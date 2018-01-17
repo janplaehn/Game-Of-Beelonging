@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour {
 	void Start () {
 
         MainCamera = GameObject.Find("Main Camera");
-        rightBoundary = MainCamera.GetComponent<CameraMovement>().offset + 10f;
+        rightBoundary = MainCamera.GetComponent<MainCamera>().offset + 10f;
     }
 	
 	void Update () {
