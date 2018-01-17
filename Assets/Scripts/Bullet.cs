@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour {
 
     private GameObject MainCamera;
     private float rightBoundary;
+    public float speed;
+
 
 	void Start () {
 
@@ -16,7 +18,7 @@ public class Bullet : MonoBehaviour {
 	void Update () {
 		if (transform.position.x <= rightBoundary)
         {
-            transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + speed, transform.position.y, transform.position.z);
         }
         else
         {
