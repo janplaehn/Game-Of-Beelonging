@@ -5,12 +5,16 @@ using UnityEngine;
 public class Beetle : MonoBehaviour {
 
 	void Start () {
-		
-	}
+        this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+        
+
+    }
 	
 	void Update () {
-		
-	}
+		if (transform.position.y <= -6) {
+            Destroy(this.gameObject);
+        }
+    }
 
     void OnTriggerStay2D(Collider2D otherCollider) {
         if (otherCollider.tag == "PlayerBullet")
@@ -20,6 +24,7 @@ public class Beetle : MonoBehaviour {
     }
 
     void Die() {
-        Destroy(this.gameObject);
+        transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
+        this.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
     }
 }
