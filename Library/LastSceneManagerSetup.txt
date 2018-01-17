@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/CODE_TEST_LEVEL_DONT_TOUCH.unity
+  isLoaded: 1
+  isActive: 1
