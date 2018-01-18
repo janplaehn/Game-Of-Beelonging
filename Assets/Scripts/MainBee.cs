@@ -10,11 +10,11 @@ public class MainBee : MonoBehaviour {
     private float rightBoundary;
     private float topBoundary;
     private float bottomBoundary;
-    public Transform bullet;
+    public Transform PlayerBullet;
     public float bulletOffset;
     public float speed;
     public bool isCursorVisible;
-    private bool isAlive;
+    public bool isAlive;
 
     void Start () {
         MainCamera = GameObject.Find("Main Camera");
@@ -61,7 +61,7 @@ public class MainBee : MonoBehaviour {
     }
 
     void Shoot() {
-        Instantiate(bullet, new Vector3(transform.position.x + bulletOffset, transform.position.y, transform.position.z), Quaternion.identity);
+        Instantiate(PlayerBullet, new Vector3(transform.position.x + bulletOffset, transform.position.y, transform.position.z), Quaternion.identity);
     }
 
     void CallSwarm() {
@@ -69,7 +69,13 @@ public class MainBee : MonoBehaviour {
     }
 
     void OnTriggerStay2D(Collider2D otherCollider) {
-        if (otherCollider.tag == "Enemy" && otherCollider.transform.root.gameObject.GetComponent<Fly>().isAlive && this.isAlive) {
+        if (otherCollider.tag == "Fly" && otherCollider.transform.root.gameObject.GetComponent<Fly>().isAlive && this.isAlive) {
+            Die();
+        }
+        else if (otherCollider.tag == "Wasp" && otherCollider.transform.root.gameObject.GetComponent<Wasp>().isAlive && this.isAlive) {
+            Die();
+        }
+        else if (otherCollider.tag == "EnemyBullet" && this.isAlive) {
             Die();
         }
     }

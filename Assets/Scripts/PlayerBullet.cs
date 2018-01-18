@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
+public class PlayerBullet : MonoBehaviour {
 
     private GameObject MainCamera;
     private float rightBoundary;
