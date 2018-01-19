@@ -7,9 +7,6 @@ public class Wasp : MonoBehaviour
 
     enum Direction { Up, Down };
     Direction moveDirection;
-    private Vector2 startPosition;
-    public float curveExtremes;
-    public float curveSpeed;
     public float moveSpeed;
     public float detectionRange;
     public float shootRange;
@@ -22,25 +19,19 @@ public class Wasp : MonoBehaviour
     public Transform enemyBullet;
     public float bulletOffset;
 
-    void Start()
-    {
+    void Start() {
         this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         moveDirection = Direction.Up;
-        startPosition = transform.position;
         isAlive = true;
-        healthPoints = 4;
+        healthPoints = 3;
         player = GameObject.Find("MainBee");
     }
 
-    void Update()
-    {
-        if (transform.position.y <= -6)
-        {
+    void Update() {
+        if (transform.position.y <= -6) {
             Destroy(this.gameObject);
         }
-        if (isAlive)
-        {
-            Move();
+        if (isAlive) {
             if (transform.position.x - player.transform.position.x < detectionRange) {
                 ChasePlayer();
             }
@@ -68,26 +59,6 @@ public class Wasp : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         this.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
         isAlive = false;
-    }
-
-    void Move()
-    {
-        if (moveDirection == Direction.Up)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y + curveSpeed, transform.position.z);
-            if (transform.position.y > startPosition.y + curveExtremes)
-            {
-                moveDirection = Direction.Down;
-            }
-        }
-        else if (moveDirection == Direction.Down)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y - curveSpeed, transform.position.z);
-            if (transform.position.y < startPosition.y - curveExtremes)
-            {
-                moveDirection = Direction.Up;
-            }
-        }
     }
 
     void ChasePlayer() {

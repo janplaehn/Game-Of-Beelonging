@@ -69,13 +69,14 @@ public class MainBee : MonoBehaviour {
     }
 
     void OnTriggerStay2D(Collider2D otherCollider) {
-        if (otherCollider.tag == "Fly" && otherCollider.transform.root.gameObject.GetComponent<Fly>().isAlive && this.isAlive) {
+        if (otherCollider.tag == "Fly" && otherCollider.transform.GetComponent<Fly>().isAlive && this.isAlive) {
             Die();
         }
-        else if (otherCollider.tag == "Wasp" && otherCollider.transform.root.gameObject.GetComponent<Wasp>().isAlive && this.isAlive) {
+        else if (otherCollider.tag == "Wasp" && otherCollider.transform.GetComponent<Wasp>().isAlive && this.isAlive) {
             Die();
         }
         else if (otherCollider.tag == "EnemyBullet" && this.isAlive) {
+            Destroy(otherCollider.transform.root.gameObject);
             Die();
         }
     }
