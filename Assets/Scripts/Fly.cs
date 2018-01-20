@@ -11,6 +11,7 @@ public class Fly : MonoBehaviour {
     public float curveSpeed;
     public int healthPoints;
     public bool isAlive;
+    private GameObject MainCamera;
 
     void Start () {
         this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
@@ -18,6 +19,7 @@ public class Fly : MonoBehaviour {
         startPosition = transform.position;
         isAlive = true;
         healthPoints = 1;
+        MainCamera = GameObject.Find("Main Camera");
     }
 	
 	void Update () {
@@ -26,7 +28,8 @@ public class Fly : MonoBehaviour {
         }
         if (isAlive) {
             Move();
-            if (healthPoints <= 0) {
+            if (healthPoints <= 0 || transform.position.x <= MainCamera.GetComponent<MainCamera>().offset - 10f)
+            {
                 Die();
             }
         }
@@ -39,7 +42,7 @@ public class Fly : MonoBehaviour {
         }
     }
 
-    void Die() {
+    public void Die() {
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         this.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
         isAlive = false;

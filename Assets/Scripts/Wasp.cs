@@ -18,6 +18,7 @@ public class Wasp : MonoBehaviour
     private float nextFire;
     public Transform enemyBullet;
     public float bulletOffset;
+    private GameObject MainCamera;
 
     void Start() {
         this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
@@ -25,6 +26,7 @@ public class Wasp : MonoBehaviour
         isAlive = true;
         healthPoints = 3;
         player = GameObject.Find("MainBee");
+        MainCamera = GameObject.Find("Main Camera");
     }
 
     void Update() {
@@ -38,7 +40,7 @@ public class Wasp : MonoBehaviour
             if (transform.position.x - player.transform.position.x < shootRange) {
                 Shoot();
             }
-            if (healthPoints <= 0)
+            if (healthPoints <= 0 || transform.position.x <= MainCamera.GetComponent<MainCamera>().offset - 10f)
             {
                 Die();
             }
@@ -54,7 +56,7 @@ public class Wasp : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         this.GetComponent<Rigidbody2D>().gravityScale = 2.0f;

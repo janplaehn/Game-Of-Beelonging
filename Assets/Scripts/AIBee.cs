@@ -18,6 +18,10 @@ public class AIBee : MonoBehaviour {
     public float bulletOffset;
     private GameObject MainCamera;
     public Collider2D[] collidersWithinRadius;
+    public Transform currentSlot;
+    bool nextSlotOccupied;
+    public float moveSpeed;
+    private float slotCoolDown;
 
     void Start () {
         GetComponent<Rigidbody2D>().gravityScale = 0.0f;
@@ -26,6 +30,7 @@ public class AIBee : MonoBehaviour {
         isAlive = true;
         player = GameObject.Find("MainBee");
         MainCamera = GameObject.Find("Main Camera");
+        nextSlotOccupied = true;
 
     }
 	
@@ -35,8 +40,13 @@ public class AIBee : MonoBehaviour {
             Destroy(gameObject);
         }
         if (isAlive) {
-            Move();
-            Shoot();
+            if (nextSlotOccupied) {
+                Move();
+                Shoot();
+            }
+            else {
+                MoveToNextSlot();
+            }
         }
     }
 
@@ -44,15 +54,35 @@ public class AIBee : MonoBehaviour {
     {
         if (otherCollider.tag == "Fly" && otherCollider.transform.GetComponent<Fly>().isAlive && isAlive)
         {
+            otherCollider.transform.gameObject.GetComponent<Fly>().Die();
             Die();
         }
         else if (otherCollider.tag == "Wasp" && otherCollider.transform.GetComponent<Wasp>().isAlive && isAlive)
         {
+            otherCollider.transform.gameObject.GetComponent<Wasp>().Die();
             Die();
         }
         else if (otherCollider.tag == "EnemyBullet" && isAlive) {
-            Destroy(otherCollider.transform.root.gameObject);
+            Destroy(otherCollider.transform.gameObject);
             Die();
+        }
+        else if (otherCollider.tag == "Slot" && otherCollider.transform.GetComponent<Slot>().nextSlot.GetComponent<Slot>().isOccupied) {
+            nextSlotOccupied = true;
+            currentSlot = otherCollider.transform;
+            Debug.Log("Next slot occupied");
+        }
+        else if (otherCollider.tag == "Slot" && !(otherCollider.transform.GetComponent<Slot>().nextSlot.GetComponent<Slot>().isOccupied)) {
+            if (Time.time > slotCoolDown) { 
+                nextSlotOccupied = false;
+                currentSlot = otherCollider.transform.GetComponent<Slot>().nextSlot.transform;
+                slotCoolDown = Time.time + 2;
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D otherCollider) {
+        if (otherCollider.tag == "Slot" && !(otherCollider.transform.GetComponent<Slot>().nextSlot.GetComponent<Slot>().isOccupied)){
+            slotCoolDown = Time.time + 2;
         }
     }
 
@@ -71,6 +101,7 @@ public class AIBee : MonoBehaviour {
     }
 
     void Move() {
+        startPosition = currentSlot.position;
         if (moveDirection == Direction.Up) {
             transform.position = new Vector3(transform.position.x, transform.position.y + curveSpeed, transform.position.z);
             if (transform.position.y > startPosition.y + curveExtremes) {
@@ -89,13 +120,17 @@ public class AIBee : MonoBehaviour {
     bool EnemiesInRange() {
         collidersWithinRadius = Physics2D.OverlapCircleAll(new Vector3(transform.position.x + 3, transform.position.y, transform.position.z), shootRange);
         foreach (Collider2D collider in collidersWithinRadius) {
-            if (collider.tag == "Fly") {
+            if (collider.tag == "Fly" && collider.transform.GetComponent<Fly>().isAlive) {
                 return true;
             }
-            else if (collider.tag == "Wasp") {
+            else if (collider.tag == "Wasp" && collider.transform.GetComponent<Wasp>().isAlive) {
                 return true;
             }
         }
         return false;
+    }
+
+    void MoveToNextSlot() {
+        transform.position = Vector3.MoveTowards(transform.position, currentSlot.position, moveSpeed);
     }
 }

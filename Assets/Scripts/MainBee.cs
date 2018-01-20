@@ -15,6 +15,7 @@ public class MainBee : MonoBehaviour {
     public float speed;
     public bool isCursorVisible;
     public bool isAlive;
+    public GameObject middleSlot;
 
     void Start () {
         MainCamera = GameObject.Find("Main Camera");
@@ -39,11 +40,8 @@ public class MainBee : MonoBehaviour {
                 CallSwarm();
             }
         }
-        else
-        {
-            if (transform.position.y <= -6) {
-                Destroy(this.gameObject);
-            }
+        if (transform.position.y <= -6) {
+            NewMainBee();
         }
     }
 
@@ -85,5 +83,13 @@ public class MainBee : MonoBehaviour {
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         this.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
         isAlive = false;
+    }
+
+    void NewMainBee() {
+        transform.position = middleSlot.GetComponent<MiddleSlot>().GetBee().transform.position;
+        isAlive = true;
+        this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+        this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        middleSlot.GetComponent<MiddleSlot>().DestroyBee();
     }
 }

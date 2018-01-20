@@ -8,6 +8,8 @@ TagManager:
   - Fly
   - Wasp
   - EnemyBullet
+  - AIBee
+  - Slot
   layers:
   - Default
   - TransparentFX

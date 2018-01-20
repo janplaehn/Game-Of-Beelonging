@@ -299,8 +299,10 @@
     <Compile Include="Assets\Scripts\Fly.cs" />
     <Compile Include="Assets\Scripts\MainBee.cs" />
     <Compile Include="Assets\Scripts\MainCamera.cs" />
+    <Compile Include="Assets\Scripts\MiddleSlot.cs" />
     <Compile Include="Assets\Scripts\Parallaxing.cs" />
     <Compile Include="Assets\Scripts\PlayerBullet.cs" />
+    <Compile Include="Assets\Scripts\Slot.cs" />
     <Compile Include="Assets\Scripts\Wasp.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
