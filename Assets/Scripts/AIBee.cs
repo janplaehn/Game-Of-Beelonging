@@ -18,7 +18,7 @@ public class AIBee : MonoBehaviour {
     public float bulletOffset;
     private GameObject MainCamera;
     public Collider2D[] collidersWithinRadius;
-    public Transform currentSlot;
+    private Transform currentSlot;
     bool nextSlotOccupied;
     public float moveSpeed;
     private float slotCoolDown;
@@ -69,7 +69,6 @@ public class AIBee : MonoBehaviour {
         else if (otherCollider.tag == "Slot" && otherCollider.transform.GetComponent<Slot>().nextSlot.GetComponent<Slot>().isOccupied) {
             nextSlotOccupied = true;
             currentSlot = otherCollider.transform;
-            Debug.Log("Next slot occupied");
         }
         else if (otherCollider.tag == "Slot" && !(otherCollider.transform.GetComponent<Slot>().nextSlot.GetComponent<Slot>().isOccupied)) {
             if (Time.time > slotCoolDown) { 
