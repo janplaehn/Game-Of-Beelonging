@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4107596687017900}
   - component: {fileID: 212198368621464734}
+  - component: {fileID: 114343556963937976}
   m_Layer: 0
   m_Name: PlayerSlot
   m_TagString: Untagged
@@ -40,6 +41,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114343556963937976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1112548817992028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6e05467aa466340a2f13ce6a92af09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212198368621464734
 SpriteRenderer:
   m_ObjectHideFlags: 1

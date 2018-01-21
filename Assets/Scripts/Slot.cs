@@ -5,6 +5,7 @@ using UnityEngine;
 public class Slot : MonoBehaviour {
 
     public GameObject nextSlot;
+    public GameObject playerSlot;
     private GameObject MainCamera;
     public bool isOccupied;
 
@@ -18,13 +19,13 @@ public class Slot : MonoBehaviour {
     }
 
     void OnTriggerStay2D(Collider2D CollisionCheck) {
-        if (CollisionCheck.gameObject.tag == "AIBee") {
+        if (CollisionCheck.gameObject.tag == "AIBee" && this == CollisionCheck.gameObject.GetComponent<AIBee>().currentSlot) {
             isOccupied = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D CollisionCheck) {
-        if (CollisionCheck.gameObject.tag == "AIBee") {
+        if (CollisionCheck.gameObject.tag == "AIBee" && transform.position.x > MainCamera.transform.position.x -10f) {
             isOccupied = false;
         }
     }

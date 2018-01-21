@@ -86,7 +86,7 @@ public class MainBee : MonoBehaviour {
     }
 
     void NewMainBee() {
-        transform.position = middleSlot.GetComponent<MiddleSlot>().GetBee().transform.position;
+        transform.position = middleSlot.GetComponent<MiddleSlot>().transform.position;
         isAlive = true;
         this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;

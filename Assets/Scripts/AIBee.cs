@@ -18,7 +18,7 @@ public class AIBee : MonoBehaviour {
     public float bulletOffset;
     private GameObject MainCamera;
     public Collider2D[] collidersWithinRadius;
-    private Transform currentSlot;
+    public Transform currentSlot;
     bool nextSlotOccupied;
     public float moveSpeed;
     private float slotCoolDown;
@@ -40,12 +40,25 @@ public class AIBee : MonoBehaviour {
             Destroy(gameObject);
         }
         if (isAlive) {
-            if (nextSlotOccupied) {
-                Move();
+            if (Input.GetMouseButton(1))
+            {
+                MoveToPlayerSlot();
                 Shoot();
             }
             else {
-                MoveToNextSlot();
+                if (nextSlotOccupied && transform.position.x - curveExtremes*2 < currentSlot.transform.position.x && transform.position.y - curveExtremes*2 < currentSlot.transform.position.y)
+                {
+                    Move();
+                    Shoot();
+                }
+                else
+                {
+                    MoveToNextSlot();
+                    Shoot();
+                }
+            }
+            if (Input.GetMouseButtonUp(1)) {
+                slotCoolDown = Time.time + 6;
             }
         }
     }
@@ -68,9 +81,8 @@ public class AIBee : MonoBehaviour {
         }
         else if (otherCollider.tag == "Slot" && otherCollider.transform.GetComponent<Slot>().nextSlot.GetComponent<Slot>().isOccupied) {
             nextSlotOccupied = true;
-            currentSlot = otherCollider.transform;
         }
-        else if (otherCollider.tag == "Slot" && !(otherCollider.transform.GetComponent<Slot>().nextSlot.GetComponent<Slot>().isOccupied)) {
+        else if (otherCollider.tag == "Slot" && !(otherCollider.transform.GetComponent<Slot>().nextSlot.GetComponent<Slot>().isOccupied && !Input.GetMouseButton(1))) {
             if (Time.time > slotCoolDown) { 
                 nextSlotOccupied = false;
                 currentSlot = otherCollider.transform.GetComponent<Slot>().nextSlot.transform;
@@ -131,5 +143,10 @@ public class AIBee : MonoBehaviour {
 
     void MoveToNextSlot() {
         transform.position = Vector3.MoveTowards(transform.position, currentSlot.position, moveSpeed);
+    }
+
+    void MoveToPlayerSlot()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, currentSlot.GetComponent<Slot>().playerSlot.transform.position, moveSpeed*4);
     }
 }
