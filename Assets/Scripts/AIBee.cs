@@ -40,6 +40,7 @@ public class AIBee : MonoBehaviour {
                 Move();
                 Shoot();
                 if (Input.GetMouseButtonDown(1)) {
+                    fireRate *= 2;
                     beeState = State.MoveToPlayer;
                 }
                 else if (!NextSlotOccupied()) {
@@ -51,6 +52,7 @@ public class AIBee : MonoBehaviour {
                 MoveToSlot();
                 Shoot();
                 if (Input.GetMouseButtonDown(1)) {
+                    fireRate /= 2;
                     beeState = State.MoveToPlayer;
                 }
                 if (transform.position == currentSlot.transform.position)
@@ -61,6 +63,7 @@ public class AIBee : MonoBehaviour {
 
             case State.MoveToPlayer:
                 MoveToPlayerSlot();
+                Shoot();
                 if (Input.GetMouseButtonUp(1)) {
                     beeState = State.MoveToSlot;
                 }
