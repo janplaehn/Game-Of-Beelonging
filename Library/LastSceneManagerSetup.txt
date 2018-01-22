@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Example Level.unity
+- path: Assets/Scenes/DONT TOUCH! (JAN)/CODE_TEST_LEVEL_DONT_TOUCH.unity
   isLoaded: 1
   isActive: 1

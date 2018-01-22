@@ -90,6 +90,7 @@ public class MainBee : MonoBehaviour {
     }
 
     void Die() {
+        GameManager.beeCount -= 1;
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         this.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
         isAlive = false;

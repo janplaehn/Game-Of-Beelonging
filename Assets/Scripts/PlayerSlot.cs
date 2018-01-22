@@ -5,12 +5,10 @@ using UnityEngine;
 public class PlayerSlot : MonoBehaviour {
 
 
-    private Vector3 origin;
     private Vector3 rotationDirection;
     private Transform player;
 
     void Start () {
-        origin = new Vector3(0, 0, 0);
         rotationDirection = new Vector3(0, 0, 1);
         player = this.transform.root.transform;
     }

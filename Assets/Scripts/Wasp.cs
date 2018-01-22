@@ -16,14 +16,12 @@ public class Wasp : MonoBehaviour
     [HideInInspector] public bool isAlive;
 
     private enum Direction { Up, Down };
-    private Direction moveDirection;
     private GameObject player;
     private float nextFire;
     private GameObject MainCamera;
 
     void Start() {
         this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
-        moveDirection = Direction.Up;
         isAlive = true;
         healthPoints = 3;
         player = GameObject.Find("MainBee");

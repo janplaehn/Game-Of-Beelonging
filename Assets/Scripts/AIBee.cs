@@ -18,7 +18,6 @@ public class AIBee : MonoBehaviour {
     private enum State { Swarm, MoveToSlot, MoveToPlayer, Die }
     private State beeState;
     private Vector2 startPosition;
-    private GameObject player;
     private float nextFire;
     private Collider2D[] collidersWithinRadius;
     private GameObject MainCamera;
@@ -28,7 +27,6 @@ public class AIBee : MonoBehaviour {
         GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         moveDirection = Direction.Up;
         startPosition = transform.position;
-        player = GameObject.Find("MainBee");
         MainCamera = GameObject.Find("Main Camera");
 
     }
@@ -103,6 +101,7 @@ public class AIBee : MonoBehaviour {
     }
 
     void Die() {
+        GameManager.beeCount -= 1;
         currentSlot.GetComponent<Slot>().isOccupied = false;
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         GetComponent<Rigidbody2D>().gravityScale = 2.0f;
