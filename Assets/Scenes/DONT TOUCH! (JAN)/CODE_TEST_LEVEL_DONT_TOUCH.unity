@@ -3450,6 +3450,11 @@ Prefab:
       propertyPath: currentSlot
       value: 
       objectReference: {fileID: 713245413}
+    - target: {fileID: 114901553554805534, guid: b2ec3ff32b8b92a438ab76a79afcc8ec,
+        type: 2}
+      propertyPath: isAlive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2ec3ff32b8b92a438ab76a79afcc8ec, type: 2}
   m_IsPrefabParent: 0

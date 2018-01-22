@@ -37,7 +37,11 @@ public class MainBee : MonoBehaviour {
             }
             if (Input.GetMouseButtonDown(1))
             {
-                CallSwarm();
+                speed *= 2;
+            }
+            else if (Input.GetMouseButtonUp(1))
+            {
+                speed /= 2;
             }
         }
         if (transform.position.y <= -6) {
@@ -87,6 +91,7 @@ public class MainBee : MonoBehaviour {
 
     void NewMainBee() {
         transform.position = middleSlot.GetComponent<MiddleSlot>().transform.position;
+        middleSlot.GetComponent<Slot>().isOccupied = false;
         isAlive = true;
         this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
