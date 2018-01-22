@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour {
 
+
+    public float speed;
+
     private GameObject MainCamera;
     private float leftBoundary;
-    public float speed;
 
     void Start() {
         MainCamera = GameObject.Find("Main Camera");

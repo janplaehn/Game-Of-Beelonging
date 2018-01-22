@@ -4,10 +4,13 @@ using System.Collections;
 
 //Reference: https://www.youtube.com/watch?v=QkisHNmcK7Y
 public class Parallaxing : MonoBehaviour {
+
     public Transform[] backgrounds;
-    private float[] parallaxScales;
     public float smoothing = 1f;
-    private Transform cam;
+
+    [ShowOnly] [SerializeField] private Transform cam;
+
+    private float[] parallaxScales;
     private Vector3 previousCamPos;
 
     void Awake() {

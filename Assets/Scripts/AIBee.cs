@@ -16,7 +16,7 @@ public class AIBee : MonoBehaviour {
     private enum Direction { Up, Down };
     private Direction moveDirection;
     private enum State { Swarm, MoveToSlot, MoveToPlayer, Die }
-    [SerializeField]  private State beeState;
+    private State beeState;
     private Vector2 startPosition;
     private GameObject player;
     private float nextFire;
@@ -86,6 +86,11 @@ public class AIBee : MonoBehaviour {
         else if (otherCollider.tag == "Wasp" && otherCollider.transform.GetComponent<Wasp>().isAlive && beeState != State.Die)
         {
             otherCollider.transform.gameObject.GetComponent<Wasp>().Die();
+            Die();
+        }
+        else if (otherCollider.tag == "Dragonfly" && otherCollider.transform.GetComponent<DragonFly>().isAlive && beeState != State.Die)
+        {
+            otherCollider.transform.gameObject.GetComponent<DragonFly>().Die();
             Die();
         }
         else if (otherCollider.tag == "EnemyBullet" && beeState != State.Die) {

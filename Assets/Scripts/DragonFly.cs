@@ -7,7 +7,9 @@ public class DragonFly : MonoBehaviour {
     public int healthPoints;
     public float moveSpeed;
     public float positionThreshold;
-    public bool isAlive;
+
+    [HideInInspector]  public bool isAlive;
+
     private GameObject MainCamera;
 
     void Start()

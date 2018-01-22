@@ -10,6 +10,7 @@ TagManager:
   - EnemyBullet
   - AIBee
   - Slot
+  - Dragonfly
   layers:
   - Default
   - TransparentFX

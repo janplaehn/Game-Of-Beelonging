@@ -5,16 +5,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4EE1CCD1-0EBB-FD13-7CDA-44432F96F796}</ProjectGuid>
+    <ProjectGuid>{8E8A330D-9DBB-3B8E-5F26-DC48B90BE540}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.0f3</UnityVersion>
     <RootNamespace></RootNamespace>
@@ -294,19 +294,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AIBee.cs" />
-    <Compile Include="Assets\Scripts\DragonFly.cs" />
-    <Compile Include="Assets\Scripts\EnemyBullet.cs" />
-    <Compile Include="Assets\Scripts\Fly.cs" />
-    <Compile Include="Assets\Scripts\MainBee.cs" />
-    <Compile Include="Assets\Scripts\MainCamera.cs" />
-    <Compile Include="Assets\Scripts\MiddleSlot.cs" />
-    <Compile Include="Assets\Scripts\Parallaxing.cs" />
-    <Compile Include="Assets\Scripts\PlayerBullet.cs" />
-    <Compile Include="Assets\Scripts\PlayerSlot.cs" />
-    <Compile Include="Assets\Scripts\ShowOnlyAttribute.cs" />
-    <Compile Include="Assets\Scripts\Slot.cs" />
-    <Compile Include="Assets\Scripts\Wasp.cs" />
+    <ProjectReference Include="Game Of Beelonging.csproj">
+      <Project>{4EE1CCD1-0EBB-FD13-7CDA-44432F96F796}</Project>
+      <Name>Game Of Beelonging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Editor\ShowOnlyDrawer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

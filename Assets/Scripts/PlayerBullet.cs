@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour {
 
+    public float speed;
+
     private GameObject MainCamera;
     private float rightBoundary;
-    public float speed;
 
 
 	void Start () {

@@ -5,7 +5,8 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour {
 
     public float speed;
-    public float offset;
+
+    [ShowOnly] public float offset;
 
 	void Start () {
 		

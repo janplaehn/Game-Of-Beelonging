@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class MainBee : MonoBehaviour {
 
-    private GameObject MainCamera;
-    private Vector2 newPosition;
-    private float leftBoundary;
-    private float rightBoundary;
-    private float topBoundary;
-    private float bottomBoundary;
     public Transform PlayerBullet;
     public float bulletOffset;
     public float speed;
     public bool isCursorVisible;
-    public bool isAlive;
     public GameObject middleSlot;
+
+    [HideInInspector] public bool isAlive;
+
+    private GameObject MainCamera;
+    private Vector2 newPosition;
+
+    [ShowOnly] [SerializeField] private float leftBoundary;
+    [ShowOnly] [SerializeField] private float rightBoundary;
+    [ShowOnly] [SerializeField] private float topBoundary;
+    [ShowOnly] [SerializeField] private float bottomBoundary;
 
     void Start () {
         MainCamera = GameObject.Find("Main Camera");
@@ -75,6 +78,9 @@ public class MainBee : MonoBehaviour {
             Die();
         }
         else if (otherCollider.tag == "Wasp" && otherCollider.transform.GetComponent<Wasp>().isAlive && this.isAlive) {
+            Die();
+        }
+        else if (otherCollider.tag == "Dragonfly" && otherCollider.transform.GetComponent<DragonFly>().isAlive && this.isAlive) {
             Die();
         }
         else if (otherCollider.tag == "EnemyBullet" && this.isAlive) {

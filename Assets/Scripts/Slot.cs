@@ -6,8 +6,11 @@ public class Slot : MonoBehaviour {
 
     public GameObject nextSlot;
     public GameObject playerSlot;
+
+    [HideInInspector] public bool isOccupied;
+
     private GameObject MainCamera;
-    public bool isOccupied;
+    
 
     void Start () {
         MainCamera = GameObject.Find("Main Camera");

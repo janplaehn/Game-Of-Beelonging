@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class Wasp : MonoBehaviour
 {
-
-    enum Direction { Up, Down };
-    Direction moveDirection;
+    public int healthPoints;
     public float moveSpeed;
     public float detectionRange;
     public float shootRange;
     public float playerDistance;
-    public int healthPoints;
-    public bool isAlive;
-    private GameObject player;
     public float fireRate;
-    private float nextFire;
     public Transform enemyBullet;
     public float bulletOffset;
+
+    [HideInInspector] public bool isAlive;
+
+    private enum Direction { Up, Down };
+    private Direction moveDirection;
+    private GameObject player;
+    private float nextFire;
     private GameObject MainCamera;
 
     void Start() {
