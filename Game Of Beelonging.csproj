@@ -296,6 +296,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AIBee.cs" />
     <Compile Include="Assets\Scripts\EnemyBullet.cs" />
+    <Compile Include="Assets\Scripts\ExampleScript.cs" />
     <Compile Include="Assets\Scripts\Fly.cs" />
     <Compile Include="Assets\Scripts\MainBee.cs" />
     <Compile Include="Assets\Scripts\MainCamera.cs" />
