@@ -297,10 +297,12 @@
     <Compile Include="Assets\Scripts\AIBee.cs" />
     <Compile Include="Assets\Scripts\DragonFly.cs" />
     <Compile Include="Assets\Scripts\EnemyBullet.cs" />
+    <Compile Include="Assets\Scripts\FinishLine.cs" />
     <Compile Include="Assets\Scripts\Fly.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MainBee.cs" />
     <Compile Include="Assets\Scripts\MainCamera.cs" />
+    <Compile Include="Assets\Scripts\Menu\OnClick.cs" />
     <Compile Include="Assets\Scripts\Menu\RetryButton.cs" />
     <Compile Include="Assets\Scripts\MiddleSlot.cs" />
     <Compile Include="Assets\Scripts\Parallaxing.cs" />
