@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 
 //Reference: https://www.youtube.com/watch?v=QkisHNmcK7Y
 public class Parallaxing : MonoBehaviour {
 
-    public Transform[] backgrounds;
+    public List<Transform> children;
     public float smoothing = 1f;
 
     [ShowOnly] [SerializeField] private Transform cam;
@@ -15,22 +16,26 @@ public class Parallaxing : MonoBehaviour {
 
     void Awake() {
         cam = Camera.main.transform;
+
+        foreach (Transform child in transform) {
+           children.Add(child.gameObject.transform);
+        }
     }
 
     void Start() {
         previousCamPos = cam.position;
-        parallaxScales = new float[backgrounds.Length];
-        for (int i = 0; i < backgrounds.Length; i++) {
-            parallaxScales[i] = backgrounds[i].position.z * -1;
+        parallaxScales = new float[children.Count];
+        for (int i = 0; i < children.Count; i++) {
+            parallaxScales[i] = children[i].position.z * -1;
         }
     }
 
     void Update() {
-        for (int i = 0; i < backgrounds.Length; i++) {
+        for (int i = 0; i < children.Count; i++) {
             float parallax = (previousCamPos.x - cam.position.x) * parallaxScales[i];
-            float backgroundTargetPosX = backgrounds[i].position.x + parallax;
-            Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, backgrounds[i].position.y, backgrounds[i].position.z);
-            backgrounds[i].position = Vector3.Lerp(backgrounds[i].position, backgroundTargetPos, smoothing * Time.deltaTime);
+            float backgroundTargetPosX = children[i].position.x + parallax;
+            Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, children[i].position.y, children[i].position.z);
+            children[i].position = Vector3.Lerp(children[i].position, backgroundTargetPos, smoothing * Time.deltaTime);
         }
         previousCamPos = cam.position;
     }   

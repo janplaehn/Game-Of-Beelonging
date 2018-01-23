@@ -99,18 +99,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1412c4d5243e1374fbf3580166260840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curveExtremes: 0.05
-  curveSpeed: 0.02
+  healthPoints: 3
   moveSpeed: 0.07
   detectionRange: 15
   shootRange: 8
   playerDistance: 7
-  healthPoints: 3
-  isAlive: 1
   fireRate: 1.5
   enemyBullet: {fileID: 4438345213601188, guid: 7589cd2dcee28bb47b7fda9920aa326a,
     type: 2}
   bulletOffset: 0.2
+  isAlive: 1
 --- !u!212 &212027328484081304
 SpriteRenderer:
   m_ObjectHideFlags: 1
