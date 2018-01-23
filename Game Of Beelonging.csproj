@@ -303,7 +303,6 @@
     <Compile Include="Assets\Scripts\MainBee.cs" />
     <Compile Include="Assets\Scripts\MainCamera.cs" />
     <Compile Include="Assets\Scripts\Menu\OnClick.cs" />
-    <Compile Include="Assets\Scripts\Menu\RetryButton.cs" />
     <Compile Include="Assets\Scripts\MiddleSlot.cs" />
     <Compile Include="Assets\Scripts\Parallaxing.cs" />
     <Compile Include="Assets\Scripts\PlayerBullet.cs" />
