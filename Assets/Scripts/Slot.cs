@@ -20,4 +20,5 @@ public class Slot : MonoBehaviour {
 	void Update () {
         transform.position = new Vector3(transform.position.x + MainCamera.GetComponent<MainCamera>().speed / 100, transform.position.y, transform.position.z);
     }
+
 }

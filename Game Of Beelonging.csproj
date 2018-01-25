@@ -310,6 +310,7 @@
     <Compile Include="Assets\Scripts\RepeatingBackground.cs" />
     <Compile Include="Assets\Scripts\ShowOnlyAttribute.cs" />
     <Compile Include="Assets\Scripts\Slot.cs" />
+    <Compile Include="Assets\Scripts\Slot3.cs" />
     <Compile Include="Assets\Scripts\Wasp.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

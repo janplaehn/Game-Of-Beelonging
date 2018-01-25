@@ -13,8 +13,8 @@ public class MiddleSlot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        
+    }
 
     void OnTriggerEnter2D(Collider2D CollisionCheck) {
         if (CollisionCheck.gameObject.tag == "AIBee") {

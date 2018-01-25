@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-//Reference: https://www.youtube.com/watch?v=QkisHNmcK7Y
+//Based on this tutorial: https://www.youtube.com/watch?v=QkisHNmcK7Y
 public class Parallaxing : MonoBehaviour {
 
     public List<Transform> children;

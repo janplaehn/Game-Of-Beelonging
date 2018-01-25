@@ -7,9 +7,9 @@ public class MainBee : MonoBehaviour {
     public Transform PlayerBullet;
     public float bulletOffset;
     public float speed;
-    public bool isCursorVisible;
     public GameObject middleSlot;
 
+    [ShowOnly] public bool isInEndSequence;
     [HideInInspector] public bool isAlive;
 
     private GameObject MainCamera;
@@ -26,29 +26,30 @@ public class MainBee : MonoBehaviour {
         rightBoundary = 8.5f;
         topBoundary = 4.75f;
         bottomBoundary = -4.75f;
-        Cursor.visible = isCursorVisible;
         isAlive = true;
+        isInEndSequence = false;
     }
 	
 	void Update () {
-        if (isAlive)
-        {
-            Move();
-            if (Input.GetMouseButtonDown(0))
-            {
-                Shoot();
-            }
-            if (Input.GetMouseButtonDown(1))
-            {
-                speed *= 2;
-            }
-            else if (Input.GetMouseButtonUp(1))
-            {
-                speed /= 2;
-            }
+        if (isInEndSequence) {
+            MoveOutOfScreen();
         }
-        if (transform.position.y <= -6) {
-            NewMainBee();
+        else {
+            if (isAlive) {
+                Move();
+                if (Input.GetMouseButtonDown(0)) {
+                    Shoot();
+                }
+                if (Input.GetMouseButtonDown(1)) {
+                    speed *= 2;
+                }
+                else if (Input.GetMouseButtonUp(1)) {
+                    speed /= 2;
+                }
+            }
+            if (transform.position.y <= -6) {
+                NewMainBee();
+            }
         }
     }
 
@@ -103,5 +104,9 @@ public class MainBee : MonoBehaviour {
         this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         middleSlot.GetComponent<MiddleSlot>().DestroyBee();
+    }
+
+    void MoveOutOfScreen() {
+        transform.position = Vector3.right * speed;
     }
 }
