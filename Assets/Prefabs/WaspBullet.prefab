@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4438345213601188}
   - component: {fileID: 212276461914214560}
+  - component: {fileID: 114289838037403648}
   - component: {fileID: 58134948447110198}
   - component: {fileID: 50875037218241686}
-  - component: {fileID: 114289838037403648}
   m_Layer: 0
   m_Name: WaspBullet
   m_TagString: EnemyBullet
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b773ba8250a82246ba417e4127f716e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
+  speed: 18
 --- !u!212 &212276461914214560
 SpriteRenderer:
   m_ObjectHideFlags: 1

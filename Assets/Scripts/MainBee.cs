@@ -59,10 +59,10 @@ public class MainBee : MonoBehaviour {
         newPosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 
         if (newPosition.x >= leftBoundary && newPosition.x <= rightBoundary && newPosition.y <= topBoundary && newPosition.y >= bottomBoundary) {
-            transform.position = Vector3.MoveTowards(transform.position, newPosition, speed);
+            transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
         }
         else {
-            this.transform.position = new Vector3(this.transform.position.x + MainCamera.GetComponent<MainCamera>().speed / 100, this.transform.position.y, this.transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x + MainCamera.GetComponent<MainCamera>().speed * Time.deltaTime / 100, this.transform.position.y, this.transform.position.z);
         }
     }
 
@@ -107,6 +107,6 @@ public class MainBee : MonoBehaviour {
     }
 
     void MoveOutOfScreen() {
-        transform.position = Vector3.right * speed;
+        transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
     }
 }

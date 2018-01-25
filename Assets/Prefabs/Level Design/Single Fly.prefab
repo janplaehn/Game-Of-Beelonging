@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveExtremes: 0.1
-  curveSpeed: 0.01
+  curveSpeed: 0.6
   healthPoints: 1
   isAlive: 0
 --- !u!212 &212113614104404536

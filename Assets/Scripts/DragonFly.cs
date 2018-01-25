@@ -47,10 +47,10 @@ public class DragonFly : MonoBehaviour {
 
     void Move() {
         if (transform.position.x < MainCamera.transform.position.x + 10 && transform.position.x > MainCamera.transform.position.x + positionThreshold) {
-            transform.position = new Vector3(transform.position.x + moveSpeed/50, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + moveSpeed* Time.deltaTime / 50, transform.position.y, transform.position.z);
         }
         if (transform.position.x < MainCamera.transform.position.x + positionThreshold) {
-            transform.position = new Vector3(transform.position.x - moveSpeed, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - moveSpeed* Time.deltaTime, transform.position.y, transform.position.z);
         }
         
     }

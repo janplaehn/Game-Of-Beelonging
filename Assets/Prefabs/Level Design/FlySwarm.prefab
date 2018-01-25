@@ -698,7 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveExtremes: 0.1
-  curveSpeed: 0.01
+  curveSpeed: 0.6
   healthPoints: 1
   isAlive: 0
 --- !u!114 &114061989240125870
@@ -728,7 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveExtremes: 0.1
-  curveSpeed: 0.01
+  curveSpeed: 0.6
   healthPoints: 1
   isAlive: 0
 --- !u!114 &114142659795933726
@@ -803,7 +803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveExtremes: 0.1
-  curveSpeed: 0.01
+  curveSpeed: 0.6
   healthPoints: 1
   isAlive: 0
 --- !u!114 &114293660684173158
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveExtremes: 0.1
-  curveSpeed: 0.01
+  curveSpeed: 0.6
   healthPoints: 1
   isAlive: 0
 --- !u!114 &114380019541696524
@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveExtremes: 0.1
-  curveSpeed: 0.01
+  curveSpeed: 0.6
   healthPoints: 1
   isAlive: 0
 --- !u!114 &114410431143135450
@@ -863,7 +863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveExtremes: 0.1
-  curveSpeed: 0.01
+  curveSpeed: 0.6
   healthPoints: 1
   isAlive: 0
 --- !u!114 &114590868968605870
@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveExtremes: 0.1
-  curveSpeed: 0.01
+  curveSpeed: 0.6
   healthPoints: 1
   isAlive: 0
 --- !u!114 &114760348357177302
@@ -908,7 +908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveExtremes: 0.1
-  curveSpeed: 0.01
+  curveSpeed: 0.6
   healthPoints: 1
   isAlive: 0
 --- !u!212 &212196931459359590

@@ -118,22 +118,22 @@ public class AIBee : MonoBehaviour {
     void Move() {
         startPosition = currentSlot.position;
         if (moveDirection == Direction.Up) {
-            transform.position = new Vector3(transform.position.x, transform.position.y + curveSpeed, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + curveSpeed * Time.deltaTime, transform.position.z);
             if (transform.position.y > startPosition.y + curveExtremes) {
                 moveDirection = Direction.Down;
             }
         }
         else if (moveDirection == Direction.Down) {
-            transform.position = new Vector3(transform.position.x, transform.position.y - curveSpeed, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y - curveSpeed * Time.deltaTime, transform.position.z);
             if (transform.position.y < startPosition.y - curveExtremes) {
                 moveDirection = Direction.Up;
             }
         }
-        transform.position = new Vector3(transform.position.x + MainCamera.GetComponent<MainCamera>().speed / 100, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x + MainCamera.GetComponent<MainCamera>().speed * Time.deltaTime/100, transform.position.y, transform.position.z);
     }
 
     bool EnemiesInRange() {
-        collidersWithinRadius = Physics2D.OverlapCircleAll(new Vector3(transform.position.x + 3, transform.position.y, transform.position.z), shootRange);
+        collidersWithinRadius = Physics2D.OverlapCircleAll(new Vector3(transform.position.x + 3 * Time.deltaTime, transform.position.y, transform.position.z), shootRange);
         foreach (Collider2D collider in collidersWithinRadius) {
             if (collider.tag == "Fly" && collider.transform.GetComponent<Fly>().isAlive) {
                 return true;
@@ -158,11 +158,11 @@ public class AIBee : MonoBehaviour {
     }
 
     void MoveToSlot() {
-        transform.position = Vector3.MoveTowards(transform.position, currentSlot.position, moveSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, currentSlot.position, moveSpeed * Time.deltaTime);
     }
 
     void MoveToPlayerSlot()
     {
-        transform.position = Vector3.MoveTowards(transform.position, currentSlot.GetComponent<Slot>().playerSlot.transform.position, moveSpeed*4);
+        transform.position = Vector3.MoveTowards(transform.position, currentSlot.GetComponent<Slot>().playerSlot.transform.position, moveSpeed * Time.deltaTime * 4);
     }
 }

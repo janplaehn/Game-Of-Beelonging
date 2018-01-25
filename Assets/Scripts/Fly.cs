@@ -53,13 +53,13 @@ public class Fly : MonoBehaviour {
 
     void Move() {
         if (moveDirection == Direction.Up) {
-            transform.position = new Vector3(transform.position.x, transform.position.y + curveSpeed, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + curveSpeed * Time.deltaTime, transform.position.z);
             if (transform.position.y > startPosition.y + curveExtremes) {
                 moveDirection = Direction.Down;
             }
         }
         else if (moveDirection == Direction.Down) {
-            transform.position = new Vector3(transform.position.x, transform.position.y - curveSpeed, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y - curveSpeed * Time.deltaTime, transform.position.z);
             if (transform.position.y < startPosition.y - curveExtremes)
             {
                 moveDirection = Direction.Up;

@@ -19,7 +19,7 @@ public class PlayerBullet : MonoBehaviour {
 	void Update () {
 		if (transform.position.x <= rightBoundary)
         {
-            transform.position = new Vector3(transform.position.x + speed, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
         }
         else
         {

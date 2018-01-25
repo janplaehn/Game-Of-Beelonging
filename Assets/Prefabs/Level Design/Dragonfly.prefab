@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 3
-  moveSpeed: 0.4
+  moveSpeed: 24
   positionThreshold: 3
   isAlive: 1
 --- !u!212 &212105361426184718

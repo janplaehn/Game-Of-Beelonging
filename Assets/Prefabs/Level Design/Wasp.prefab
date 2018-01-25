@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 3
-  moveSpeed: 0.07
+  moveSpeed: 4.2
   detectionRange: 15
   shootRange: 8
   playerDistance: 7

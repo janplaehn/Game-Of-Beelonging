@@ -65,7 +65,7 @@ public class Wasp : MonoBehaviour
     void ChasePlayer() {
         if (player.GetComponent<MainBee>().isAlive == true) {
             Vector3 targetPosition = new Vector3(player.transform.position.x + playerDistance, player.transform.position.y, player.transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
     }
 
