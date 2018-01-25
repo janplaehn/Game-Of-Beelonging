@@ -647,11 +647,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 114855045972605286, guid: f583b5d2d3ce74341b5a75a30ace7e67,
-        type: 2}
-      propertyPath: shootRange
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f583b5d2d3ce74341b5a75a30ace7e67, type: 2}
   m_IsPrefabParent: 0
@@ -857,8 +852,8 @@ MonoBehaviour:
     type: 2}
   bulletOffset: 0.2
   speed: 0.15
-  isCursorVisible: 0
   middleSlot: {fileID: 1104369050}
+  isInEndSequence: 0
   isAlive: 1
   leftBoundary: 0
   rightBoundary: 0
@@ -1125,6 +1120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff4832e812f1a141ad1a464f8097e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCursorVisible: 0
 --- !u!212 &540221026
 SpriteRenderer:
   m_ObjectHideFlags: 0
