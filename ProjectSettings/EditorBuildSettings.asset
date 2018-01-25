@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Game Over Screen.unity
+    guid: 5579b1eff1a262e44ad612f16e88747f
+  - enabled: 1
+    path: Assets/Scenes/DONT TOUCH! (JAN)/CODE_TEST_LEVEL_DONT_TOUCH.unity
+    guid: c76150dcf420f6e4e8ef2330618b7be1
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 4832ee7b20b4885478500144d3dcc76e
+  - enabled: 1
+    path: Assets/Scenes/Boss Fight.unity
+    guid: f93febb77a221ec499baaff9c56553a4

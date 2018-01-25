@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Fly : MonoBehaviour {
 
-    enum Direction { Up, Down};
-    Direction moveDirection;
-    private Vector2 startPosition;
     public float curveExtremes;
     public float curveSpeed;
     public int healthPoints;
-    public bool isAlive;
+
+    [HideInInspector] public bool isAlive;
+
+    private enum Direction { Up, Down};
+    private Direction moveDirection;
+    private Vector2 startPosition;
     private GameObject MainCamera;
+ 
 
     void Start () {
         this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;

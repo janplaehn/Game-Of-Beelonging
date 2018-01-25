@@ -4,104 +4,108 @@ using UnityEngine;
 
 public class AIBee : MonoBehaviour {
 
-    enum Direction { Up, Down };
-    Direction moveDirection;
-    private Vector2 startPosition;
+    public float moveSpeed;
     public float curveExtremes;
     public float curveSpeed;
     public float shootRange;
-    public bool isAlive;
-    private GameObject player;
     public float fireRate;
-    private float nextFire;
-    public Transform playerBullet;
     public float bulletOffset;
-    private GameObject MainCamera;
-    public Collider2D[] collidersWithinRadius;
+    public Transform playerBullet;
     public Transform currentSlot;
-    bool nextSlotOccupied;
-    public float moveSpeed;
-    private float slotCoolDown;
+
+    private enum Direction { Up, Down };
+    private Direction moveDirection;
+    private enum State { Swarm, MoveToSlot, MoveToPlayer, Die }
+    private State beeState;
+    private Vector2 startPosition;
+    private float nextFire;
+    private Collider2D[] collidersWithinRadius;
+    private GameObject MainCamera;
 
     void Start () {
+        beeState = State.Swarm;
         GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         moveDirection = Direction.Up;
         startPosition = transform.position;
-        isAlive = true;
-        player = GameObject.Find("MainBee");
         MainCamera = GameObject.Find("Main Camera");
-        nextSlotOccupied = true;
 
     }
 	
 	void Update () {
-        if (transform.position.y <= -6)
-        {
-            Destroy(gameObject);
-        }
-        if (isAlive) {
-            if (Input.GetMouseButton(1))
-            {
+        switch (beeState) {
+
+            case State.Swarm:
+                Move();
+                Shoot();
+                if (Input.GetMouseButtonDown(1)) {
+                    fireRate *= 2;
+                    beeState = State.MoveToPlayer;
+                }
+                else if (!NextSlotOccupied()) {
+                    beeState = State.MoveToSlot;
+                }
+                break;
+
+            case State.MoveToSlot:
+                MoveToSlot();
+                Shoot();
+                if (Input.GetMouseButtonDown(1)) {
+                    fireRate /= 2;
+                    beeState = State.MoveToPlayer;
+                }
+                if (transform.position == currentSlot.transform.position)
+                {
+                    beeState = State.Swarm;
+                }
+                break;
+
+            case State.MoveToPlayer:
                 MoveToPlayerSlot();
                 Shoot();
-            }
-            else {
-                if (nextSlotOccupied && transform.position.x - curveExtremes*2 < currentSlot.transform.position.x && transform.position.y - curveExtremes*2 < currentSlot.transform.position.y)
-                {
-                    Move();
-                    Shoot();
+                if (Input.GetMouseButtonUp(1)) {
+                    beeState = State.MoveToSlot;
                 }
-                else
-                {
-                    MoveToNextSlot();
-                    Shoot();
+                break;
+
+            case State.Die:
+                if (transform.position.y <= -6) {
+                    Destroy(gameObject);
                 }
-            }
-            if (Input.GetMouseButtonUp(1)) {
-                slotCoolDown = Time.time + 6;
-            }
+                break;
+
+            default:
+                beeState = State.Swarm;
+                break;
         }
     }
 
-    void OnTriggerStay2D(Collider2D otherCollider)
-    {
-        if (otherCollider.tag == "Fly" && otherCollider.transform.GetComponent<Fly>().isAlive && isAlive)
-        {
+    void OnTriggerStay2D(Collider2D otherCollider) {
+        if (otherCollider.tag == "Fly" && otherCollider.transform.GetComponent<Fly>().isAlive && beeState != State.Die) {
             otherCollider.transform.gameObject.GetComponent<Fly>().Die();
             Die();
         }
-        else if (otherCollider.tag == "Wasp" && otherCollider.transform.GetComponent<Wasp>().isAlive && isAlive)
+        else if (otherCollider.tag == "Wasp" && otherCollider.transform.GetComponent<Wasp>().isAlive && beeState != State.Die)
         {
             otherCollider.transform.gameObject.GetComponent<Wasp>().Die();
             Die();
         }
-        else if (otherCollider.tag == "EnemyBullet" && isAlive) {
+        else if (otherCollider.tag == "Dragonfly" && otherCollider.transform.GetComponent<DragonFly>().isAlive && beeState != State.Die)
+        {
+            otherCollider.transform.gameObject.GetComponent<DragonFly>().Die();
+            Die();
+        }
+        else if (otherCollider.tag == "EnemyBullet" && beeState != State.Die) {
             Destroy(otherCollider.transform.gameObject);
             Die();
         }
-        else if (otherCollider.tag == "Slot" && otherCollider.transform.GetComponent<Slot>().nextSlot.GetComponent<Slot>().isOccupied) {
-            nextSlotOccupied = true;
-        }
-        else if (otherCollider.tag == "Slot" && !(otherCollider.transform.GetComponent<Slot>().nextSlot.GetComponent<Slot>().isOccupied && !Input.GetMouseButton(1))) {
-            if (Time.time > slotCoolDown) { 
-                nextSlotOccupied = false;
-                currentSlot = otherCollider.transform.GetComponent<Slot>().nextSlot.transform;
-                slotCoolDown = Time.time + 2;
-            }
-        }
     }
 
-    void OnTriggerEnter2D(Collider2D otherCollider) {
-        if (otherCollider.tag == "Slot" && !(otherCollider.transform.GetComponent<Slot>().nextSlot.GetComponent<Slot>().isOccupied)){
-            slotCoolDown = Time.time + 2;
-        }
-    }
-
-    void Die()
-    {
+    void Die() {
+        GameManager.beeCount -= 1;
+        currentSlot.GetComponent<Slot>().isOccupied = false;
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         GetComponent<Rigidbody2D>().gravityScale = 2.0f;
-        isAlive = false;
+        beeState = State.Die;
     }
 
     void Shoot() {
@@ -141,7 +145,19 @@ public class AIBee : MonoBehaviour {
         return false;
     }
 
-    void MoveToNextSlot() {
+    bool NextSlotOccupied() {
+        if (currentSlot.GetComponent<Slot>().nextSlot.GetComponent<Slot>().isOccupied) {
+            return true;
+        }
+        else {
+            currentSlot.GetComponent<Slot>().isOccupied = false;
+            currentSlot = currentSlot.GetComponent<Slot>().nextSlot.transform;
+            currentSlot.GetComponent<Slot>().isOccupied = true;
+            return false;
+        }
+    }
+
+    void MoveToSlot() {
         transform.position = Vector3.MoveTowards(transform.position, currentSlot.position, moveSpeed);
     }
 

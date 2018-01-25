@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MiddleSlot : MonoBehaviour {
 
-       private GameObject  currentBee;
+    private GameObject currentBee;
 
 	// Use this for initialization
 	void Start () {
