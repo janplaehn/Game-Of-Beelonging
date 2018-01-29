@@ -107,7 +107,7 @@ MonoBehaviour:
   fireRate: 1.5
   enemyBullet: {fileID: 4438345213601188, guid: 7589cd2dcee28bb47b7fda9920aa326a,
     type: 2}
-  bulletOffset: 0.2
+  bulletOffset: 0.4
   isAlive: 1
 --- !u!212 &212027328484081304
 SpriteRenderer:

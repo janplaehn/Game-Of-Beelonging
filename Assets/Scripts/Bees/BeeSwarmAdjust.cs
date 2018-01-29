@@ -9,7 +9,7 @@ public class BeeSwarmAdjust : MonoBehaviour {
     }
 	
 	void Update () {
-        if (!(transform.position.x < 0.2 && transform.position.x > 0.2)) {
+        if (!(transform.position.x < 0.05 && transform.position.x > 0.05)) {
             Vector3 newPosition = new Vector3(transform.position.x, transform.position.y - getAIBeeCenter() * Time.deltaTime, transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, newPosition, adjustSpeed * Time.deltaTime);
         }

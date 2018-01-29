@@ -104,7 +104,7 @@ MonoBehaviour:
   curveSpeed: 0.005
   shootRange: 0.5
   fireRate: 2
-  bulletOffset: 0.2
+  bulletOffset: 0.7
   playerBullet: {fileID: 4386417187394728, guid: f19341cdac5268e47acb5fe23724ff12,
     type: 2}
   currentSlot: {fileID: 0}

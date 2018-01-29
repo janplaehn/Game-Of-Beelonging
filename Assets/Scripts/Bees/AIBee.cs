@@ -15,7 +15,7 @@ public class AIBee : MonoBehaviour {
 
     private enum Direction { Up, Down };
     private Direction moveDirection;
-    private enum State { Swarm, MoveToSlot, MoveToPlayer, Die }
+    private enum State { Swarm, MoveToSlot, MoveToPlayer, Die}
     private State beeState;
     private Vector2 startPosition;
     private float nextFire;
