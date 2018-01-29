@@ -133,7 +133,7 @@ public class AIBee : MonoBehaviour {
     }
 
     bool EnemiesInRange() {
-        collidersWithinRadius = Physics2D.OverlapCircleAll(new Vector3(transform.position.x + 3 * Time.deltaTime, transform.position.y, transform.position.z), shootRange);
+        collidersWithinRadius = Physics2D.OverlapCircleAll(new Vector3(transform.position.x + 3, transform.position.y, transform.position.z), shootRange);
         foreach (Collider2D collider in collidersWithinRadius) {
             if (collider.tag == "Fly" && collider.transform.GetComponent<Fly>().isAlive) {
                 return true;

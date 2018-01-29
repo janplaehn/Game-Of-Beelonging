@@ -64,7 +64,7 @@ public class Wasp : MonoBehaviour
 
     void ChasePlayer() {
         if (player.GetComponent<MainBee>().isAlive == true) {
-            Vector3 targetPosition = new Vector3(player.transform.position.x + playerDistance, player.transform.position.y, player.transform.position.z);
+            Vector3 targetPosition = new Vector3(player.transform.position.x + playerDistance + playerDistance /4 * WaspsInRange(), player.transform.position.y, player.transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
     }
@@ -74,5 +74,17 @@ public class Wasp : MonoBehaviour
             nextFire = Time.time + fireRate;
             Instantiate(enemyBullet, new Vector3(transform.position.x - bulletOffset, transform.position.y, transform.position.z), Quaternion.identity);
         }
+    }
+
+    int WaspsInRange() {
+        int Wasps = 0;
+        Collider2D[] collidersWithinRadius;
+        collidersWithinRadius = Physics2D.OverlapCircleAll(new Vector3(transform.position.x, transform.position.y, transform.position.z), detectionRange);
+        foreach (Collider2D collider in collidersWithinRadius) {
+            if (collider.tag == "Wasp" && collider.transform.GetComponent<Wasp>().isAlive && collider.transform.position.x < this.transform.position.x) {
+                Wasps++;
+            }
+        }
+        return Wasps;
     }
 }

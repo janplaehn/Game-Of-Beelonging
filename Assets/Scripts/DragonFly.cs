@@ -5,7 +5,8 @@ using UnityEngine;
 public class DragonFly : MonoBehaviour {
 
     public int healthPoints;
-    public float moveSpeed;
+    public float forwardMoveSpeed;
+    public float backwardMoveSpeed;
     public float positionThreshold;
 
     [HideInInspector]  public bool isAlive;
@@ -47,10 +48,10 @@ public class DragonFly : MonoBehaviour {
 
     void Move() {
         if (transform.position.x < MainCamera.transform.position.x + 10 && transform.position.x > MainCamera.transform.position.x + positionThreshold) {
-            transform.position = new Vector3(transform.position.x + moveSpeed* Time.deltaTime / 50, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + backwardMoveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
         }
         if (transform.position.x < MainCamera.transform.position.x + positionThreshold) {
-            transform.position = new Vector3(transform.position.x - moveSpeed* Time.deltaTime, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - forwardMoveSpeed* Time.deltaTime, transform.position.y, transform.position.z);
         }
         
     }
