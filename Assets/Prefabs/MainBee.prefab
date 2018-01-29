@@ -79,8 +79,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.47, y: 3.1}
-    newSize: {x: 6.47, y: 3.1}
+    oldSize: {x: 6.47, y: 5.05}
+    newSize: {x: 4.33, y: 3.57}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -99,16 +99,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f346df3ccbaedf4fbb6e2b675b67937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0
   curveExtremes: 0.08
   curveSpeed: 0.005
-  moveSpeed: 0
   shootRange: 1
-  isAlive: 0
   fireRate: 2
+  bulletOffset: 0.2
   playerBullet: {fileID: 4386417187394728, guid: f19341cdac5268e47acb5fe23724ff12,
     type: 2}
-  bulletOffset: 0.2
-  collidersWithinRadius: []
+  currentSlot: {fileID: 0}
 --- !u!212 &212481532324360694
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -148,7 +147,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.47, y: 3.1}
+  m_Size: {x: 4.33, y: 3.57}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
