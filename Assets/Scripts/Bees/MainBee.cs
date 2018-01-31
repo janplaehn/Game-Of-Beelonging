@@ -84,6 +84,9 @@ public class MainBee : MonoBehaviour {
         else if (otherCollider.tag == "Dragonfly" && otherCollider.transform.GetComponent<DragonFly>().isAlive && this.isAlive) {
             Die();
         }
+        else if (otherCollider.tag == "Bear" && this.isAlive) {
+            Die();
+        }
         else if (otherCollider.tag == "EnemyBullet" && this.isAlive) {
             Destroy(otherCollider.transform.root.gameObject);
             Die();

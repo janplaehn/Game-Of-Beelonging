@@ -94,6 +94,9 @@ public class AIBee : MonoBehaviour {
             otherCollider.transform.gameObject.GetComponent<DragonFly>().Die();
             Die();
         }
+        else if (otherCollider.tag == "Bear" && beeState != State.Die) {
+            Die();
+        }
         else if (otherCollider.tag == "EnemyBullet" && beeState != State.Die) {
             Destroy(otherCollider.transform.gameObject);
             Die();

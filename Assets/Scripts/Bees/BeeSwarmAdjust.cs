@@ -18,6 +18,9 @@ public class BeeSwarmAdjust : MonoBehaviour {
 
     float getAIBeeCenter() {
         GameObject[] bees = GameObject.FindGameObjectsWithTag("AIBee");
+        if (bees.Length == 0) {
+            return 0;
+        }
         float totalYPos = 0;
         float beeCount = 0;
         foreach (GameObject bee in bees) {
