@@ -651,7 +651,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 50
-  rotationDuration: 3
   rotationDirection: {x: 0, y: 0, z: 1}
 --- !u!1 &398335272
 GameObject:
@@ -1800,7 +1799,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 30
-  rotationDuration: 5
   rotationDirection: {x: 0, y: 0, z: 1}
 --- !u!1001 &1026524074
 Prefab:
@@ -3437,10 +3435,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7d182198f41014cae26d1e9635e6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 1
+  healthPoints: 4
   moveSpeed: 3
-  leftBoundary: {x: -2.8, y: 0, z: 0}
-  rightBoundary: {x: 5, y: 0, z: 0}
+  leftBoundary: -3
+  rightBoundary: 6
+  targetHeight1: 2
+  targetHeight2: 0
+  targetHeight3: -2
   leftarm: {fileID: 264385657}
   rightarm: {fileID: 1015506264}
   hitbox: {fileID: 884225708}
