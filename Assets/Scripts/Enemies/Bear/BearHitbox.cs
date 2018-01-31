@@ -18,7 +18,7 @@ public class BearHitbox : MonoBehaviour {
         if (otherCollider.tag == "PlayerBullet") {
             Destroy(otherCollider.transform.root.gameObject);
             this.transform.root.GetComponent<Bear>().healthPoints--;
-            this.transform.root.GetComponent<Bear>().fightState = Bear.State.AttackForward;
+            this.gameObject.SetActive(false);
         }
     }
 }

@@ -11,6 +11,7 @@ public class Bear : MonoBehaviour {
     public float targetHeight1;
     public float targetHeight2;
     public float targetHeight3;
+    public float timeVulnerable;
 
     public GameObject leftarm;
     public GameObject rightarm;
@@ -35,27 +36,28 @@ public class Bear : MonoBehaviour {
         switch (fightState) {
             case State.AttackForward:
                 hitbox.SetActive(false);
+                rightarm.GetComponent<BearArm>().rotationDirection = new Vector3(0, 0, 1);
+                leftarm.GetComponent<BearArm>().rotationDirection = new Vector3(0, 0, 1);
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(leftBoundary, currentTargetHeight, 0), moveSpeed * Time.deltaTime);
                 leftarm.GetComponent<BearArm>().MoveArm();
                 rightarm.GetComponent<BearArm>().MoveArm();
                 if (transform.position.x <= leftBoundary) {
-                    rightarm.GetComponent<BearArm>().ChangeDirection();
-                    leftarm.GetComponent<BearArm>().ChangeDirection();
                     fightState = State.AttackBackward;
                 }
                 break;
             case State.AttackBackward:
                 hitbox.SetActive(false);
+                rightarm.GetComponent<BearArm>().rotationDirection = new Vector3(0, 0, -1);
+                leftarm.GetComponent<BearArm>().rotationDirection = new Vector3(0, 0, -1);
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(rightBoundary, 0, 0), moveSpeed * Time.deltaTime);
                 leftarm.GetComponent<BearArm>().MoveArm();
                 rightarm.GetComponent<BearArm>().MoveArm();
                 if (transform.position.x >= rightBoundary) {
-                    rightarm.GetComponent<BearArm>().ChangeDirection();
-                    leftarm.GetComponent<BearArm>().ChangeDirection();
                     attackNumber++;
                     if (attackNumber > 3) {
                         currentTargetHeight = SetRandomHeight();
                         fightState = State.Defend;
+                        hitbox.SetActive(true);
                         attackNumber = 0;
                         StartCoroutine(ChangeState(State.AttackForward));
                     }
@@ -69,7 +71,6 @@ public class Bear : MonoBehaviour {
             case State.SpawnEnemies:
                 break;
             case State.Defend:
-               hitbox.SetActive(true);
                 rightarm.GetComponent<BearArm>().ResetArm();
                 leftarm.GetComponent<BearArm>().ResetArm();
                 break;
@@ -90,7 +91,7 @@ public class Bear : MonoBehaviour {
     }
 
     IEnumerator ChangeState(State st) {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(timeVulnerable);
         fightState = st;     
     }
 
