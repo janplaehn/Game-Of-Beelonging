@@ -12,6 +12,7 @@ TagManager:
   - Slot
   - Dragonfly
   - MainBee
+  - Bear
   layers:
   - Default
   - TransparentFX
