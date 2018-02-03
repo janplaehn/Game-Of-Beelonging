@@ -26,6 +26,9 @@ public class FinishLine : MonoBehaviour {
             Sky.GetComponent<RepeatingBackground>().scrollSpeed = 0;
             Grass.GetComponent<RepeatingBackground>().scrollSpeed = 0;
             MainBee.GetComponent<MainBee>().isInEndSequence = true;
+            foreach (GameObject go in GameObject.FindGameObjectsWithTag("AIBee")) {
+                go.GetComponent<AIBee>().isInBossFight = true;     
+            }
         }	
 	}
 

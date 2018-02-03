@@ -3,13 +3,14 @@
 public class BeeSwarmAdjust : MonoBehaviour {
 
     public float adjustSpeed;
+    public bool isInBossFight = false;
 
 	void Start () {
         
     }
 	
 	void Update () {
-        if (Input.GetMouseButton(1)) {
+        if (Input.GetMouseButton(1) || isInBossFight) {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, 0, 0), adjustSpeed * Time.deltaTime);
         }
         else {

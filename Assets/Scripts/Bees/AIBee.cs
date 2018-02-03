@@ -12,6 +12,7 @@ public class AIBee : MonoBehaviour {
     public float bulletOffset;
     public Transform playerBullet;
     public Transform currentSlot;
+    public bool isInBossFight = false;
 
     private enum Direction { Up, Down };
     private Direction moveDirection;
@@ -37,7 +38,7 @@ public class AIBee : MonoBehaviour {
             case State.Swarm:
                 Move();
                 Shoot();
-                if (Input.GetMouseButtonDown(1)) {
+                if (Input.GetMouseButtonDown(1) || isInBossFight) {
                     fireRate *= 2;
                     beeState = State.MoveToPlayer;
                 }
@@ -49,7 +50,7 @@ public class AIBee : MonoBehaviour {
             case State.MoveToSlot:
                 MoveToSlot();
                 Shoot();
-                if (Input.GetMouseButtonDown(1)) {
+                if (Input.GetMouseButtonDown(1) || isInBossFight) {
                     fireRate /= 2;
                     beeState = State.MoveToPlayer;
                 }

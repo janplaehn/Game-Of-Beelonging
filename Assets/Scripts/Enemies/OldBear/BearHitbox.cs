@@ -17,7 +17,7 @@ public class BearHitbox : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D otherCollider) {
         if (otherCollider.tag == "PlayerBullet") {
             Destroy(otherCollider.transform.root.gameObject);
-            this.transform.root.GetComponent<Bear>().healthPoints--;
+            this.transform.root.GetComponent<BearHead>().healthPoints--;
             this.gameObject.SetActive(false);
         }
     }
