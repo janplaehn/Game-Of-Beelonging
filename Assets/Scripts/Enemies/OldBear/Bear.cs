@@ -108,4 +108,9 @@ public class Bear : MonoBehaviour {
                 return targetHeight1;
         }
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.tag == "PlayerBullet")
+        Destroy(other.transform.root.gameObject);
+    }
 }
