@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114855045972605286}
   - component: {fileID: 50000163051970082}
   - component: {fileID: 61803670978954354}
+  - component: {fileID: 95891813819462342}
   m_Layer: 0
   m_Name: Wasp
   m_TagString: Wasp
@@ -37,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1905310299115192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.199997, y: -2.87, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.71000004}
+  m_LocalPosition: {x: 2.9593124, y: -0.19991751, z: 0}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.71000004}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,19 +76,36 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.09}
+  m_Offset: {x: 0, y: 2.8}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 37.04, y: 35.27}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.32, y: 1.19}
+  m_Size: {x: 22.29, y: 14.12}
   m_EdgeRadius: 0
+--- !u!95 &95891813819462342
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905310299115192}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d5cd9bec726b234196901bbfb5af330, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114855045972605286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7931262bee02b4179ab843cecd12cb07, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd5d81928f3710747891312deff9b61c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
