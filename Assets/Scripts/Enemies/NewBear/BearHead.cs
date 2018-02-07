@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BearHead : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class BearHead : MonoBehaviour {
     public GameObject leftPaw;
     public GameObject rightPaw;
     public float attackFrequency;
+    public GameObject gameManager;
 
 
 	void Start () {
@@ -23,6 +25,8 @@ public class BearHead : MonoBehaviour {
         }
         if (transform.position.y <= -12) {
             Destroy(this.gameObject);
+            gameManager.GetComponent<GameManager>().ToggleCursorVisibility(true);
+            SceneManager.LoadScene("Win Screen", LoadSceneMode.Single);
         }
     }
 

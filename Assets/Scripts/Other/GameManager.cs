@@ -28,4 +28,9 @@ public class GameManager : MonoBehaviour {
         beeCount = 10;
         Cursor.visible = true;
     }
+
+    public void ToggleCursorVisibility(bool isVisible) {
+        isCursorVisible = isVisible;
+        Cursor.visible = isCursorVisible;
+    }
 }
