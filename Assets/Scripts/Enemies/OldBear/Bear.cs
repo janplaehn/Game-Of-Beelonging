@@ -109,8 +109,9 @@ public class Bear : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.tag == "PlayerBullet")
-        Destroy(other.transform.root.gameObject);
+    public void OnTriggerStay(Collider other) {
+        if (other.tag == "PlayerBullet") {
+            Destroy(other.gameObject);
+        }
     }
 }

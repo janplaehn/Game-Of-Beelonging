@@ -74,7 +74,7 @@ public class MainBee : MonoBehaviour {
 
     }
 
-    void OnTriggerStay2D(Collider2D otherCollider) {
+    void OnTriggerEnter2D(Collider2D otherCollider) {
         if (otherCollider.tag == "Fly" && otherCollider.transform.GetComponent<Fly>().isAlive && this.isAlive) {
             Die();
         }
@@ -101,12 +101,13 @@ public class MainBee : MonoBehaviour {
     }
 
     void NewMainBee() {
+        middleSlot.GetComponent<MiddleSlot>().DestroyBee();
         transform.position = middleSlot.GetComponent<MiddleSlot>().transform.position;
         middleSlot.GetComponent<Slot>().isOccupied = false;
         isAlive = true;
         this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-        middleSlot.GetComponent<MiddleSlot>().DestroyBee();
+        
     }
 
     void MoveOutOfScreen() {

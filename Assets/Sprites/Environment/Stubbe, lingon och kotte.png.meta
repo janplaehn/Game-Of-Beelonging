@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: b6176d6db0ebc4c4d8b85f345c66060a
-timeCreated: 1517840050
+guid: b001bf3ab45d7494c8f88eee2fcbcf15
+timeCreated: 1518007641
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: FlyFlyingAnimationSpriteSheet_0
-    21300002: FlyFlyingAnimationSpriteSheet_1
-    21300004: FlyFlyingAnimationSpriteSheet_2
-    21300006: FlyFlyingAnimationSpriteSheet_3
-    21300008: FlyFlyingAnimationSpriteSheet_4
-    21300010: FlyFlyingAnimationSpriteSheet_5
-    21300012: FlyFlyingAnimationSpriteSheet_6
-    21300014: FlyFlyingAnimationSpriteSheet_7
+    21300000: Stubbe, lingon och kotte_0
+    21300002: Stubbe, lingon och kotte_1
+    21300004: Stubbe, lingon och kotte_2
+    21300006: Stubbe, lingon och kotte_4
+    21300008: Stubbe, lingon och kotte_5
+    21300010: Stubbe, lingon och kotte_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -108,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FlyFlyingAnimationSpriteSheet_0
+      name: Stubbe, lingon och kotte_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 1747
-        width: 277
-        height: 274
+        x: 518
+        y: 1471
+        width: 11
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,13 +120,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: FlyFlyingAnimationSpriteSheet_1
+      name: Stubbe, lingon och kotte_1
       rect:
         serializedVersion: 2
-        x: 432
-        y: 1747
-        width: 276
-        height: 244
+        x: 530
+        y: 1473
+        width: 65
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,13 +134,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: FlyFlyingAnimationSpriteSheet_2
+      name: Stubbe, lingon och kotte_2
       rect:
         serializedVersion: 2
-        x: 795
-        y: 1736
-        width: 274
-        height: 244
+        x: 145
+        y: 682
+        width: 1118
+        height: 784
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,13 +148,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: FlyFlyingAnimationSpriteSheet_3
+      name: Stubbe, lingon och kotte_4
       rect:
         serializedVersion: 2
-        x: 1150
-        y: 1736
-        width: 274
-        height: 244
+        x: 1307
+        y: 849
+        width: 344
+        height: 501
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,13 +162,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: FlyFlyingAnimationSpriteSheet_4
+      name: Stubbe, lingon och kotte_5
       rect:
         serializedVersion: 2
-        x: 1512
-        y: 1716
-        width: 273
-        height: 244
+        x: 1950
+        y: 826
+        width: 559
+        height: 537
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,41 +176,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: FlyFlyingAnimationSpriteSheet_5
+      name: Stubbe, lingon och kotte_6
       rect:
         serializedVersion: 2
-        x: 71
-        y: 1403
-        width: 277
-        height: 244
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: FlyFlyingAnimationSpriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 432
-        y: 1391
-        width: 280
-        height: 245
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: FlyFlyingAnimationSpriteSheet_7
-      rect:
-        serializedVersion: 2
-        x: 795
-        y: 1380
-        width: 277
-        height: 245
+        x: 789
+        y: 681
+        width: 69
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

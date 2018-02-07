@@ -110,7 +110,7 @@ public class PawMovement : MonoBehaviour {
         if (transform.position.y > -2 && Mathf.Abs(transform.rotation.x) < 0.5f) {
             battleState = State.GoBackFromAttack;
         }
-        else if (transform.position.y < -2 && Mathf.Abs(transform.rotation.x) > 0.5f) {
+        else if (transform.position.y < 2 && Mathf.Abs(transform.rotation.x) > 0.5f) {
             battleState = State.GoBackFromAttack;
         }
 
@@ -148,8 +148,9 @@ public class PawMovement : MonoBehaviour {
         movementVector /= movementVector.magnitude;
     }
 
-    private void OnTriggerStay2D(Collider2D collision) {
+    private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "AIBee" || collision.tag == "MainBee") {
+            Debug.Log("Hurt");
             battleState = State.GoBackFromAttack;
         }
     }

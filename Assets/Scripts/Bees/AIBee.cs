@@ -80,7 +80,7 @@ public class AIBee : MonoBehaviour {
         }
     }
 
-    void OnTriggerStay2D(Collider2D otherCollider) {
+    void OnTriggerEnter2D(Collider2D otherCollider) {
         if (otherCollider.tag == "Fly" && otherCollider.transform.GetComponent<Fly>().isAlive && beeState != State.Die) {
             otherCollider.transform.gameObject.GetComponent<Fly>().Die();
             Die();
