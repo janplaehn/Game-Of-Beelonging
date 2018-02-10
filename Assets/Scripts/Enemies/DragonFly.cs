@@ -38,6 +38,10 @@ public class DragonFly : MonoBehaviour {
             Destroy(otherCollider.transform.root.gameObject);
             healthPoints--;
         }
+        else if (otherCollider.tag == "PlayerMissile" && isAlive) {
+            healthPoints--;
+        }
+
     }
 
     public void Die() {

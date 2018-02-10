@@ -5,11 +5,13 @@ using UnityEngine;
 public class MainBee : MonoBehaviour {
 
     public Transform PlayerBullet;
+    public Transform PlayerMissile;
     public float bulletOffset;
     public float speed;
     public GameObject middleSlot;
 
     [ShowOnly] public bool isInEndSequence;
+    [ShowOnly] public bool hasPowerup;
     [HideInInspector] public bool isAlive;
 
     private GameObject MainCamera;
@@ -19,6 +21,7 @@ public class MainBee : MonoBehaviour {
     [ShowOnly] [SerializeField] private float rightBoundary;
     [ShowOnly] [SerializeField] private float topBoundary;
     [ShowOnly] [SerializeField] private float bottomBoundary;
+    
 
     void Start () {
         MainCamera = GameObject.Find("Main Camera");
@@ -51,6 +54,7 @@ public class MainBee : MonoBehaviour {
                 NewMainBee();
             }
         }
+        SetAnimation();
     }
 
     void Move() {
@@ -67,7 +71,13 @@ public class MainBee : MonoBehaviour {
     }
 
     void Shoot() {
-        Instantiate(PlayerBullet, new Vector3(transform.position.x + bulletOffset, transform.position.y, transform.position.z), Quaternion.identity);
+        if (hasPowerup) {
+            Instantiate(PlayerMissile, new Vector3(transform.position.x + bulletOffset*2, transform.position.y, transform.position.z), Quaternion.identity);
+        }
+        else {
+            Instantiate(PlayerBullet, new Vector3(transform.position.x + bulletOffset, transform.position.y, transform.position.z), Quaternion.identity);
+        }
+        
     }
 
     void CallSwarm() {
@@ -112,5 +122,23 @@ public class MainBee : MonoBehaviour {
 
     void MoveOutOfScreen() {
         transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
+    }
+
+    void SetAnimation() {
+        if (hasPowerup) {
+            transform.localScale = new Vector3(0.4f, 0.4f, 1);
+        }
+        else {
+            transform.localScale = new Vector3(0.228f, 0.228f, 1);
+        }
+    }
+
+    public void SetPowerupTimer(float time) {
+        StartCoroutine(ResetPowerup(time));
+    }
+
+    IEnumerator ResetPowerup(float seconds) {
+        yield return new WaitForSeconds(seconds);
+        hasPowerup = false;
     }
 }
