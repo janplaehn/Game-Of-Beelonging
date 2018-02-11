@@ -72,7 +72,7 @@ public class MainBee : MonoBehaviour {
 
     void Shoot() {
         if (hasPowerup) {
-            Instantiate(PlayerMissile, new Vector3(transform.position.x + bulletOffset*2, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(PlayerMissile, new Vector3(transform.position.x + bulletOffset*3, transform.position.y, transform.position.z), Quaternion.identity);
         }
         else {
             Instantiate(PlayerBullet, new Vector3(transform.position.x + bulletOffset, transform.position.y, transform.position.z), Quaternion.identity);
@@ -127,9 +127,11 @@ public class MainBee : MonoBehaviour {
     void SetAnimation() {
         if (hasPowerup) {
             transform.localScale = new Vector3(0.4f, 0.4f, 1);
+            GetComponent<Animator>().Play("mainBee_bodybuilder");
         }
         else {
             transform.localScale = new Vector3(0.228f, 0.228f, 1);
+            GetComponent<Animator>().Play("mainBee_flying");
         }
     }
 
