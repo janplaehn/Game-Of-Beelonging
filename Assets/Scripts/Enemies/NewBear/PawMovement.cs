@@ -153,6 +153,9 @@ public class PawMovement : MonoBehaviour {
             Debug.Log("Hurt");
             battleState = State.GoBackFromAttack;
         }
+        else if (collision.tag == "PlayerBullet") {
+                Destroy(collision.transform.root.gameObject);
+        }
     }
 
     IEnumerator ChangeState(State state, float seconds) {

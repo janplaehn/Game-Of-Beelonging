@@ -453,10 +453,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerBullet: {fileID: 4386417187394728, guid: f19341cdac5268e47acb5fe23724ff12,
     type: 2}
-  PlayerMissile: {fileID: 0}
+  PlayerMissile: {fileID: 4826800328482058, guid: 00db7904bcb210240b2ae36e6cb52da8,
+    type: 2}
   bulletOffset: 0.7
   speed: 9
   middleSlot: {fileID: 0}
+  fireRate: 0.2
   isInEndSequence: 0
   hasPowerup: 0
   isAlive: 1

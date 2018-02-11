@@ -9,11 +9,14 @@ public class MainBee : MonoBehaviour {
     public float bulletOffset;
     public float speed;
     public GameObject middleSlot;
+    public float fireRate;
 
     [ShowOnly] public bool isInEndSequence;
     [ShowOnly] public bool hasPowerup;
     [HideInInspector] public bool isAlive;
 
+
+    private float nextFire;
     private GameObject MainCamera;
     private Vector2 newPosition;
 
@@ -72,10 +75,17 @@ public class MainBee : MonoBehaviour {
 
     void Shoot() {
         if (hasPowerup) {
-            Instantiate(PlayerMissile, new Vector3(transform.position.x + bulletOffset*3, transform.position.y, transform.position.z), Quaternion.identity);
+            if (Time.time > nextFire) {
+                nextFire = Time.time + fireRate*2;
+                Instantiate(PlayerMissile, new Vector3(transform.position.x + bulletOffset * 3, transform.position.y, transform.position.z), Quaternion.identity);
+            }
+           
         }
         else {
-            Instantiate(PlayerBullet, new Vector3(transform.position.x + bulletOffset, transform.position.y, transform.position.z), Quaternion.identity);
+            if (Time.time > nextFire) {
+                nextFire = Time.time + fireRate;
+                Instantiate(PlayerBullet, new Vector3(transform.position.x + bulletOffset, transform.position.y, transform.position.z), Quaternion.identity);
+            }
         }
         
     }

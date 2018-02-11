@@ -36,4 +36,10 @@ public class BearHead : MonoBehaviour {
         if (tempNumber == 0) leftPaw.GetComponent<PawMovement>().battleState = PawMovement.State.Indicate;
         else rightPaw.GetComponent<PawMovement>().battleState = PawMovement.State.Indicate;
     }
+
+    void OnTriggerEnter2D(Collider2D otherCollider) {
+        if (otherCollider.tag == "PlayerBullet") {
+            Destroy(otherCollider.transform.root.gameObject);
+        }
+    }
 }
