@@ -18,6 +18,7 @@ public class BearHitbox : MonoBehaviour {
         if (otherCollider.tag == "PlayerBullet") {
             Destroy(otherCollider.transform.root.gameObject);
             this.transform.root.GetComponent<BearHead>().healthPoints--;
+            this.transform.root.GetComponent<BearHead>().PlayHitAnimation();
             this.gameObject.SetActive(false);
         }
     }

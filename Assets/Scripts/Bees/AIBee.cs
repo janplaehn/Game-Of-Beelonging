@@ -69,6 +69,7 @@ public class AIBee : MonoBehaviour {
                 break;
 
             case State.Die:
+                GetComponent<Animator>().Play("swarmBee_death");
                 if (transform.position.y <= -6) {
                     Destroy(gameObject);
                 }

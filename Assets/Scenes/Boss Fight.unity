@@ -2746,6 +2746,7 @@ GameObject:
   - component: {fileID: 1632759326}
   - component: {fileID: 1632759325}
   - component: {fileID: 1632759324}
+  - component: {fileID: 1632759329}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Bear
@@ -3118,6 +3119,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1632759329
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1632759323}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 146e735da24396747880d0a358f6d688, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1773291495
 Prefab:
   m_ObjectHideFlags: 0

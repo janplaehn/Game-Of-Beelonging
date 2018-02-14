@@ -135,7 +135,10 @@ public class MainBee : MonoBehaviour {
     }
 
     void SetAnimation() {
-        if (hasPowerup) {
+        if (!isAlive) {
+            GetComponent<Animator>().Play("mainBee_death");
+        }
+        else if (hasPowerup) {
             transform.localScale = new Vector3(0.4f, 0.4f, 1);
             GetComponent<Animator>().Play("mainBee_bodybuilder");
         }

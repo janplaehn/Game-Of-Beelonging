@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: c3e84d613be416d4090b4fe74c0eab94
-timeCreated: 1518600582
+guid: ccdeb0fc133b79f4ea5358f1ac086dc6
+timeCreated: 1518600468
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: DragonFlyDyingSpriteSheet_0
-    21300002: DragonFlyDyingSpriteSheet_1
+    21300000: MainBeeDyingAnimation_0
+    21300002: MainBeeDyingAnimation_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -102,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DragonFlyDyingSpriteSheet_0
+      name: MainBeeDyingAnimation_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 849
-        width: 1282
-        height: 849
+        y: 354
+        width: 456
+        height: 354
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,13 +116,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: DragonFlyDyingSpriteSheet_1
+      name: MainBeeDyingAnimation_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1282
-        height: 849
+        width: 456
+        height: 354
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

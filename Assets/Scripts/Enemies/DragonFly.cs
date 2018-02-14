@@ -31,6 +31,9 @@ public class DragonFly : MonoBehaviour {
                 Die();
             }
         }
+        else {
+            GetComponent<Animator>().Play("dragonfly_death");
+        }
     }
 
     void OnTriggerStay2D(Collider2D otherCollider) {

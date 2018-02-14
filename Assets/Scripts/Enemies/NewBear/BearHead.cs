@@ -42,4 +42,14 @@ public class BearHead : MonoBehaviour {
             Destroy(otherCollider.transform.root.gameObject);
         }
     }
+
+    public void PlayHitAnimation() {
+        GetComponent<Animator>().Play("bear_hit");
+        StartCoroutine(AnimationBackToDefault());
+    }
+
+    IEnumerator AnimationBackToDefault() {
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<Animator>().Play("bear_default");
+    }
 }

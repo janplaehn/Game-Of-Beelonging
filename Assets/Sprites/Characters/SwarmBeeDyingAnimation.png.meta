@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: c3e84d613be416d4090b4fe74c0eab94
-timeCreated: 1518600582
+guid: 79c509c71f38f5d4cae66b7458ff1b23
+timeCreated: 1518600482
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: DragonFlyDyingSpriteSheet_0
-    21300002: DragonFlyDyingSpriteSheet_1
+    21300000: SwarmBeeDyingAnimation_0
+    21300002: SwarmBeeDyingAnimation_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -102,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DragonFlyDyingSpriteSheet_0
+      name: SwarmBeeDyingAnimation_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 849
-        width: 1282
-        height: 849
+        y: 354
+        width: 456
+        height: 354
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,13 +116,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: DragonFlyDyingSpriteSheet_1
+      name: SwarmBeeDyingAnimation_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1282
-        height: 849
+        width: 456
+        height: 354
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
