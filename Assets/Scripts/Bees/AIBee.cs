@@ -14,10 +14,11 @@ public class AIBee : MonoBehaviour {
     public Transform currentSlot;
     public bool isInBossFight = false;
 
+    [HideInInspector] public enum State { Swarm, MoveToSlot, MoveToPlayer, Die }
+    [HideInInspector] public State beeState;
+
     private enum Direction { Up, Down };
     private Direction moveDirection;
-    private enum State { Swarm, MoveToSlot, MoveToPlayer, Die}
-    private State beeState;
     private Vector2 startPosition;
     private float nextFire;
     private Collider2D[] collidersWithinRadius;
@@ -29,6 +30,9 @@ public class AIBee : MonoBehaviour {
         moveDirection = Direction.Up;
         startPosition = transform.position;
         MainCamera = GameObject.Find("Main Camera");
+        if (!currentSlot ) {
+            currentSlot = GameObject.Find("Slot").transform;
+        }
 
     }
 	
@@ -38,7 +42,7 @@ public class AIBee : MonoBehaviour {
             case State.Swarm:
                 Move();
                 Shoot();
-                if (Input.GetMouseButtonDown(1) || isInBossFight) {
+                if (Input.GetMouseButton(1) || isInBossFight) {
                     fireRate *= 2;
                     beeState = State.MoveToPlayer;
                 }
@@ -50,7 +54,7 @@ public class AIBee : MonoBehaviour {
             case State.MoveToSlot:
                 MoveToSlot();
                 Shoot();
-                if (Input.GetMouseButtonDown(1) || isInBossFight) {
+                if (Input.GetMouseButton(1) || isInBossFight) {
                     fireRate /= 2;
                     beeState = State.MoveToPlayer;
                 }
@@ -97,6 +101,9 @@ public class AIBee : MonoBehaviour {
             Die();
         }
         else if (otherCollider.tag == "Bear" && beeState != State.Die) {
+            Die();
+        }
+        else if (otherCollider.tag == "Thistle" && beeState != State.Die) {
             Die();
         }
         else if (otherCollider.tag == "EnemyBullet" && beeState != State.Die) {

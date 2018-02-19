@@ -15,7 +15,7 @@ public class RepeatingBackground : MonoBehaviour
     }
 
     void Update() {
-        transform.position = new Vector3(transform.position.x - scrollSpeed + MainCamera.GetComponent<MainCamera>().speed * Time.deltaTime / 100, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x - scrollSpeed * Time.deltaTime + MainCamera.GetComponent<MainCamera>().speed * Time.deltaTime / 100, transform.position.y, transform.position.z);
         if (transform.position.x < MainCamera.GetComponent<MainCamera>().offset - tileSize) {
             transform.position = new Vector3(transform.position.x + tileSize + MainCamera.GetComponent<MainCamera>().speed * Time.deltaTime / 100, transform.position.y, transform.position.z);
         }

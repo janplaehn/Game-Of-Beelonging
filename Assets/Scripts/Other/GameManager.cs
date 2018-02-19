@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
         beeCount = 10;
         Cursor.visible = isCursorVisible;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 	
 	// Update is called once per frame

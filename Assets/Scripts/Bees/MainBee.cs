@@ -30,8 +30,8 @@ public class MainBee : MonoBehaviour {
         MainCamera = GameObject.Find("Main Camera");
         leftBoundary = -8.5f;
         rightBoundary = 8.5f;
-        topBoundary = 4.75f;
-        bottomBoundary = -4.75f;
+        topBoundary = 6f;
+        bottomBoundary = -6f;
         isAlive = true;
         isInEndSequence = false;
     }
@@ -61,8 +61,8 @@ public class MainBee : MonoBehaviour {
     }
 
     void Move() {
-        leftBoundary = MainCamera.GetComponent<MainCamera>().offset - 8.5f;
-        rightBoundary = MainCamera.GetComponent<MainCamera>().offset + 8.5f;
+        leftBoundary = MainCamera.GetComponent<MainCamera>().offset - 15f;
+        rightBoundary = MainCamera.GetComponent<MainCamera>().offset + 15f;
         newPosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 
         if (newPosition.x >= leftBoundary && newPosition.x <= rightBoundary && newPosition.y <= topBoundary && newPosition.y >= bottomBoundary) {
@@ -105,6 +105,9 @@ public class MainBee : MonoBehaviour {
             Die();
         }
         else if (otherCollider.tag == "Bear" && this.isAlive) {
+            Die();
+        }
+        else if (otherCollider.tag == "Thistle" && this.isAlive) {
             Die();
         }
         else if (otherCollider.tag == "EnemyBullet" && this.isAlive) {
