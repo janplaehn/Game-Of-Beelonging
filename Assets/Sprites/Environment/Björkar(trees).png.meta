@@ -1,9 +1,20 @@
 fileFormatVersion: 2
 guid: b01b781bdaca2934d93f8800da316b9a
-timeCreated: 1519127748
+timeCreated: 1519158779
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: "Bj\xF6rkar(trees)_0"
+    21300002: "Bj\xF6rkar(trees)_1"
+    21300004: "Bj\xF6rkar(trees)_2"
+    21300006: "Bj\xF6rkar(trees)_3"
+    21300008: "Bj\xF6rkar(trees)_4"
+    21300010: "Bj\xF6rkar(trees)_5"
+    21300012: "Bj\xF6rkar(trees)_6"
+    21300014: "Bj\xF6rkar(trees)_7"
+    21300016: "Bj\xF6rkar(trees)_8"
+    21300018: "Bj\xF6rkar(trees)_9"
+    21300020: "Bj\xF6rkar(trees)_11"
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,7 +51,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -66,9 +77,193 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees)_0"
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 511
+        width: 2419
+        height: 7929
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees)_1"
+      rect:
+        serializedVersion: 2
+        x: 2652
+        y: 506
+        width: 2283
+        height: 7934
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees)_2"
+      rect:
+        serializedVersion: 2
+        x: 5072
+        y: 533
+        width: 2801
+        height: 7924
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees)_3"
+      rect:
+        serializedVersion: 2
+        x: 9584
+        y: 6874
+        width: 800
+        height: 623
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees)_4"
+      rect:
+        serializedVersion: 2
+        x: 7511
+        y: 4753
+        width: 748
+        height: 1922
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees)_5"
+      rect:
+        serializedVersion: 2
+        x: 8427
+        y: 5329
+        width: 1157
+        height: 748
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees)_6"
+      rect:
+        serializedVersion: 2
+        x: 9422
+        y: 6031
+        width: 958
+        height: 754
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees)_7"
+      rect:
+        serializedVersion: 2
+        x: 7600
+        y: 1176
+        width: 1036
+        height: 3223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees)_8"
+      rect:
+        serializedVersion: 2
+        x: 9113
+        y: 4224
+        width: 1136
+        height: 780
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees)_9"
+      rect:
+        serializedVersion: 2
+        x: 9108
+        y: 128
+        width: 1020
+        height: 3818
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees)_11"
+      rect:
+        serializedVersion: 2
+        x: 3411
+        y: 427
+        width: 47
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
