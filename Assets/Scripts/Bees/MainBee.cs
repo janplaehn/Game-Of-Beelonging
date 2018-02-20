@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MainBee : MonoBehaviour {
@@ -17,6 +16,7 @@ public class MainBee : MonoBehaviour {
 
 
     private float nextFire;
+    private bool isInvincible;
     private GameObject MainCamera;
     private Vector2 newPosition;
 
@@ -95,32 +95,41 @@ public class MainBee : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D otherCollider) {
-        if (otherCollider.tag == "Fly" && otherCollider.transform.GetComponent<Fly>().isAlive && this.isAlive) {
-            Die();
-        }
-        else if (otherCollider.tag == "Wasp" && otherCollider.transform.GetComponent<Wasp>().isAlive && this.isAlive) {
-            Die();
-        }
-        else if (otherCollider.tag == "Dragonfly" && otherCollider.transform.GetComponent<DragonFly>().isAlive && this.isAlive) {
-            Die();
-        }
-        else if (otherCollider.tag == "Bear" && this.isAlive) {
-            Die();
-        }
-        else if (otherCollider.tag == "Thistle" && this.isAlive) {
-            Die();
-        }
-        else if (otherCollider.tag == "EnemyBullet" && this.isAlive) {
-            Destroy(otherCollider.transform.root.gameObject);
-            Die();
+        if (!isInvincible && this.isAlive) {
+            if (otherCollider.tag == "Fly" && otherCollider.transform.GetComponent<Fly>().isAlive) {
+                Die();
+            }
+            else if (otherCollider.tag == "Wasp" && otherCollider.transform.GetComponent<Wasp>().isAlive) {
+                Die();
+            }
+            else if (otherCollider.tag == "Dragonfly" && otherCollider.transform.GetComponent<DragonFly>().isAlive) {
+                Die();
+            }
+            else if (otherCollider.tag == "Bear") {
+                Die();
+            }
+            else if (otherCollider.tag == "Thistle") {
+                Die();
+            }
+            else if (otherCollider.tag == "Beetle") {
+                Die();
+            }
+            else if (otherCollider.tag == "Spider") {
+                Die();
+            }
+            else if (otherCollider.tag == "EnemyBullet") {
+                Destroy(otherCollider.transform.root.gameObject);
+                Die();
+            }
         }
     }
 
     void Die() {
-        GameManager.beeCount -= 1;
+        hasPowerup = false;
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         this.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
         isAlive = false;
+        StartCoroutine(MakeInvincible());
     }
 
     void NewMainBee() {
@@ -146,13 +155,26 @@ public class MainBee : MonoBehaviour {
             GetComponent<Animator>().Play("mainBee_bodybuilder");
         }
         else {
-            transform.localScale = new Vector3(0.228f, 0.228f, 1);
-            GetComponent<Animator>().Play("mainBee_flying");
+            if (isInvincible) {
+                transform.localScale = new Vector3(0.228f, 0.228f, 1);
+                GetComponent<Animator>().Play("mainBee_invincible");
+            }
+            else {
+                transform.localScale = new Vector3(0.228f, 0.228f, 1);
+                GetComponent<Animator>().Play("mainBee_flying");
+            }
+            
         }
     }
 
     public void SetPowerupTimer(float time) {
         StartCoroutine(ResetPowerup(time));
+    }
+
+    IEnumerator MakeInvincible() {
+        isInvincible = true;
+        yield return new WaitForSeconds(2);
+        isInvincible = false;
     }
 
     IEnumerator ResetPowerup(float seconds) {

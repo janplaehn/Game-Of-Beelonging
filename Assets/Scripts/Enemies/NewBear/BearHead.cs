@@ -31,7 +31,6 @@ public class BearHead : MonoBehaviour {
     }
 
     void Attack() {
-        Debug.Log("Requested Attack");
         int tempNumber = Random.Range(0, 2);
         if (tempNumber == 0) leftPaw.GetComponent<PawMovement>().battleState = PawMovement.State.Indicate;
         else rightPaw.GetComponent<PawMovement>().battleState = PawMovement.State.Indicate;

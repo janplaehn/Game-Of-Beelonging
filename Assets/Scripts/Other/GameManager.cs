@@ -5,13 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
+
+    public static GameManager instance = null;
     public bool isCursorVisible;
     
-    [ShowOnly] public static int beeCount;
+    [ShowOnly] public static int beeCount = 10;
  
-	// Use this for initialization
-	void Start () {
-        beeCount = 10;
+	void Awake () {
+        if (instance == null) instance = this;
+        else if (instance != this) Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
+
         Cursor.visible = isCursorVisible;
         Cursor.lockState = CursorLockMode.Confined;
     }

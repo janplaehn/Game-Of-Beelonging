@@ -44,6 +44,9 @@ public class Wasp : MonoBehaviour
                 Die();
             }
         }
+        else {
+            GetComponent<Animator>().Play("wasp_death");
+        }
     }
 
     void OnTriggerStay2D(Collider2D otherCollider)

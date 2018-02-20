@@ -24,6 +24,8 @@ public class MiddleSlot : MonoBehaviour {
 
     public void DestroyBee () {
         Destroy(currentBee);
+        GameManager.beeCount -= 1;
+
     }
 
     public GameObject GetBee()

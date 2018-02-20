@@ -13,7 +13,7 @@ public class PlayerBullet : MonoBehaviour {
 	void Start () {
 
         MainCamera = GameObject.Find("Main Camera");
-        rightBoundary = MainCamera.GetComponent<MainCamera>().offset + 10f;
+        rightBoundary = MainCamera.GetComponent<MainCamera>().offset + 12f;
     }
 	
 	void Update () {
