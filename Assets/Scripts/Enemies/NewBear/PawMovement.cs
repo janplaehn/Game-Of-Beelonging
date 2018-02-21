@@ -22,8 +22,8 @@ public class PawMovement : MonoBehaviour {
     [HideInInspector] public State battleState;
 
     void Start() {
-        startPosition = transform.position;
-        targetPosition = transform.position + Vector3.down * 5;
+        startPosition = transform.position + Vector3.left * 10;
+        targetPosition = transform.position + Vector3.down * 5 + Vector3.left * 10;
         battleState = State.Default;
 
     }
@@ -69,7 +69,6 @@ public class PawMovement : MonoBehaviour {
 
     void TeleportToAttack() {
         hitbox.SetActive(false);
-        Debug.Log("Teleporting to Attack");
         int tempNum = Random.Range(0, 3);
         switch (tempNum) {
             case 0:
@@ -92,7 +91,6 @@ public class PawMovement : MonoBehaviour {
 
     void TeleportBack() {
         hitbox.SetActive(false);
-        Debug.Log("Going Back Back");
         ResetRotation();
         transform.position = targetPosition;
         battleState = State.Default;
@@ -125,7 +123,9 @@ public class PawMovement : MonoBehaviour {
     }
 
     void Default() {
-        transform.position = Vector3.MoveTowards(transform.position, startPosition, moveSpeed * Time.deltaTime * 6);
+        if (transform.position.x < 6) {
+            transform.position = Vector3.MoveTowards(transform.position, startPosition, moveSpeed * Time.deltaTime);
+        }
         
 
     }
@@ -153,8 +153,8 @@ public class PawMovement : MonoBehaviour {
             Debug.Log("Hurt");
             battleState = State.GoBackFromAttack;
         }
-        else if (collision.tag == "PlayerBullet") {
-                Destroy(collision.transform.root.gameObject);
+        else if (collision.tag == "PlayerBullet" && collision.GetComponent<PlayerBullet>().isAlive) {
+            collision.GetComponent<PlayerBullet>().Die();
         }
     }
 

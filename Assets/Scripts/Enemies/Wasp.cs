@@ -51,9 +51,9 @@ public class Wasp : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D otherCollider)
     {
-        if (otherCollider.tag == "PlayerBullet" && isAlive)
+        if (otherCollider.tag == "PlayerBullet" && isAlive && otherCollider.GetComponent<PlayerBullet>().isAlive)
         {
-            Destroy(otherCollider.transform.root.gameObject);
+            otherCollider.GetComponent<PlayerBullet>().Die();
             healthPoints--;
         }
         else if (otherCollider.tag == "PlayerMissile" && isAlive) {

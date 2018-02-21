@@ -64,13 +64,8 @@ public class MainBee : MonoBehaviour {
         leftBoundary = MainCamera.GetComponent<MainCamera>().offset - 15f;
         rightBoundary = MainCamera.GetComponent<MainCamera>().offset + 15f;
         newPosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
-
-        if (newPosition.x >= leftBoundary && newPosition.x <= rightBoundary && newPosition.y <= topBoundary && newPosition.y >= bottomBoundary) {
-            transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
-        }
-        else {
-            this.transform.position = new Vector3(this.transform.position.x + MainCamera.GetComponent<MainCamera>().speed * Time.deltaTime / 100, this.transform.position.y, this.transform.position.z);
-        }
+        transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
+        this.transform.position = new Vector3(this.transform.position.x + MainCamera.GetComponent<MainCamera>().speed * Time.deltaTime / 100, this.transform.position.y, this.transform.position.z);
     }
 
     void Shoot() {
