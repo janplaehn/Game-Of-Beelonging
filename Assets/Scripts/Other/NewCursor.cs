@@ -13,10 +13,10 @@ public class NewCursor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (MainCamera.GetComponent<MainCamera>().offset - 8.5f < Camera.main.ScreenToWorldPoint(Input.mousePosition).x &&
-            MainCamera.GetComponent<MainCamera>().offset + 8.5f > Camera.main.ScreenToWorldPoint(Input.mousePosition).x &&
-            4.9 > Camera.main.ScreenToWorldPoint(Input.mousePosition).y &&
-            -4.9 < Camera.main.ScreenToWorldPoint(Input.mousePosition).y) {
+        if (MainCamera.GetComponent<MainCamera>().offset - 9.5f < Camera.main.ScreenToWorldPoint(Input.mousePosition).x &&
+            MainCamera.GetComponent<MainCamera>().offset + 9.5f > Camera.main.ScreenToWorldPoint(Input.mousePosition).x &&
+            5.9 > Camera.main.ScreenToWorldPoint(Input.mousePosition).y &&
+            -5.9 < Camera.main.ScreenToWorldPoint(Input.mousePosition).y) {
             transform.position = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
         }
         else {
