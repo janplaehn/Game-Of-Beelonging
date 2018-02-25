@@ -112,9 +112,12 @@ Animator:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 693a4554dbdfe90d48d6147dd591b1dc9e735ed3
 =======
 >>>>>>> 693a4554dbdfe90d48d6147dd591b1dc9e735ed3
+=======
+>>>>>>> cceb75809634a125d7087bd12c256547a56a4f4b
 =======
 >>>>>>> cceb75809634a125d7087bd12c256547a56a4f4b
 =======
@@ -144,6 +147,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   beeState: 0
 =======
   beeState: 1
@@ -151,6 +155,9 @@ MonoBehaviour:
 =======
   beeState: 1
 >>>>>>> 693a4554dbdfe90d48d6147dd591b1dc9e735ed3
+=======
+  beeState: 1
+>>>>>>> cceb75809634a125d7087bd12c256547a56a4f4b
 =======
   beeState: 1
 >>>>>>> cceb75809634a125d7087bd12c256547a56a4f4b
