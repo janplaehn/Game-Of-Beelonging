@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class BearHead : MonoBehaviour {
 
     public float healthPoints;
+    public float speed;
     public GameObject leftPaw;
     public GameObject rightPaw;
     public float attackFrequency;
@@ -28,18 +29,20 @@ public class BearHead : MonoBehaviour {
             gameManager.GetComponent<GameManager>().ToggleCursorVisibility(true);
             SceneManager.LoadScene("Win Screen", LoadSceneMode.Single);
         }
+        if (transform.position.x > 5) {
+            transform.position += Vector3.left * speed * Time.deltaTime;
+        }
     }
 
     void Attack() {
-        Debug.Log("Requested Attack");
         int tempNumber = Random.Range(0, 2);
         if (tempNumber == 0) leftPaw.GetComponent<PawMovement>().battleState = PawMovement.State.Indicate;
         else rightPaw.GetComponent<PawMovement>().battleState = PawMovement.State.Indicate;
     }
 
     void OnTriggerEnter2D(Collider2D otherCollider) {
-        if (otherCollider.tag == "PlayerBullet") {
-            Destroy(otherCollider.transform.root.gameObject);
+        if (otherCollider.tag == "PlayerBullet" && otherCollider.GetComponent<PlayerBullet>().isAlive) {
+            otherCollider.GetComponent<PlayerBullet>().Die();
         }
     }
 

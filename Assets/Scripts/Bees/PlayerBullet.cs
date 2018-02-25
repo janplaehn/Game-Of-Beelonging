@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour {
 
     public float speed;
+    [ShowOnly] public bool isAlive;
 
     private GameObject MainCamera;
     private float rightBoundary;
@@ -12,8 +13,9 @@ public class PlayerBullet : MonoBehaviour {
 
 	void Start () {
 
+        isAlive = true;
         MainCamera = GameObject.Find("Main Camera");
-        rightBoundary = MainCamera.GetComponent<MainCamera>().offset + 10f;
+        rightBoundary = MainCamera.GetComponent<MainCamera>().offset + 12f;
     }
 	
 	void Update () {
@@ -25,5 +27,19 @@ public class PlayerBullet : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        if (!isAlive) {
+            GetComponent<Animator>().Play("playerbullet_splash");
+        }
 	}
+
+    public void Die() {
+        isAlive = false;
+        speed = 2;
+        StartCoroutine(Destroy());
+    }
+
+    IEnumerator Destroy() {
+        yield return new WaitForSeconds(0.15f);
+        Destroy(gameObject);
+    }
 }

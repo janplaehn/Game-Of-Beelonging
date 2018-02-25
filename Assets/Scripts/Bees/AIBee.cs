@@ -18,6 +18,7 @@ public class AIBee : MonoBehaviour {
     [HideInInspector] public State beeState;
 
     private enum Direction { Up, Down };
+    private GameObject mainBee;
     private Direction moveDirection;
     private Vector2 startPosition;
     private float nextFire;
@@ -25,11 +26,12 @@ public class AIBee : MonoBehaviour {
     private GameObject MainCamera;
 
     void Start () {
-        beeState = State.Swarm;
+        beeState = State.MoveToPlayer;
         GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         moveDirection = Direction.Up;
         startPosition = transform.position;
         MainCamera = GameObject.Find("Main Camera");
+        mainBee = GameObject.Find("MainBee");
         if (!currentSlot ) {
             currentSlot = GameObject.Find("Slot").transform;
         }
@@ -54,7 +56,7 @@ public class AIBee : MonoBehaviour {
             case State.MoveToSlot:
                 MoveToSlot();
                 Shoot();
-                if (Input.GetMouseButton(1) || isInBossFight) {
+                if ((Input.GetMouseButton(1) || isInBossFight) && mainBee.GetComponent<MainBee>().isAlive) {
                     fireRate /= 2;
                     beeState = State.MoveToPlayer;
                 }
@@ -67,7 +69,7 @@ public class AIBee : MonoBehaviour {
             case State.MoveToPlayer:
                 MoveToPlayerSlot();
                 Shoot();
-                if (Input.GetMouseButtonUp(1)) {
+                if ((!Input.GetMouseButton(1) && !isInBossFight) || !mainBee.GetComponent<MainBee>().isAlive) {
                     beeState = State.MoveToSlot;
                 }
                 break;
@@ -80,7 +82,7 @@ public class AIBee : MonoBehaviour {
                 break;
 
             default:
-                beeState = State.Swarm;
+                beeState = State.MoveToSlot;
                 break;
         }
     }
@@ -104,6 +106,12 @@ public class AIBee : MonoBehaviour {
             Die();
         }
         else if (otherCollider.tag == "Thistle" && beeState != State.Die) {
+            Die();
+        }
+        else if (otherCollider.tag == "Beetle" && otherCollider.transform.GetComponent<Beetle>().isAlive && beeState != State.Die) {
+            Die();
+        }
+        else if (otherCollider.tag == "Spider" && otherCollider.transform.GetComponent<Spider>().isAlive && beeState != State.Die) {
             Die();
         }
         else if (otherCollider.tag == "EnemyBullet" && beeState != State.Die) {
@@ -151,6 +159,15 @@ public class AIBee : MonoBehaviour {
                 return true;
             }
             else if (collider.tag == "Wasp" && collider.transform.GetComponent<Wasp>().isAlive) {
+                return true;
+            }
+            else if (collider.tag == "Dragonfly" && collider.transform.GetComponent<DragonFly>().isAlive) {
+                return true;
+            }
+            else if (collider.tag == "Beetle" && collider.transform.GetComponent<Beetle>().isAlive) {
+                return true;
+            }
+            else if (collider.tag == "Spider" && collider.transform.GetComponent<Spider>().isAlive) {
                 return true;
             }
         }

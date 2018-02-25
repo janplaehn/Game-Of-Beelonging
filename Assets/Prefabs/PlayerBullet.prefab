@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114119929069650112}
   - component: {fileID: 58713943746727580}
   - component: {fileID: 50376579162243864}
+  - component: {fileID: 95415823583016464}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: PlayerBullet
@@ -78,6 +79,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.95
+--- !u!95 &95415823583016464
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397809232423828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5e240e83f87fce4b80183999156d437, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114119929069650112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,7 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6bf3416698bb1469c122d4aaa9627b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 13
+  isAlive: 0
 --- !u!212 &212476816160021980
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -121,8 +140,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1819740757
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300030, guid: 47889e0bd0b92ff4095376c26f9e7785, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

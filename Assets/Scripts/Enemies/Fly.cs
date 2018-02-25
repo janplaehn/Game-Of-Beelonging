@@ -42,8 +42,8 @@ public class Fly : MonoBehaviour {
     }
 
     void OnTriggerStay2D(Collider2D otherCollider) {
-        if (otherCollider.tag == "PlayerBullet" && isAlive) {
-            Destroy(otherCollider.transform.root.gameObject);
+        if (otherCollider.tag == "PlayerBullet" && isAlive && otherCollider.GetComponent<PlayerBullet>().isAlive) {
+            otherCollider.GetComponent<PlayerBullet>().Die();
             healthPoints--; 
         }
         else if (otherCollider.tag == "PlayerMissile" && isAlive) {

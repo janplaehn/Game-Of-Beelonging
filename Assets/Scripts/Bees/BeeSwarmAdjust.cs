@@ -6,7 +6,15 @@ public class BeeSwarmAdjust : MonoBehaviour {
     public bool isInBossFight = false;
 
 	void Start () {
-        
+        if (GameManager.beeCount < 9) Destroy(GameObject.Find("AIBee"));
+        if (GameManager.beeCount < 8) Destroy(GameObject.Find("AIBee (1)"));
+        if (GameManager.beeCount < 7) Destroy(GameObject.Find("AIBee (2)"));
+        if (GameManager.beeCount < 6) Destroy(GameObject.Find("AIBee (3)"));
+        if (GameManager.beeCount < 5) Destroy(GameObject.Find("AIBee (4)"));
+        if (GameManager.beeCount < 4) Destroy(GameObject.Find("AIBee (5)"));
+        if (GameManager.beeCount < 3) Destroy(GameObject.Find("AIBee (6)"));
+        if (GameManager.beeCount < 2) Destroy(GameObject.Find("AIBee (7)"));
+        if (GameManager.beeCount < 1) Destroy(GameObject.Find("AIBee (8)"));
     }
 	
 	void Update () {

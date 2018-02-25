@@ -44,13 +44,16 @@ public class Wasp : MonoBehaviour
                 Die();
             }
         }
+        else {
+            GetComponent<Animator>().Play("wasp_death");
+        }
     }
 
     void OnTriggerStay2D(Collider2D otherCollider)
     {
-        if (otherCollider.tag == "PlayerBullet" && isAlive)
+        if (otherCollider.tag == "PlayerBullet" && isAlive && otherCollider.GetComponent<PlayerBullet>().isAlive)
         {
-            Destroy(otherCollider.transform.root.gameObject);
+            otherCollider.GetComponent<PlayerBullet>().Die();
             healthPoints--;
         }
         else if (otherCollider.tag == "PlayerMissile" && isAlive) {
