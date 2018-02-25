@@ -1,0 +1,202 @@
+fileFormatVersion: 2
+guid: 5e8bbd8a88efe024f95850b22c7f02c4
+timeCreated: 1519570335
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: "Bj\xF6rkar(trees) 1_0"
+    21300002: "Bj\xF6rkar(trees) 1_1"
+    21300004: "Bj\xF6rkar(trees) 1_2"
+    21300006: "Bj\xF6rkar(trees) 1_3"
+    21300008: "Bj\xF6rkar(trees) 1_4"
+    21300010: "Bj\xF6rkar(trees) 1_8"
+    21300012: "Bj\xF6rkar(trees) 1_9"
+    21300014: "Bj\xF6rkar(trees) 1_11"
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees) 1_0"
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 341
+        width: 1628
+        height: 5327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees) 1_1"
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 341
+        width: 1534
+        height: 5327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees) 1_2"
+      rect:
+        serializedVersion: 2
+        x: 3395
+        y: 345
+        width: 1881
+        height: 5323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees) 1_3"
+      rect:
+        serializedVersion: 2
+        x: 6572
+        y: 2940
+        width: 1849
+        height: 2592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees) 1_4"
+      rect:
+        serializedVersion: 2
+        x: 5737
+        y: 3453
+        width: 505
+        height: 1294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees) 1_8"
+      rect:
+        serializedVersion: 2
+        x: 5678
+        y: 703
+        width: 699
+        height: 2168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees) 1_9"
+      rect:
+        serializedVersion: 2
+        x: 8250
+        y: 287
+        width: 859
+        height: 2564
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "Bj\xF6rkar(trees) 1_11"
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 282
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
