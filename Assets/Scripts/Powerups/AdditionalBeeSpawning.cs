@@ -20,8 +20,9 @@ public class AdditionalBeeSpawning : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D otherCollider) {
         if (otherCollider.tag == "MainBee") {
-            if (GameManager.beeCount < 10) {
+            if (GameManager.beeCount < 9) {
             Instantiate(bee, transform.position, Quaternion.identity);
+                GameManager.beeCount += 1;
                 Destroy(this.gameObject);
             }
         }
