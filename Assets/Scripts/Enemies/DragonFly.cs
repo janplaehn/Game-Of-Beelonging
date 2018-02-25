@@ -54,11 +54,17 @@ public class DragonFly : MonoBehaviour {
     }
 
     void Move() {
-        if (transform.position.x < MainCamera.transform.position.x + 10 && transform.position.x > MainCamera.transform.position.x + positionThreshold) {
+        if (transform.position.x < MainCamera.transform.position.x + 10 && transform.position.x > MainCamera.transform.position.x + 4) {
             transform.position = new Vector3(transform.position.x + backwardMoveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
+            
+        }
+        else if (transform.position.x < MainCamera.transform.position.x + 4 && transform.position.x > MainCamera.transform.position.x + positionThreshold) {
+            transform.position = new Vector3(transform.position.x + backwardMoveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
+            GetComponent<Animator>().Play("dragonfly_charge");
         }
         if (transform.position.x < MainCamera.transform.position.x + positionThreshold) {
             transform.position = new Vector3(transform.position.x - forwardMoveSpeed* Time.deltaTime, transform.position.y, transform.position.z);
+            GetComponent<Animator>().Play("dragonfly_attack");
         }
         
     }

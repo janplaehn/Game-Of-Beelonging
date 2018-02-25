@@ -42,7 +42,7 @@ public class Spider : MonoBehaviour {
             }
         }
         else {
-            //GetComponent<Animator>().Play("spider_death");
+            GetComponent<Animator>().Play("spider_death");
         }
     }
 
@@ -69,8 +69,10 @@ public class Spider : MonoBehaviour {
                 if (transform.position.x - player.transform.position.x < shootRange) {
                     Shoot();
                 }
+                GetComponent<Animator>().Play("spider_shooting");
             }
             else {
+                GetComponent<Animator>().Play("spider_default");
                 transform.position = new Vector3(transform.position.x, transform.position.y + stringSpeed * Time.deltaTime, transform.position.z);
             }
         }
@@ -80,8 +82,10 @@ public class Spider : MonoBehaviour {
                 if (transform.position.x - player.transform.position.x < shootRange) {
                     Shoot();
                 }
+                GetComponent<Animator>().Play("spider_shooting");
             }
             else {
+                GetComponent<Animator>().Play("spider_default");
                 transform.position = new Vector3(transform.position.x, transform.position.y - stringSpeed * Time.deltaTime, transform.position.z);
             }
         }
@@ -95,7 +99,7 @@ public class Spider : MonoBehaviour {
     void Shoot() {
         if (Time.time > nextFire) {
             nextFire = Time.time + fireRate;
-            Instantiate(spiderBullet, new Vector3(transform.position.x - bulletOffset, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(spiderBullet, new Vector3(transform.position.x, transform.position.y - bulletOffset, transform.position.z), Quaternion.identity);
         }
     }
 }

@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 50529117488695294}
   - component: {fileID: 61090494289879392}
   - component: {fileID: 114663981617782400}
+  - component: {fileID: 95388861451652024}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Spider
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1961860805140994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 199.3, y: 1, z: 0}
+  m_LocalPosition: {x: 4.879855, y: 0.11277819, z: 0}
   m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_Children:
   - {fileID: 4976276967767870}
@@ -118,6 +119,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.8, y: 33.2}
   m_EdgeRadius: 0
+--- !u!95 &95388861451652024
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961860805140994}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fc852dd9153f144cabdb23e04ab4cfa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114663981617782400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,7 +152,7 @@ MonoBehaviour:
   healthPoints: 3
   fireRate: 0.3
   shootRange: 12
-  spiderBullet: {fileID: 4438345213601188, guid: 7589cd2dcee28bb47b7fda9920aa326a,
+  spiderBullet: {fileID: 4762268490162280, guid: 769b6b8b2b4bd6b4db62b85874de89ec,
     type: 2}
   bulletOffset: 0.4
   isAlive: 0

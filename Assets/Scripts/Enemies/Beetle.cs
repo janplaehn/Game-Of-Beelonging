@@ -35,7 +35,7 @@ public class Beetle : MonoBehaviour {
             }
         }
         else {
-            //GetComponent<Animator>().Play("fly_death");
+            GetComponent<Animator>().Play("beetle_death");
         }
     }
 

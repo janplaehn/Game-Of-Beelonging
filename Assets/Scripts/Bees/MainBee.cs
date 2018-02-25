@@ -19,21 +19,14 @@ public class MainBee : MonoBehaviour {
     private bool isInvincible;
     private GameObject MainCamera;
     private Vector2 newPosition;
-
-    [ShowOnly] [SerializeField] private float leftBoundary;
-    [ShowOnly] [SerializeField] private float rightBoundary;
-    [ShowOnly] [SerializeField] private float topBoundary;
-    [ShowOnly] [SerializeField] private float bottomBoundary;
+    private GameObject cursor;
     
 
     void Start () {
         MainCamera = GameObject.Find("Main Camera");
-        leftBoundary = -8.5f;
-        rightBoundary = 8.5f;
-        topBoundary = 6f;
-        bottomBoundary = -6f;
         isAlive = true;
         isInEndSequence = false;
+        cursor = GameObject.Find("Cursor");
     }
 	
 	void Update () {
@@ -61,10 +54,7 @@ public class MainBee : MonoBehaviour {
     }
 
     void Move() {
-        leftBoundary = MainCamera.GetComponent<MainCamera>().offset - 15f;
-        rightBoundary = MainCamera.GetComponent<MainCamera>().offset + 15f;
-        newPosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
-        transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, cursor.transform.position, speed * Time.deltaTime);
         this.transform.position = new Vector3(this.transform.position.x + MainCamera.GetComponent<MainCamera>().speed * Time.deltaTime / 100, this.transform.position.y, this.transform.position.z);
     }
 
