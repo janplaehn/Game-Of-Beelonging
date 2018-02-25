@@ -13,6 +13,7 @@ public class PawMovement : MonoBehaviour {
     public Transform targetPoint;
 
     public GameObject hitbox;
+    public GameObject bear;
 
     private Vector3 targetPosition;
     private Vector3 startPosition;
@@ -32,6 +33,7 @@ public class PawMovement : MonoBehaviour {
         switch (battleState) {
             case State.Indicate:
                 IndicateAttack();
+                bear.GetComponent<BearHead>().mouthOpen = true;
                 break;
             case State.TeleportToAttack:
                 TeleportToAttack();
@@ -119,6 +121,7 @@ public class PawMovement : MonoBehaviour {
         transform.position += (-movementVector) * moveSpeed * Time.deltaTime*2;
         if (Mathf.Abs(transform.position.y) > 20) {
             battleState = State.TeleportBack;
+            bear.GetComponent<BearHead>().mouthOpen = false;
         }
     }
 

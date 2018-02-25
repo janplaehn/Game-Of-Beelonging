@@ -997,6 +997,7 @@ MonoBehaviour:
   AttackPosition3: {fileID: 163218807}
   targetPoint: {fileID: 1531719593}
   hitbox: {fileID: 680733131}
+  bear: {fileID: 1632759323}
   battleState: 0
 --- !u!50 &500623803
 Rigidbody2D:
@@ -2771,6 +2772,8 @@ MonoBehaviour:
   rightPaw: {fileID: 500623801}
   attackFrequency: 10
   gameManager: {fileID: 789226494}
+  mouthOpen: 0
+  isHit: 0
 --- !u!60 &1632759325
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3832,6 +3835,7 @@ MonoBehaviour:
   AttackPosition3: {fileID: 70635361}
   targetPoint: {fileID: 1531719593}
   hitbox: {fileID: 680733131}
+  bear: {fileID: 1632759323}
   battleState: 0
 --- !u!60 &2088220178
 PolygonCollider2D:

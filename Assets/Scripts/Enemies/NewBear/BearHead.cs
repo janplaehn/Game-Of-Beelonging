@@ -11,11 +11,14 @@ public class BearHead : MonoBehaviour {
     public GameObject rightPaw;
     public float attackFrequency;
     public GameObject gameManager;
+    public bool mouthOpen;
+    public bool isHit;
 
 
 	void Start () {
         InvokeRepeating("Attack", 3.0f, attackFrequency);
-
+        mouthOpen = false;
+        isHit = false;
     }
 
     void Update() {
@@ -32,6 +35,17 @@ public class BearHead : MonoBehaviour {
         if (transform.position.x > 5) {
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
+        if (mouthOpen) {
+            GetComponent<Animator>().Play("bear_openmouth");
+        }
+        else {
+            if (isHit) {
+                GetComponent<Animator>().Play("bear_hit");
+            }
+            else {
+                GetComponent<Animator>().Play("bear_default");
+            }
+        }
     }
 
     void Attack() {
@@ -47,12 +61,12 @@ public class BearHead : MonoBehaviour {
     }
 
     public void PlayHitAnimation() {
-        GetComponent<Animator>().Play("bear_hit");
+        isHit = true;
         StartCoroutine(AnimationBackToDefault());
     }
 
     IEnumerator AnimationBackToDefault() {
         yield return new WaitForSeconds(0.5f);
-        GetComponent<Animator>().Play("bear_default");
+        isHit = false;
     }
 }
