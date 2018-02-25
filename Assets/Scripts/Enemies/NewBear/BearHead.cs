@@ -25,7 +25,7 @@ public class BearHead : MonoBehaviour {
             rightPaw.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
         }
         if (transform.position.y <= -12) {
-            Destroy(this.gameObject);
+            Debug.Log("Dead");
             gameManager.GetComponent<GameManager>().ToggleCursorVisibility(true);
             SceneManager.LoadScene("Win Screen", LoadSceneMode.Single);
         }
