@@ -6,11 +6,8 @@ public class MiddleSlot : MonoBehaviour {
 
     private GameObject currentBee;
 
-    private bool isColliding;
-
 	// Use this for initialization
 	void Start () {
-        isColliding = false;
 		
 	}
 	
@@ -21,23 +18,31 @@ public class MiddleSlot : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D CollisionCheck) {
         if (CollisionCheck.gameObject.tag == "AIBee") {
             currentBee = CollisionCheck.gameObject;
-            isColliding = true;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D CollisionCheck) {
-        if (CollisionCheck.gameObject.tag == "AIBee") {
-            isColliding = false;
         }
     }
 
     public void DestroyBee () {
-        Destroy(currentBee);
-        GameManager.beeCount -= 1;
+        if (DestroyBeeInRange()) {
+        }
     }
 
     public GameObject GetBee()
     {
         return currentBee;
+    }
+
+    private bool DestroyBeeInRange() {
+        Collider2D[] collidersWithinRadius;
+        collidersWithinRadius = Physics2D.OverlapCircleAll(new Vector3(transform.position.x, transform.position.y, transform.position.z), 0.5f);
+        foreach (Collider2D collider in collidersWithinRadius) {
+            if (collider.tag == "AIBee") {
+                Destroy(collider.gameObject);
+                GetComponent<Slot>().isOccupied = false;
+                GameManager.beeCount -= 1;
+                Debug.Log("Reduced Bee Count");
+                return true;
+            }
+        }
+        return false;
     }
 }

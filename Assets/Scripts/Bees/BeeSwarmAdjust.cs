@@ -6,15 +6,42 @@ public class BeeSwarmAdjust : MonoBehaviour {
     public bool isInBossFight = false;
 
 	void Start () {
-        if (GameManager.beeCount < 9) Destroy(GameObject.Find("AIBee"));
-        if (GameManager.beeCount < 8) Destroy(GameObject.Find("AIBee (1)"));
-        if (GameManager.beeCount < 7) Destroy(GameObject.Find("AIBee (2)"));
-        if (GameManager.beeCount < 6) Destroy(GameObject.Find("AIBee (3)"));
-        if (GameManager.beeCount < 5) Destroy(GameObject.Find("AIBee (4)"));
-        if (GameManager.beeCount < 4) Destroy(GameObject.Find("AIBee (5)"));
-        if (GameManager.beeCount < 3) Destroy(GameObject.Find("AIBee (6)"));
-        if (GameManager.beeCount < 2) Destroy(GameObject.Find("AIBee (7)"));
-        if (GameManager.beeCount < 1) Destroy(GameObject.Find("AIBee (8)"));
+        if (GameManager.beeCount < 9) {
+            Destroy(GameObject.Find("AIBee"));
+            GameObject.Find("Slot").GetComponent<Slot>().isOccupied = false;
+        }
+        if (GameManager.beeCount < 8) {
+            Destroy(GameObject.Find("AIBee (1)"));
+            GameObject.Find("Slot (1)").GetComponent<Slot>().isOccupied = false;
+        }
+        if (GameManager.beeCount < 7) {
+            Destroy(GameObject.Find("AIBee (2)"));
+            GameObject.Find("Slot (2)").GetComponent<Slot>().isOccupied = false;
+        }
+        if (GameManager.beeCount < 6) {
+            Destroy(GameObject.Find("AIBee (3)"));
+            GameObject.Find("Slot (3)").GetComponent<Slot>().isOccupied = false;
+        }
+        if (GameManager.beeCount < 5) {
+            Destroy(GameObject.Find("AIBee (4)"));
+            GameObject.Find("Slot (4)").GetComponent<Slot>().isOccupied = false;
+        }
+        if (GameManager.beeCount < 4) {
+            Destroy(GameObject.Find("AIBee (5)"));
+            GameObject.Find("Slot (5)").GetComponent<Slot>().isOccupied = false;
+        }
+        if (GameManager.beeCount < 3) {
+            Destroy(GameObject.Find("AIBee (6)"));
+            GameObject.Find("Slot (6)").GetComponent<Slot>().isOccupied = false;
+        }
+        if (GameManager.beeCount < 2) {
+            Destroy(GameObject.Find("AIBee (7)"));
+            GameObject.Find("Slot (7)").GetComponent<Slot>().isOccupied = false;
+        }
+        if (GameManager.beeCount < 1) {
+            Destroy(GameObject.Find("AIBee (8)"));
+            GameObject.Find("Slot (8)").GetComponent<Slot>().isOccupied = false;
+        }
     }
 	
 	void Update () {

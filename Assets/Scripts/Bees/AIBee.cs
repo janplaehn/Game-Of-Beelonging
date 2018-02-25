@@ -13,6 +13,7 @@ public class AIBee : MonoBehaviour {
     public Transform playerBullet;
     public Transform currentSlot;
     public bool isInBossFight = false;
+    [ShowOnly] public bool isInvincible;
 
     [HideInInspector] public enum State { Swarm, MoveToSlot, MoveToPlayer, Die }
     [HideInInspector] public State beeState;
@@ -26,6 +27,7 @@ public class AIBee : MonoBehaviour {
     private GameObject MainCamera;
 
     void Start () {
+        isInvincible = false;
         beeState = State.MoveToPlayer;
         GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         moveDirection = Direction.Up;
@@ -64,6 +66,10 @@ public class AIBee : MonoBehaviour {
                 {
                     beeState = State.Swarm;
                 }
+                if (transform.position.y <= -6) {
+                    GameManager.beeCount -= 1;
+                    Destroy(gameObject);
+                }
                 break;
 
             case State.MoveToPlayer:
@@ -77,6 +83,7 @@ public class AIBee : MonoBehaviour {
             case State.Die:
                 GetComponent<Animator>().Play("swarmBee_death");
                 if (transform.position.y <= -6) {
+                    GameManager.beeCount -= 1;
                     Destroy(gameObject);
                 }
                 break;
@@ -90,38 +97,37 @@ public class AIBee : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D otherCollider) {
         if (otherCollider.tag == "Fly" && otherCollider.transform.GetComponent<Fly>().isAlive && beeState != State.Die) {
             otherCollider.transform.gameObject.GetComponent<Fly>().Die();
-            Die();
+            if (!isInvincible) Die();
         }
         else if (otherCollider.tag == "Wasp" && otherCollider.transform.GetComponent<Wasp>().isAlive && beeState != State.Die)
         {
             otherCollider.transform.gameObject.GetComponent<Wasp>().Die();
-            Die();
+            if (!isInvincible) Die();
         }
         else if (otherCollider.tag == "Dragonfly" && otherCollider.transform.GetComponent<DragonFly>().isAlive && beeState != State.Die)
         {
             otherCollider.transform.gameObject.GetComponent<DragonFly>().Die();
-            Die();
+            if (!isInvincible) Die();
         }
         else if (otherCollider.tag == "Bear" && beeState != State.Die) {
-            Die();
+            if (!isInvincible) Die();
         }
         else if (otherCollider.tag == "Thistle" && beeState != State.Die) {
-            Die();
+            if (!isInvincible) Die();
         }
         else if (otherCollider.tag == "Beetle" && otherCollider.transform.GetComponent<Beetle>().isAlive && beeState != State.Die) {
-            Die();
+            if (!isInvincible) Die();
         }
         else if (otherCollider.tag == "Spider" && otherCollider.transform.GetComponent<Spider>().isAlive && beeState != State.Die) {
-            Die();
+            if (!isInvincible) Die();
         }
         else if (otherCollider.tag == "EnemyBullet" && beeState != State.Die) {
             Destroy(otherCollider.transform.gameObject);
-            Die();
+            if (!isInvincible) Die();
         }
     }
 
     void Die() {
-        GameManager.beeCount -= 1;
         currentSlot.GetComponent<Slot>().isOccupied = false;
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         GetComponent<Rigidbody2D>().gravityScale = 2.0f;

@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
     public bool isCursorVisible;
     
-    [ShowOnly] public static int beeCount = 10;
+    [ShowOnly] public static int beeCount = 9;
  
 	void Awake () {
         if (instance == null) instance = this;

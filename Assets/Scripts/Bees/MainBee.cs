@@ -118,9 +118,9 @@ public class MainBee : MonoBehaviour {
     }
 
     void NewMainBee() {
+        Debug.Log("Beecount:" + GameManager.beeCount);
         middleSlot.GetComponent<MiddleSlot>().DestroyBee();
         transform.position = middleSlot.GetComponent<MiddleSlot>().transform.position;
-        middleSlot.GetComponent<Slot>().isOccupied = false;
         isAlive = true;
         this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
@@ -158,8 +158,14 @@ public class MainBee : MonoBehaviour {
 
     IEnumerator MakeInvincible() {
         isInvincible = true;
+        foreach (GameObject bee in GameObject.FindGameObjectsWithTag("AIBee")) {
+            bee.GetComponent<AIBee>().isInvincible = true;
+        }
         yield return new WaitForSeconds(2);
         isInvincible = false;
+        foreach (GameObject bee in GameObject.FindGameObjectsWithTag("AIBee")) {
+            bee.GetComponent<AIBee>().isInvincible = false;
+        }
     }
 
     IEnumerator ResetPowerup(float seconds) {
