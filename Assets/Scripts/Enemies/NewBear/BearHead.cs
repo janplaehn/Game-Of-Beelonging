@@ -23,11 +23,12 @@ public class BearHead : MonoBehaviour {
 
     void Update() {
         if (healthPoints <= 0) {
+            StartCoroutine(LoadWinScreen());
             this.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
             leftPaw.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
             rightPaw.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
         }
-        if (transform.position.y <= -12) {
+        if (transform.position.y <= -8) {
             Debug.Log("Dead");
             gameManager.GetComponent<GameManager>().ToggleCursorVisibility(true);
             SceneManager.LoadScene("Win Screen", LoadSceneMode.Single);
@@ -68,5 +69,11 @@ public class BearHead : MonoBehaviour {
     IEnumerator AnimationBackToDefault() {
         yield return new WaitForSeconds(0.5f);
         isHit = false;
+    }
+
+    IEnumerator LoadWinScreen() {
+        yield return new WaitForSeconds(1f);
+        gameManager.GetComponent<GameManager>().ToggleCursorVisibility(true);
+        SceneManager.LoadScene("Win Screen", LoadSceneMode.Single);
     }
 }
