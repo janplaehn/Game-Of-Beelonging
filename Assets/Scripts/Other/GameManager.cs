@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 
     void Exit() {
         SceneManager.LoadScene("Game Over Screen", LoadSceneMode.Single);
-        beeCount = 10;
+        beeCount = 9;
         Cursor.visible = true;
     }
 
