@@ -7,20 +7,21 @@ public class MainCamera : MonoBehaviour {
     public float speed;
 
     [ShowOnly] public float offset;
+    private float initialSpeed;
 
 	void Start () {
-		
+        initialSpeed = speed;
 	}
 	
 	void Update () {
         this.transform.position = new Vector3(this.transform.position.x + speed/100 * Time.deltaTime, this.transform.position.y, this.transform.position.z);
         offset = transform.position.x;
-        if (Input.GetMouseButtonDown(1)) {
-            speed *= 1.5f;
+        if (Input.GetMouseButtonDown(1) && GameManager.beeCount > 1) {
+            speed = initialSpeed * 1.5f;
         }
         if (Input.GetMouseButtonUp(1))
         {
-            speed /= 1.5f;
+            speed = initialSpeed;
         }
     }
 }

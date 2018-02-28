@@ -30,12 +30,12 @@ public class Parallaxing : MonoBehaviour {
         }
     }
 
-    void Update() {
+    void FixedUpdate() {
         for (int i = 0; i < children.Count; i++) {
             float parallax = (previousCamPos.x - cam.position.x) * parallaxScales[i];
             float backgroundTargetPosX = children[i].position.x + parallax;
             Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, children[i].position.y, children[i].position.z);
-            children[i].position = Vector3.Lerp(children[i].position, backgroundTargetPos, smoothing * Time.deltaTime);
+            children[i].position = Vector3.Lerp(children[i].position, backgroundTargetPos, smoothing);
         }
         previousCamPos = cam.position;
     }   

@@ -36,14 +36,8 @@ public class MainBee : MonoBehaviour {
         else {
             if (isAlive) {
                 Move();
-                if (Input.GetMouseButtonDown(0)) {
+                if (Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1)) {
                     Shoot();
-                }
-                if (Input.GetMouseButtonDown(1)) {
-                    speed *= 2;
-                }
-                else if (Input.GetMouseButtonUp(1)) {
-                    speed /= 2;
                 }
             }
             if (transform.position.y <= -6) {
@@ -96,10 +90,10 @@ public class MainBee : MonoBehaviour {
             else if (otherCollider.tag == "Thistle") {
                 Die();
             }
-            else if (otherCollider.tag == "Beetle") {
+            else if (otherCollider.tag == "Beetle" && otherCollider.transform.GetComponent<Beetle>().isAlive) {
                 Die();
             }
-            else if (otherCollider.tag == "Spider") {
+            else if (otherCollider.tag == "Spider" && otherCollider.transform.GetComponent<Spider>().isAlive) {
                 Die();
             }
             else if (otherCollider.tag == "EnemyBullet") {
@@ -118,13 +112,15 @@ public class MainBee : MonoBehaviour {
     }
 
     void NewMainBee() {
-        Debug.Log("Beecount:" + GameManager.beeCount);
+        if (GameManager.beeCount == 1) {
+            Destroy(gameObject);
+            return;
+        }
         middleSlot.GetComponent<MiddleSlot>().DestroyBee();
         transform.position = middleSlot.GetComponent<MiddleSlot>().transform.position;
         isAlive = true;
         this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
-        this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-        
+        this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;        
     }
 
     void MoveOutOfScreen() {

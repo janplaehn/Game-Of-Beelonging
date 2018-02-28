@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class FinishLine : MonoBehaviour {
 
     public string nextSceneName;
+    public bool restoreBees;
 
     private GameObject MainCamera;
     private GameObject Sky;
@@ -34,6 +35,9 @@ public class FinishLine : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D otherCollider) {
         if (otherCollider.tag == "MainBee") {
+            if (restoreBees) {
+                GameManager.restoreBees = true;
+            }
             SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
         }
     }
