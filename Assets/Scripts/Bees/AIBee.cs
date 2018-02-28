@@ -135,7 +135,7 @@ public class AIBee : MonoBehaviour {
     }
 
     void Shoot() {
-        if (Time.time > nextFire && EnemiesInRange()) {
+        if (Time.time > nextFire && EnemiesInRange() && !Input.GetMouseButton(1)) {
             nextFire = Time.time + fireRate;
             Instantiate(playerBullet, new Vector3(transform.position.x - bulletOffset, transform.position.y, transform.position.z), Quaternion.identity);
         }

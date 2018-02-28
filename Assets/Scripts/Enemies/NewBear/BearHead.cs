@@ -30,7 +30,7 @@ public class BearHead : MonoBehaviour {
         }
         if (transform.position.y <= -8) {
             Debug.Log("Dead");
-            gameManager.GetComponent<GameManager>().ToggleCursorVisibility(true);
+            GameManager.ToggleCursorVisibility(true);
             SceneManager.LoadScene("Win Screen", LoadSceneMode.Single);
         }
         if (transform.position.x > 5) {
@@ -73,7 +73,7 @@ public class BearHead : MonoBehaviour {
 
     IEnumerator LoadWinScreen() {
         yield return new WaitForSeconds(1f);
-        gameManager.GetComponent<GameManager>().ToggleCursorVisibility(true);
+        GameManager.ToggleCursorVisibility(true);
         SceneManager.LoadScene("Win Screen", LoadSceneMode.Single);
     }
 }

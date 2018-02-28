@@ -6,6 +6,7 @@ public class Beetle : MonoBehaviour {
 
     public float curveExtremes;
     public float curveSpeed;
+    public float moveSpeed;
     public int healthPoints;
 
     [HideInInspector] public bool isAlive;
@@ -67,6 +68,9 @@ public class Beetle : MonoBehaviour {
             if (transform.position.y < startPosition.y - curveExtremes) {
                 moveDirection = Direction.Up;
             }
+        }
+        if (transform.position.x <= MainCamera.GetComponent<MainCamera>().offset + 10f) {
+            transform.position += Vector3.left * moveSpeed * Time.deltaTime;
         }
     }
 }

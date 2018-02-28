@@ -12,6 +12,9 @@ public class PawMovement : MonoBehaviour {
 
     public Transform targetPoint;
 
+
+    public GameObject openMouthCollider;
+    public GameObject defaultCollider;
     public GameObject hitbox;
     public GameObject bear;
 
@@ -62,6 +65,8 @@ public class PawMovement : MonoBehaviour {
 
     void IndicateAttack() {
         hitbox.SetActive(false);
+        defaultCollider.SetActive(false);
+        openMouthCollider.SetActive(true);
         transform.position += Vector3.down * moveSpeed * Time.deltaTime;
         if (transform.position.y < -20) {
             battleState = State.TeleportToAttack;
@@ -71,6 +76,8 @@ public class PawMovement : MonoBehaviour {
 
     void TeleportToAttack() {
         hitbox.SetActive(false);
+        defaultCollider.SetActive(false);
+        openMouthCollider.SetActive(true);
         int tempNum = Random.Range(0, 3);
         switch (tempNum) {
             case 0:
@@ -93,19 +100,26 @@ public class PawMovement : MonoBehaviour {
 
     void TeleportBack() {
         hitbox.SetActive(false);
+        defaultCollider.SetActive(false);
         ResetRotation();
         transform.position = targetPosition;
         battleState = State.Default;
         hitbox.SetActive(true);
+        defaultCollider.SetActive(true);
+        openMouthCollider.SetActive(false);
     }
 
     void AttackSlow() {
         hitbox.SetActive(false);
+        defaultCollider.SetActive(false);
+        openMouthCollider.SetActive(true);
         transform.position += movementVector * moveSpeed * Time.deltaTime;
     }
 
     void AttackFast() {
         hitbox.SetActive(false);
+        defaultCollider.SetActive(false);
+        openMouthCollider.SetActive(true);
         transform.position += movementVector * moveSpeed * Time.deltaTime * 6;
         if (transform.position.y > -2 && Mathf.Abs(transform.rotation.x) < 0.5f) {
             battleState = State.GoBackFromAttack;
@@ -118,6 +132,8 @@ public class PawMovement : MonoBehaviour {
 
     void GoBackFromAttack() {
         hitbox.SetActive(false);
+        defaultCollider.SetActive(false);
+        openMouthCollider.SetActive(true);
         transform.position += (-movementVector) * moveSpeed * Time.deltaTime*2;
         if (Mathf.Abs(transform.position.y) > 20) {
             battleState = State.TeleportBack;

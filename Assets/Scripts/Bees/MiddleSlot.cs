@@ -38,8 +38,6 @@ public class MiddleSlot : MonoBehaviour {
             if (collider.tag == "AIBee") {
                 Destroy(collider.gameObject);
                 GetComponent<Slot>().isOccupied = false;
-                GameManager.beeCount -= 1;
-                Debug.Log("Reduced Bee Count");
                 return true;
             }
         }
