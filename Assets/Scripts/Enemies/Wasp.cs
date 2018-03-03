@@ -12,6 +12,7 @@ public class Wasp : MonoBehaviour
     public float fireRate;
     public Transform enemyBullet;
     public float bulletOffset;
+    public float outOfScreenSpeed;
 
     [HideInInspector] public bool isAlive;
 
@@ -19,6 +20,7 @@ public class Wasp : MonoBehaviour
     private GameObject player;
     private float nextFire;
     private GameObject MainCamera;
+    private bool isHit = false;
 
     void Start() {
         this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
@@ -33,8 +35,13 @@ public class Wasp : MonoBehaviour
             Destroy(this.gameObject);
         }
         if (isAlive) {
-            if (transform.position.x - player.transform.position.x < detectionRange) {
-                ChasePlayer();
+            if (transform.position.x > player.transform.position.x) {
+                if (transform.position.x - player.transform.position.x < detectionRange) {
+                    ChasePlayer();
+                }
+            }
+            else {
+                transform.position += Vector3.left * outOfScreenSpeed * Time.deltaTime;
             }
             if (transform.position.x - player.transform.position.x < shootRange) {
                 Shoot();
@@ -42,6 +49,10 @@ public class Wasp : MonoBehaviour
             if (healthPoints <= 0 || transform.position.x <= MainCamera.GetComponent<MainCamera>().offset - 10f)
             {
                 Die();
+            }
+            if (isHit) {
+                GetComponent<Animator>().Play("wasp_hit");
+                StartCoroutine(StopHitAnimation());
             }
         }
         else {
@@ -55,6 +66,22 @@ public class Wasp : MonoBehaviour
         {
             otherCollider.GetComponent<PlayerBullet>().Die();
             healthPoints--;
+            isHit = true;
+            int soundNumber = Random.Range(0, 5);
+            switch (soundNumber) {
+                case 0:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("WaspHit1");
+                    break;
+                case 1:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("WaspHit2");
+                    break;
+                case 2:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("WaspHit3");
+                    break;
+                default:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("WaspHit4");
+                    break;
+            }
         }
         else if (otherCollider.tag == "PlayerMissile" && isAlive) {
             healthPoints--;
@@ -92,5 +119,10 @@ public class Wasp : MonoBehaviour
             }
         }
         return Wasps;
+    }
+
+    IEnumerator StopHitAnimation() {
+        yield return new WaitForSeconds(0.1f);
+        isHit = false;
     }
 }

@@ -11,21 +11,28 @@ public class OnClick : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene(GameManager.currentSceneNumber, LoadSceneMode.Single);
     }
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
-    }
-
-    public void Options()
-    {
-        //SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
     }
 
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void LevelSelect() {
+        SceneManager.LoadScene("Level Select", LoadSceneMode.Single);
+    }
+
+    public void MainLevel() {
+        SceneManager.LoadScene("Main Level", LoadSceneMode.Single);
+    }
+
+    public void BossFight() {
+        SceneManager.LoadScene("Boss Fight", LoadSceneMode.Single);
     }
 }

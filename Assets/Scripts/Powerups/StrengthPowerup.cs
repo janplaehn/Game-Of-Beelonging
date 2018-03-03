@@ -26,6 +26,7 @@ public class StrengthPowerup : MonoBehaviour {
         if (otherCollider.tag == "MainBee" && otherCollider.transform.GetComponent<MainBee>().isAlive) {
             otherCollider.gameObject.GetComponent<MainBee>().hasPowerup = true;
             otherCollider.gameObject.GetComponent<MainBee>().SetPowerupTimer(powerupTime);
+            GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("Trumpet1");
             Destroy(gameObject);
         }
     }

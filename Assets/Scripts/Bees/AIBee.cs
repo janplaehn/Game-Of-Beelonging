@@ -46,8 +46,7 @@ public class AIBee : MonoBehaviour {
             case State.Swarm:
                 Move();
                 Shoot();
-                if (Input.GetMouseButton(1) || isInBossFight) {
-                    fireRate *= 2;
+                if ((Input.GetMouseButton(1) || isInBossFight) && mainBee.GetComponent<MainBee>().isAlive) {
                     beeState = State.MoveToPlayer;
                 }
                 else if (!NextSlotOccupied()) {
@@ -59,7 +58,6 @@ public class AIBee : MonoBehaviour {
                 MoveToSlot();
                 Shoot();
                 if ((Input.GetMouseButton(1) || isInBossFight) && mainBee.GetComponent<MainBee>().isAlive) {
-                    fireRate /= 2;
                     beeState = State.MoveToPlayer;
                 }
                 if (transform.position == currentSlot.transform.position)
@@ -75,6 +73,9 @@ public class AIBee : MonoBehaviour {
             case State.MoveToPlayer:
                 MoveToPlayerSlot();
                 Shoot();
+                if (!NextSlotOccupied()) {
+                    beeState = State.MoveToSlot;
+                }
                 if ((!Input.GetMouseButton(1) && !isInBossFight) || !mainBee.GetComponent<MainBee>().isAlive) {
                     beeState = State.MoveToSlot;
                 }
@@ -131,7 +132,20 @@ public class AIBee : MonoBehaviour {
         currentSlot.GetComponent<Slot>().isOccupied = false;
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         GetComponent<Rigidbody2D>().gravityScale = 2.0f;
+        mainBee.GetComponent<MainBee>().MakeAIBeesInvincible();
         beeState = State.Die;
+        int soundNumber = Random.Range(0, 3);
+        switch (soundNumber) {
+            case 0:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("SwarmBeeDie1");
+                break;
+            case 1:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("SwarmBeeDie2");
+                break;
+            default:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("SwarmBeeDie3");
+                break;
+        }
     }
 
     void Shoot() {
@@ -194,10 +208,12 @@ public class AIBee : MonoBehaviour {
 
     void MoveToSlot() {
         transform.position = Vector3.MoveTowards(transform.position, currentSlot.position, moveSpeed * Time.deltaTime);
+        if (isInBossFight) {
+            transform.position = currentSlot.position;
+        }
     }
 
-    void MoveToPlayerSlot()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, currentSlot.GetComponent<Slot>().playerSlot.transform.position, moveSpeed * Time.deltaTime * 4);
+    void MoveToPlayerSlot() {
+        transform.position = Vector3.MoveTowards(transform.position, currentSlot.GetComponent<Slot>().playerSlot.transform.position, moveSpeed * Time.deltaTime * 2.8f);
     }
 }

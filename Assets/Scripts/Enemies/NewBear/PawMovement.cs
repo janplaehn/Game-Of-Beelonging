@@ -95,7 +95,7 @@ public class PawMovement : MonoBehaviour {
         }
         LookAtTarget();
         battleState = State.AttackSlow;
-        StartCoroutine(ChangeState(State.AttackFast, 1.5f));
+        StartCoroutine(ChangeState(State.AttackFast, 1.7f));
     }
 
     void TeleportBack() {
@@ -104,6 +104,11 @@ public class PawMovement : MonoBehaviour {
         ResetRotation();
         transform.position = targetPosition;
         battleState = State.Default;
+        if (bear.GetComponent<BearHead>().isWaspSpawningRequested) {
+            //TODO: Play mouth open animation
+            bear.GetComponent<BearHead>().SpawnWasp();
+            bear.GetComponent<BearHead>().isWaspSpawningRequested = false;
+        }
         hitbox.SetActive(true);
         defaultCollider.SetActive(true);
         openMouthCollider.SetActive(false);
@@ -120,7 +125,7 @@ public class PawMovement : MonoBehaviour {
         hitbox.SetActive(false);
         defaultCollider.SetActive(false);
         openMouthCollider.SetActive(true);
-        transform.position += movementVector * moveSpeed * Time.deltaTime * 6;
+        transform.position += movementVector * moveSpeed * Time.deltaTime * 8;
         if (transform.position.y > -2 && Mathf.Abs(transform.rotation.x) < 0.5f) {
             battleState = State.GoBackFromAttack;
         }
@@ -137,6 +142,9 @@ public class PawMovement : MonoBehaviour {
         transform.position += (-movementVector) * moveSpeed * Time.deltaTime*2;
         if (Mathf.Abs(transform.position.y) > 20) {
             battleState = State.TeleportBack;
+            hitbox.SetActive(true);
+            defaultCollider.SetActive(true);
+            openMouthCollider.SetActive(false);
             bear.GetComponent<BearHead>().mouthOpen = false;
         }
     }
@@ -169,7 +177,6 @@ public class PawMovement : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "AIBee" || collision.tag == "MainBee") {
-            Debug.Log("Hurt");
             battleState = State.GoBackFromAttack;
         }
         else if (collision.tag == "PlayerBullet" && collision.GetComponent<PlayerBullet>().isAlive) {

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BeeSwarmAdjust : MonoBehaviour {
 
@@ -6,6 +7,8 @@ public class BeeSwarmAdjust : MonoBehaviour {
     public bool isInBossFight = false;
 
 	void Start () {
+        GameManager.currentSceneNumber =  SceneManager.GetActiveScene().buildIndex;
+        GameManager.isInLevel = true;
         if (!GameManager.restoreBees) {
             if (GameManager.beeCount < 10) {
                 Destroy(GameObject.Find("AIBee"));

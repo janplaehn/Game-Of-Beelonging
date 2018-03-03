@@ -10,11 +10,14 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
     public static bool isCursorVisible;
     public static bool restoreBees = false;
+    public static int currentSceneNumber;
 
     private static GameObject mainCamera;
-    [ShowOnly] public static int beeCount = 9;
- 
-	void Awake () {
+    [ShowOnly] public static int beeCount = 10;
+    [ShowOnly] public static bool isInLevel;
+
+
+    void Awake () {
         if (instance == null) instance = this;
         else if (instance != this) Destroy(gameObject);
         DontDestroyOnLoad(this.gameObject);
@@ -30,8 +33,10 @@ public class GameManager : MonoBehaviour {
     }
 
     void Update () {
-        if (getAllBeesOnScreen() <= 0) {
+        if (getAllBeesOnScreen() <= 0 && isInLevel) {
             Exit();
+            restoreBees = true;
+            isInLevel = false;
         }
 	}
 

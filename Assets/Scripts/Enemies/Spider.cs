@@ -20,6 +20,7 @@ public class Spider : MonoBehaviour {
     private Direction moveDirection;
     private Vector2 startPosition;
     private GameObject MainCamera;
+    private bool isHit = false;
 
 
     void Start() {
@@ -50,6 +51,26 @@ public class Spider : MonoBehaviour {
         if (otherCollider.tag == "PlayerBullet" && isAlive) {
             Destroy(otherCollider.transform.root.gameObject);
             healthPoints--;
+            isHit = true;
+            StartCoroutine(StopHitAnimation());
+            int soundNumber = Random.Range(0, 5);
+            switch (soundNumber) {
+                case 0:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("SpiderHit1");
+                    break;
+                case 1:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("SpiderHit2");
+                    break;
+                case 2:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("SpiderHit3");
+                    break;
+                case 3:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("SpiderHit4");
+                    break;
+                default:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("SpiderHit5");
+                    break;
+            }
         }
         else if (otherCollider.tag == "PlayerMissile" && isAlive) {
             healthPoints--;
@@ -60,6 +81,21 @@ public class Spider : MonoBehaviour {
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         this.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
         isAlive = false;
+        int soundNumber = Random.Range(0, 4);
+        switch (soundNumber) {
+            case 0:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("SpiderDie1");
+                break;
+            case 1:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("SpiderDie2");
+                break;
+            case 2:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("SpiderDie3");
+                break;
+            default:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("SpiderDie4");
+                break;
+        }
     }
 
     void Move() {
@@ -69,10 +105,20 @@ public class Spider : MonoBehaviour {
                 if (transform.position.x - player.transform.position.x < shootRange) {
                     Shoot();
                 }
-                GetComponent<Animator>().Play("spider_shooting");
+                if (isHit) {
+                    GetComponent<Animator>().Play("spider_hit");
+                }
+                else {
+                    GetComponent<Animator>().Play("spider_shooting");
+                }
             }
             else {
-                GetComponent<Animator>().Play("spider_default");
+                if (isHit) {
+                    GetComponent<Animator>().Play("spider_hit");
+                }
+                else {
+                    GetComponent<Animator>().Play("spider_default");
+                }
                 transform.position = new Vector3(transform.position.x, transform.position.y + stringSpeed * Time.deltaTime, transform.position.z);
             }
         }
@@ -82,10 +128,20 @@ public class Spider : MonoBehaviour {
                 if (transform.position.x - player.transform.position.x < shootRange) {
                     Shoot();
                 }
-                GetComponent<Animator>().Play("spider_shooting");
+                if (isHit) {
+                    GetComponent<Animator>().Play("spider_hit");
+                }
+                else {
+                    GetComponent<Animator>().Play("spider_shooting");
+                }
             }
             else {
-                GetComponent<Animator>().Play("spider_default");
+                if (isHit) {
+                    GetComponent<Animator>().Play("spider_hit");
+                }
+                else {
+                    GetComponent<Animator>().Play("spider_default");
+                }
                 transform.position = new Vector3(transform.position.x, transform.position.y - stringSpeed * Time.deltaTime, transform.position.z);
             }
         }
@@ -94,6 +150,11 @@ public class Spider : MonoBehaviour {
     IEnumerator ChangeDirection(Direction dir) {
         yield return new WaitForSeconds(0.7f);
         moveDirection = dir;
+    }
+
+    IEnumerator StopHitAnimation() {
+        yield return new WaitForSeconds(0.1f);
+        isHit = false;
     }
 
     void Shoot() {

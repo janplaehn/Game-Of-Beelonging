@@ -14,6 +14,19 @@ public class PlayerMissile : MonoBehaviour {
 
         MainCamera = GameObject.Find("Main Camera");
         rightBoundary = MainCamera.GetComponent<MainCamera>().offset + 15f;
+
+        int soundNumber = Random.Range(0, 2);
+        switch (soundNumber) {
+            case 0:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BeeMissile1");
+                break;
+            case 1:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BeeMissile2");
+                break;
+            default:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BeeMissile1");
+                break;
+        }
     }
 
     void Update() {

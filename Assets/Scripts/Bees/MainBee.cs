@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MainBee : MonoBehaviour {
 
+    public GameObject SoundManager;
     public Transform PlayerBullet;
     public Transform PlayerMissile;
     public float bulletOffset;
@@ -62,6 +63,21 @@ public class MainBee : MonoBehaviour {
         }
         else {
             if (Time.time > nextFire) {
+                int soundNumber = Random.Range(0, 3);
+                switch (soundNumber) {
+                    case 0:
+                        SoundManager.GetComponent<SoundManager>().Play("BeeShoot1");
+                        break;
+                    case 1:
+                        SoundManager.GetComponent<SoundManager>().Play("BeeShoot2");
+                        break;
+                    case 2:
+                        SoundManager.GetComponent<SoundManager>().Play("BeeShoot3");
+                        break;
+                    default:
+                        SoundManager.GetComponent<SoundManager>().Play("BeeShoot1");
+                        break;
+                }
                 nextFire = Time.time + fireRate;
                 Instantiate(PlayerBullet, new Vector3(transform.position.x + bulletOffset, transform.position.y, transform.position.z), Quaternion.identity);
             }
@@ -108,6 +124,21 @@ public class MainBee : MonoBehaviour {
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         this.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
         isAlive = false;
+        int soundNumber = Random.Range(0, 3);
+        switch (soundNumber) {
+            case 0:
+                SoundManager.GetComponent<SoundManager>().Play("MainBeeDie1");
+                break;
+            case 1:
+                SoundManager.GetComponent<SoundManager>().Play("MainBeeDie2");
+                break;
+            case 2:
+                SoundManager.GetComponent<SoundManager>().Play("MainBeeDie3");
+                break;
+            default:
+                SoundManager.GetComponent<SoundManager>().Play("MainBeeDie1");
+                break;
+        }
         StartCoroutine(MakeInvincible());
     }
 
@@ -152,6 +183,10 @@ public class MainBee : MonoBehaviour {
         StartCoroutine(ResetPowerup(time));
     }
 
+    public void MakeAIBeesInvincible() {
+        StartCoroutine(MakeAIInvincible());
+    }
+
     IEnumerator MakeInvincible() {
         isInvincible = true;
         foreach (GameObject bee in GameObject.FindGameObjectsWithTag("AIBee")) {
@@ -159,6 +194,16 @@ public class MainBee : MonoBehaviour {
         }
         yield return new WaitForSeconds(2);
         isInvincible = false;
+        foreach (GameObject bee in GameObject.FindGameObjectsWithTag("AIBee")) {
+            bee.GetComponent<AIBee>().isInvincible = false;
+        }
+    }
+
+    IEnumerator MakeAIInvincible() {
+        foreach (GameObject bee in GameObject.FindGameObjectsWithTag("AIBee")) {
+            bee.GetComponent<AIBee>().isInvincible = true;
+        }
+        yield return new WaitForSeconds(2);
         foreach (GameObject bee in GameObject.FindGameObjectsWithTag("AIBee")) {
             bee.GetComponent<AIBee>().isInvincible = false;
         }

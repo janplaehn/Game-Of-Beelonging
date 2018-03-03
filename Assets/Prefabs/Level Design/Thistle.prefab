@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 212457702124465800}
   - component: {fileID: 50819931218552600}
   - component: {fileID: 58342498706734402}
+  - component: {fileID: 114350991144940074}
   m_Layer: 0
   m_Name: Thistle
   m_TagString: Thistle
@@ -167,6 +168,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.44}
   serializedVersion: 2
   m_Radius: 2.49
+--- !u!114 &114350991144940074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1845579713760880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0350b86e0098aeb44abe712df8bfdfb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212163048569972482
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerSlot : MonoBehaviour {
 
 
+    public GameObject nextSlot;
     private Vector3 rotationDirection;
     private Transform player;
 
