@@ -9,14 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 4832ee7b20b4885478500144d3dcc76e
   - enabled: 1
-    path: Assets/Scenes/DONT TOUCH! (JAN)/CODE_TEST_LEVEL_DONT_TOUCH.unity
-    guid: c76150dcf420f6e4e8ef2330618b7be1
+    path: Assets/Scenes/Level Select.unity
+    guid: f58dd730bdf26aa4f89f365fc3a64a15
   - enabled: 1
-    path: Assets/Scenes/Game Over Screen.unity
-    guid: 5579b1eff1a262e44ad612f16e88747f
+    path: Assets/Scenes/Tutorial.unity
+    guid: 1180c8c640236074fb8230d44880f96a
+  - enabled: 1
+    path: Assets/Scenes/Main level.unity
+    guid: b86e0a5655ab8f14c9bc6719b1592ebb
   - enabled: 1
     path: Assets/Scenes/Boss Fight.unity
     guid: 0766bb5b68c08a144bd7ecc43d3a4910
+  - enabled: 1
+    path: Assets/Scenes/Game Over Screen.unity
+    guid: 5579b1eff1a262e44ad612f16e88747f
   - enabled: 1
     path: Assets/Scenes/Win Screen.unity
     guid: a6436e03d9c3e77499f93469e37b8649

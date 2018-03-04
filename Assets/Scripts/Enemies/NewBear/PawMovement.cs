@@ -103,12 +103,7 @@ public class PawMovement : MonoBehaviour {
         defaultCollider.SetActive(false);
         ResetRotation();
         transform.position = targetPosition;
-        battleState = State.Default;
-        if (bear.GetComponent<BearHead>().isWaspSpawningRequested) {
-            //TODO: Play mouth open animation
-            bear.GetComponent<BearHead>().SpawnWasp();
-            bear.GetComponent<BearHead>().isWaspSpawningRequested = false;
-        }
+        battleState = State.Default;       
         hitbox.SetActive(true);
         defaultCollider.SetActive(true);
         openMouthCollider.SetActive(false);
@@ -187,5 +182,23 @@ public class PawMovement : MonoBehaviour {
     IEnumerator ChangeState(State state, float seconds) {
         yield return new WaitForSeconds(seconds);
         if (battleState == State.AttackSlow) battleState = state;
+        int soundNumber = Random.Range(0, 5);
+        switch (soundNumber) {
+            case 0:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearAttack1");
+                break;
+            case 1:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearAttack2");
+                break;
+            case 2:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearAttack3");
+                break;
+            case 3:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearAttack4");
+                break;
+            default:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearAttack5");
+                break;
+        }
     }
 }

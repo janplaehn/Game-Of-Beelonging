@@ -15,12 +15,12 @@ public class BearHead : MonoBehaviour {
     public bool mouthOpen;
     public bool isHit;
     public bool isEating;
+    public bool isOpeningMouth;
     public Transform wasp;
     public bool isWaspSpawningRequested;
 
 
 	void Start () {
-        StartCoroutine(DelayAttack(3f));
         mouthOpen = false;
         isHit = false;
     }
@@ -43,19 +43,20 @@ public class BearHead : MonoBehaviour {
         if (transform.position.x > 5) {
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
-        if (mouthOpen) {
+        if (isHit) {
+            GetComponent<Animator>().Play("bear_hit");
+        }
+        else if (isOpeningMouth) {
+            GetComponent<Animator>().Play("bear_openingmouth");
+        }
+        else if (isEating) {
+            GetComponent<Animator>().Play("bear_lick");
+        }   
+        else if (mouthOpen) {
             GetComponent<Animator>().Play("bear_openmouth");
         }
         else {
-            if (isHit) {
-                GetComponent<Animator>().Play("bear_hit");
-            }
-            else if (isEating) {
-                GetComponent<Animator>().Play("bear_eating");
-            }
-            else {
-                GetComponent<Animator>().Play("bear_default");
-            }
+            GetComponent<Animator>().Play("bear_default");
         }
     }
 
@@ -73,11 +74,52 @@ public class BearHead : MonoBehaviour {
 
     public void PlayHitAnimation() {
         isHit = true;
+        int soundNumber = Random.Range(0, 5);
+        switch (soundNumber) {
+            case 0:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearHit1");
+                break;
+            case 1:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearHit2");
+                break;
+            case 2:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearHit3");
+                break;
+            case 3:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearHit4");
+                break;
+            default:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearHit5");
+                break;
+        }
         StartCoroutine(AnimationBackToDefault());
     }
 
     public void PlayEatAnimation() {
+        int soundNumber = Random.Range(0, 5);
+        switch (soundNumber) {
+            case 0:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearEat1");
+                break;
+            case 1:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearEat2");
+                break;
+            case 2:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearEat3");
+                break;
+            case 3:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearEat4");
+                break;
+            default:
+                GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearEat5");
+                break;
+        }
         isEating = true;
+        StartCoroutine(AnimationBackToDefault());
+    }
+
+    public void PlayOpeningMouthAnimation() {
+        isOpeningMouth = true;
         StartCoroutine(AnimationBackToDefault());
     }
 
@@ -86,9 +128,32 @@ public class BearHead : MonoBehaviour {
     }
 
     IEnumerator AnimationBackToDefault() {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
+        if (isWaspSpawningRequested) {
+            isWaspSpawningRequested = false;
+            SpawnWasp();
+            int soundNumber = Random.Range(0, 5);
+            switch (soundNumber) {
+                case 0:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearCough1");
+                    break;
+                case 1:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearCough2");
+                    break;
+                case 2:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearCough3");
+                    break;
+                case 3:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearCough4");
+                    break;
+                default:
+                    GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("BearCough5");
+                    break;
+            }
+        }
         isHit = false;
         isEating = false;
+        isOpeningMouth = false;
     }
 
     IEnumerator LoadWinScreen() {
@@ -105,5 +170,6 @@ public class BearHead : MonoBehaviour {
     public IEnumerator DelayAttack(float time) {
         yield return new WaitForSeconds(time);
         Attack();
+        PlayOpeningMouthAnimation();
     }
 }

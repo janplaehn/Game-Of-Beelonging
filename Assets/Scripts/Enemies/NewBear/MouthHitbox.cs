@@ -21,8 +21,11 @@ public class MouthHitbox : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D otherCollider) {
         if (otherCollider.tag == "PlayerBullet") {
             Destroy(otherCollider.transform.root.gameObject);
-            //TODO: Play eating Animation
-            this.transform.root.GetComponent<BearHead>().isWaspSpawningRequested = true;
+            if (GameObject.FindGameObjectsWithTag("Wasp").Length == 0) {
+                this.transform.root.GetComponent<BearHead>().isWaspSpawningRequested = true;
+                this.transform.root.GetComponent<BearHead>().PlayEatAnimation();
+            }
+
         }
     }
 }

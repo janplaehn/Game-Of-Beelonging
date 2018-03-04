@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50255951007959062}
   - component: {fileID: 61241276333502814}
   - component: {fileID: 114163548273907650}
+  - component: {fileID: 95753535207081632}
   m_Layer: 0
   m_Name: Bee Power Up
   m_TagString: Untagged
@@ -53,8 +54,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1552155970308622}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.48, y: 1.25, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 34.72, y: 2.1303382, z: 0.65738404}
   m_LocalScale: {x: 0.3595378, y: 0.3595378, z: 0.3595378}
   m_Children:
   - {fileID: 4893376049005970}
@@ -119,6 +120,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.02, y: 2.5}
   m_EdgeRadius: 0
+--- !u!95 &95753535207081632
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1552155970308622}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb2e33f44bc9c884a88fd0e6c80aef9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114163548273907650
 MonoBehaviour:
   m_ObjectHideFlags: 1

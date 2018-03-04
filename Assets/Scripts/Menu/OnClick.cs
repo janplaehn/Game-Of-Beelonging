@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class OnClick : MonoBehaviour
 {
     public void BackToMenu() {
+        GameManager.isInLevel = false;
         SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
     }
 

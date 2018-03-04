@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MainBee : MonoBehaviour {
 
-    public GameObject SoundManager;
+    private GameObject SoundManager;
     public Transform PlayerBullet;
     public Transform PlayerMissile;
     public float bulletOffset;
@@ -25,6 +25,7 @@ public class MainBee : MonoBehaviour {
 
     void Start () {
         MainCamera = GameObject.Find("Main Camera");
+        SoundManager = GameObject.Find("_SoundManager");
         isAlive = true;
         isInEndSequence = false;
         cursor = GameObject.Find("Cursor");
