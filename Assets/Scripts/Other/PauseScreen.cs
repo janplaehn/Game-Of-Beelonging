@@ -26,7 +26,7 @@ public class PauseScreen : MonoBehaviour {
         }
     }
 
-    void Resume() {
+    public void Resume() {
         PauseUI.SetActive(false);
         cursorObject.SetActive(true);
         Time.timeScale = 1f;
