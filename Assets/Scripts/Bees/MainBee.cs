@@ -32,6 +32,9 @@ public class MainBee : MonoBehaviour {
     }
 	
 	void Update () {
+        if (Input.GetKeyDown(KeyCode.L)) {
+            Debug.Log("\n Marker set at x = " + transform.position.x + "\n Beecount: " + GameManager.beeCount);
+        }
         if (isInEndSequence) {
             MoveOutOfScreen();
         }

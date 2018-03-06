@@ -39,6 +39,11 @@ public class OnClick : MonoBehaviour
         SceneManager.LoadScene("Main Level", LoadSceneMode.Single);
     }
 
+    public void SpikeLevel() {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Spike Level", LoadSceneMode.Single);
+    }
+
     public void BossFight() {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Boss Fight", LoadSceneMode.Single);

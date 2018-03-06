@@ -16,10 +16,10 @@ public class RepeatingBackground : MonoBehaviour
 
     void Update() {
         if (Input.GetMouseButtonDown(1)) {
-            scrollSpeed *= 1.5f;
+            scrollSpeed *= 1.2f;
         }
         if (Input.GetMouseButtonUp(1)) {
-            scrollSpeed /= 1.5f;
+            scrollSpeed /= 1.2f;
         }
         transform.position = new Vector3(transform.position.x - scrollSpeed * Time.deltaTime + MainCamera.GetComponent<MainCamera>().speed * Time.deltaTime / 100, transform.position.y, transform.position.z);
         if (transform.position.x < MainCamera.GetComponent<MainCamera>().offset - tileSize) {

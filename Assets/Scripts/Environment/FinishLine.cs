@@ -23,12 +23,13 @@ public class FinishLine : MonoBehaviour {
 	void Update () {
         if (transform.position.x < MainCamera.transform.position.x + 8)
         {
-            MainCamera.GetComponent<MainCamera>().speed = 0;
-            Sky.GetComponent<RepeatingBackground>().scrollSpeed = 0;
-            Grass.GetComponent<RepeatingBackground>().scrollSpeed = 0;
             MainBee.GetComponent<MainBee>().isInEndSequence = true;
             foreach (GameObject go in GameObject.FindGameObjectsWithTag("AIBee")) {
-                go.GetComponent<AIBee>().isInBossFight = true;     
+                go.GetComponent<AIBee>().isInBossFight = true;
+            }
+            MainCamera.GetComponent<MainCamera>().speed = 0;
+            foreach (GameObject bg in GameObject.FindGameObjectsWithTag("Background")) {
+                bg.GetComponent<RepeatingBackground>().scrollSpeed = 0;
             }
         }	
 	}
