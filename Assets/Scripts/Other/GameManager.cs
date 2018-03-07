@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
     [ShowOnly] public static int beeCount = 10;
     [ShowOnly] public static bool isInLevel;
 
+    [HideInInspector] public enum Costumes {Default, Sombrero, Party}
+    [HideInInspector] public static Costumes costume = Costumes.Default;
 
     void Awake () {
         if (instance == null) instance = this;
@@ -63,5 +65,19 @@ public class GameManager : MonoBehaviour {
         }
         beeCount = AIBeeCount + mainbees.Length;
         return AIBeeCount + mainbees.Length;
+    }
+
+    public static void NextCostume() {
+        costume++;
+        if ((int)costume >= System.Enum.GetNames(typeof(Costumes)).Length) {
+            costume = 0;
+        }
+    }
+
+    public static void PreviousCostume() {
+        costume--;
+        if ((int)costume < 0) {
+            costume = (Costumes)System.Enum.GetNames(typeof(Costumes)).Length - 1;
+        }
     }
 }

@@ -9,14 +9,10 @@ public class FinishLine : MonoBehaviour {
     public bool restoreBees;
 
     private GameObject MainCamera;
-    private GameObject Sky;
-    private GameObject Grass;
     private GameObject MainBee;
 
     void Start () {
         MainCamera = GameObject.Find("Main Camera");
-        Sky = GameObject.Find("Sky");
-        Grass = GameObject.Find("Grass");
         MainBee = GameObject.Find("MainBee");
     }
 	

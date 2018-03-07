@@ -101,7 +101,11 @@ public class DragonFly : MonoBehaviour {
             transform.position = new Vector3(transform.position.x + backwardMoveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
             
         }
-        if (transform.position.x < MainCamera.transform.position.x + 8 && !isCharging) {
+        else if (transform.position.x < MainCamera.transform.position.x + 4 && transform.position.x > MainCamera.transform.position.x + positionThreshold) {
+            transform.position = new Vector3(transform.position.x + backwardMoveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
+            GetComponent<Animator>().Play("dragonfly_charge");
+        }
+        if (transform.position.x < MainCamera.transform.position.x + positionThreshold && !isCharging) {
             isCharging = true;
             int soundNumber = Random.Range(0, 4);
             switch (soundNumber) {
@@ -118,10 +122,6 @@ public class DragonFly : MonoBehaviour {
                     GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("DragonFlyAttack1");
                     break;
             }
-        }
-        else if (transform.position.x < MainCamera.transform.position.x + 4 && transform.position.x > MainCamera.transform.position.x + positionThreshold) {
-            transform.position = new Vector3(transform.position.x + backwardMoveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
-            GetComponent<Animator>().Play("dragonfly_charge");
         }
         if (transform.position.x < MainCamera.transform.position.x + positionThreshold) {
             transform.position = new Vector3(transform.position.x - forwardMoveSpeed* Time.deltaTime, transform.position.y, transform.position.z);

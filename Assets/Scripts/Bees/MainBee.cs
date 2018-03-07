@@ -164,11 +164,37 @@ public class MainBee : MonoBehaviour {
 
     void SetAnimation() {
         if (!isAlive) {
-            GetComponent<Animator>().Play("mainBee_death");
+            switch (GameManager.costume) {
+                case GameManager.Costumes.Default:
+                    GetComponent<Animator>().Play("mainBee_death");
+                    break;
+                case GameManager.Costumes.Sombrero:
+                    GetComponent<Animator>().Play("sombreroBee_death");
+                    break;
+                case GameManager.Costumes.Party:
+                    GetComponent<Animator>().Play("partyBee_death");
+                    break;
+                default:
+                    GetComponent<Animator>().Play("mainBee_death");
+                    break;
+            }      
         }
         else if (hasPowerup) {
             transform.localScale = new Vector3(0.4f, 0.4f, 1);
-            GetComponent<Animator>().Play("mainBee_bodybuilder");
+            switch (GameManager.costume) {
+                case GameManager.Costumes.Default:
+                    GetComponent<Animator>().Play("mainBee_bodybuilder");
+                    break;
+                case GameManager.Costumes.Sombrero:
+                    GetComponent<Animator>().Play("sombreroBee_bodybuilder");
+                    break;
+                case GameManager.Costumes.Party:
+                    GetComponent<Animator>().Play("partyBee_bodybuilder");
+                    break;
+                default:
+                    GetComponent<Animator>().Play("mainBee_bodybuilder");
+                    break;
+            }
         }
         else {
             if (isInvincible) {
@@ -177,7 +203,20 @@ public class MainBee : MonoBehaviour {
             }
             else {
                 transform.localScale = new Vector3(0.228f, 0.228f, 1);
-                GetComponent<Animator>().Play("mainBee_flying");
+                switch (GameManager.costume) {
+                    case GameManager.Costumes.Default:
+                        GetComponent<Animator>().Play("mainBee_flying");
+                        break;
+                    case GameManager.Costumes.Sombrero:
+                        GetComponent<Animator>().Play("sombreroBee_flying");
+                        break;
+                    case GameManager.Costumes.Party:
+                        GetComponent<Animator>().Play("partyBee_flying");
+                        break;
+                    default:
+                        GetComponent<Animator>().Play("mainBee_flying");
+                        break;
+                }
             }
             
         }

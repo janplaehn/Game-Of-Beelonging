@@ -39,6 +39,11 @@ public class OnClick : MonoBehaviour
         SceneManager.LoadScene("Main Level", LoadSceneMode.Single);
     }
 
+    public void Credits() {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+    }
+
     public void SpikeLevel() {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Spike Level", LoadSceneMode.Single);
@@ -47,6 +52,14 @@ public class OnClick : MonoBehaviour
     public void BossFight() {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Boss Fight", LoadSceneMode.Single);
+    }
+
+    public void NextCostume() {
+        GameManager.NextCostume();
+    }
+
+    public void PreviousCostume() {
+        GameManager.PreviousCostume();
     }
 
     public void Resume() {
