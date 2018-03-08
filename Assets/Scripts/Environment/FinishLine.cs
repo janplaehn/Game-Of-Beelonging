@@ -7,6 +7,7 @@ public class FinishLine : MonoBehaviour {
 
     public string nextSceneName;
     public bool restoreBees;
+    public int levelNumber;
 
     private GameObject MainCamera;
     private GameObject MainBee;
@@ -35,6 +36,12 @@ public class FinishLine : MonoBehaviour {
             if (restoreBees) {
                 GameManager.restoreBees = true;
             }
+            if (levelNumber > GameManager.unlockedLevelNumber) {
+                GameManager.unlockedLevelNumber = levelNumber;
+                PlayerPrefs.SetInt("unlockedLevelNumber", GameManager.unlockedLevelNumber);
+            }
+            GameManager.ToggleCursorVisibility(true);
+            GameManager.isInLevel = false;
             SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
         }
     }

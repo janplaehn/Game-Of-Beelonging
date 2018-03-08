@@ -65,4 +65,8 @@ public class OnClick : MonoBehaviour
     public void Resume() {
         GameObject.Find("_PauseController").GetComponent<PauseScreen>().Resume();
     }
+
+    public void ResetData() {
+        PlayerPrefs.DeleteAll();
+    }
 }

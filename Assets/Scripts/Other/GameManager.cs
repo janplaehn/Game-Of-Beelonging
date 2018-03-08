@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-
+    public bool isGameCursorVisible;
     
     public static GameManager instance = null;
     public static bool isCursorVisible;
     public static bool restoreBees = false;
     public static int currentSceneNumber;
+    public static int unlockedLevelNumber;
 
     private static GameObject mainCamera;
     [ShowOnly] public static int beeCount = 10;
@@ -18,20 +19,42 @@ public class GameManager : MonoBehaviour {
 
     [HideInInspector] public enum Costumes {Default, Sombrero, Party}
     [HideInInspector] public static Costumes costume = Costumes.Default;
+    public static float isSombreroUnlocked;
+    public static float isPartyhatUnlocked;
 
     void Awake () {
         if (instance == null) instance = this;
         else if (instance != this) Destroy(gameObject);
         DontDestroyOnLoad(this.gameObject);
 
-        Cursor.visible = isCursorVisible;
-        Cursor.lockState = CursorLockMode.Confined;
-        mainCamera = GameObject.Find("Main Camera");
+        unlockedLevelNumber = PlayerPrefs.GetInt("unlockedLevelNumber", 0);
+        isSombreroUnlocked = PlayerPrefs.GetInt("isSombreroUnlocked", 0);
+        isPartyhatUnlocked = PlayerPrefs.GetInt("isPartyhatUnlocked", 0);
     }
 
     private void Start() {
+        isCursorVisible = isGameCursorVisible;
+        Cursor.visible = isCursorVisible;
+        Cursor.lockState = CursorLockMode.Confined;
         mainCamera = GameObject.Find("Main Camera");
         getAllBeesOnScreen();
+
+        switch (costume) {
+            case Costumes.Default:
+                break;
+            case Costumes.Sombrero:
+                if (isSombreroUnlocked == 0) {
+                    costume = Costumes.Default;
+                }
+                break;
+            case Costumes.Party:
+                if (isPartyhatUnlocked == 0) {
+                    costume = Costumes.Default;
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     void Update () {

@@ -6,7 +6,6 @@ public class WardrobeBee : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -14,12 +13,25 @@ public class WardrobeBee : MonoBehaviour {
         switch (GameManager.costume) {
             case GameManager.Costumes.Default:
                 GetComponent<Animator>().Play("wardrobe_default");
+                GetComponent<Renderer>().material.color = Color.white;
                 break;
             case GameManager.Costumes.Sombrero:
                 GetComponent<Animator>().Play("wardrobe_sombrero");
+                if (GameManager.isSombreroUnlocked != 0) {
+                    GetComponent<Renderer>().material.color = Color.white;
+                }
+                else {
+                    GetComponent<Renderer>().material.color = Color.black;
+                }
                 break;
             case GameManager.Costumes.Party:
                 GetComponent<Animator>().Play("wardrobe_party");
+                if (GameManager.isPartyhatUnlocked != 0) {
+                    GetComponent<Renderer>().material.color = Color.white;
+                }
+                else {
+                    GetComponent<Renderer>().material.color = Color.black;
+                }
                 break;
             default:
                 break;
