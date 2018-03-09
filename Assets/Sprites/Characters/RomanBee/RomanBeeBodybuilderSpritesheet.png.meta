@@ -1,12 +1,15 @@
 fileFormatVersion: 2
-guid: 3e0d1d381effb684d8995ca37fa7986f
-timeCreated: 1520623409
+guid: 0f88192494c0efe4fbb4a57d5a9606d0
+timeCreated: 1520624522
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: TryAgainAnimationSpriteSheet_0
-    21300002: TryAgainAnimationSpriteSheet_1
-    21300004: TryAgainAnimationSpriteSheet_2
+    21300000: RomanBeeBodybuilderSpritesheet_0
+    21300002: RomanBeeBodybuilderSpritesheet_1
+    21300004: RomanBeeBodybuilderSpritesheet_2
+    21300006: RomanBeeBodybuilderSpritesheet_3
+    21300008: RomanBeeBodybuilderSpritesheet_4
+    21300010: RomanBeeBodybuilderSpritesheet_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -103,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TryAgainAnimationSpriteSheet_0
+      name: RomanBeeBodybuilderSpritesheet_0
       rect:
         serializedVersion: 2
-        x: 355
-        y: 1376
-        width: 1353
-        height: 337
+        x: 0
+        y: 592
+        width: 562
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,13 +120,69 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TryAgainAnimationSpriteSheet_2
+      name: RomanBeeBodybuilderSpritesheet_1
       rect:
         serializedVersion: 2
-        x: 300
-        y: 364
-        width: 1456
-        height: 365
+        x: 562
+        y: 592
+        width: 562
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: RomanBeeBodybuilderSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 592
+        width: 562
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: RomanBeeBodybuilderSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 562
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: RomanBeeBodybuilderSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 0
+        width: 562
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: RomanBeeBodybuilderSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 0
+        width: 562
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

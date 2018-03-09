@@ -30,14 +30,6 @@ public class GameManager : MonoBehaviour {
         unlockedLevelNumber = PlayerPrefs.GetInt("unlockedLevelNumber", 0);
         isSombreroUnlocked = PlayerPrefs.GetInt("isSombreroUnlocked", 0);
         isPartyhatUnlocked = PlayerPrefs.GetInt("isPartyhatUnlocked", 0);
-    }
-
-    private void Start() {
-        isCursorVisible = isGameCursorVisible;
-        Cursor.visible = isCursorVisible;
-        Cursor.lockState = CursorLockMode.Confined;
-        mainCamera = GameObject.Find("Main Camera");
-        getAllBeesOnScreen();
 
         switch (costume) {
             case Costumes.Default:
@@ -55,6 +47,14 @@ public class GameManager : MonoBehaviour {
             default:
                 break;
         }
+    }
+
+    private void Start() {
+        isCursorVisible = isGameCursorVisible;
+        Cursor.visible = isCursorVisible;
+        Cursor.lockState = CursorLockMode.Confined;
+        mainCamera = GameObject.Find("Main Camera");
+        getAllBeesOnScreen();
     }
 
     void Update () {

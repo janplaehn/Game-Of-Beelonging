@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: 3e0d1d381effb684d8995ca37fa7986f
-timeCreated: 1520623409
+guid: ca78e69b874f0a74aacdf44e05faf72a
+timeCreated: 1520624501
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: TryAgainAnimationSpriteSheet_0
-    21300002: TryAgainAnimationSpriteSheet_1
-    21300004: TryAgainAnimationSpriteSheet_2
+    21300000: BeeRoman_0
+    21300002: BeeRoman_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -103,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TryAgainAnimationSpriteSheet_0
+      name: BeeRoman_0
       rect:
         serializedVersion: 2
-        x: 355
-        y: 1376
-        width: 1353
-        height: 337
+        x: 0
+        y: 354
+        width: 456
+        height: 354
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,13 +116,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TryAgainAnimationSpriteSheet_2
+      name: BeeRoman_1
       rect:
         serializedVersion: 2
-        x: 300
-        y: 364
-        width: 1456
-        height: 365
+        x: 0
+        y: 0
+        width: 456
+        height: 354
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -1134,7 +1134,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4694162301702380, guid: ab2528d3390d0344ead588da34bb1e1b, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 212357960817016090, guid: ab2528d3390d0344ead588da34bb1e1b,
         type: 2}
@@ -1224,7 +1224,7 @@ Prefab:
         type: 2}
       propertyPath: SoundManager
       value: 
-      objectReference: {fileID: 1843465389}
+      objectReference: {fileID: 0}
     - target: {fileID: 4533193444183044, guid: 12103f99004734445b8a67c65ce87aff, type: 2}
       propertyPath: m_RootOrder
       value: 5
@@ -2378,6 +2378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff4832e812f1a141ad1a464f8097e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameCursorVisible: 0
 --- !u!1 &988644200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,7 +2804,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1445718066}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1208836653
 AudioSource:
@@ -3286,9 +3287,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 868880002}
-  - {fileID: 1843465391}
   - {fileID: 1208836652}
   - {fileID: 186271639}
+  - {fileID: 2145064500}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4294,489 +4295,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 818cfdc3dbd0daf4ab2fd2f6329bfcf5, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1843465389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1843465391}
-  - component: {fileID: 1843465390}
-  m_Layer: 0
-  m_Name: _SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1843465390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1843465389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6694e97937e21a44a1b3ed78c499234, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixerGroup: {fileID: 0}
-  sounds:
-  - name: BeeShoot1
-    clip: {fileID: 8300000, guid: 202bb0deafeb15b46828c4f5d9906a93, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeeShoot2
-    clip: {fileID: 8300000, guid: 52cc8046954121242ab7bb1b4423f454, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeeShoot3
-    clip: {fileID: 8300000, guid: 4ea1a879ead7c444d81f7b58ae5cae01, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: Cheer1
-    clip: {fileID: 8300000, guid: ca8b9d3c088bf4543bc7423638965514, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: Cheer2
-    clip: {fileID: 8300000, guid: 06419ea07bb3a004e806b381a4195cd4, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: Cheer3
-    clip: {fileID: 8300000, guid: 8968d3854dccc094b8660da2091e91eb, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeetleDie1
-    clip: {fileID: 8300000, guid: d7d85debcb16bf340a1abaffdb28844c, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeetleDie2
-    clip: {fileID: 8300000, guid: a37f188cac337344fab16502432d5b77, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeetleDie3
-    clip: {fileID: 8300000, guid: 7613bfdcd0552264c828aca3f97e7dd3, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeetleDie4
-    clip: {fileID: 8300000, guid: ac04ee0f6cec1be4fb1deb1ce7164d12, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeetleDie5
-    clip: {fileID: 8300000, guid: 0dd8d79402e03554fafb6d04d73a66a9, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeetleHit1
-    clip: {fileID: 8300000, guid: 745706a7a29c26e4f89c1d967d5c9dfb, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeetleHit2
-    clip: {fileID: 8300000, guid: ddca2ccd15860634d9c2b1c8f28cc5f0, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeetleHit3
-    clip: {fileID: 8300000, guid: a1108c8dec81abf419e49baa78fd506c, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeetleHit4
-    clip: {fileID: 8300000, guid: 57e7b60e352f4e74b9fc1982a6514910, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeetleHit5
-    clip: {fileID: 8300000, guid: bea7ba1b215e7c44eb86e77290f46e8e, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeetleHit6
-    clip: {fileID: 8300000, guid: 07bf01ff5f4242740a32e1b5c0b8c98c, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: MainBeeDie1
-    clip: {fileID: 8300000, guid: 3900a4802b9c44d459d91a216a013704, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: MainBeeDie2
-    clip: {fileID: 8300000, guid: fdd9ba92ed5c84c40937af6f64ffa457, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: MainBeeDie3
-    clip: {fileID: 8300000, guid: 88755ac28e2fd6148ac98d5d040041e6, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyAttack1
-    clip: {fileID: 8300000, guid: 433155558b9453242939973bace49887, type: 3}
-    volume: 0.6
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyAttack2
-    clip: {fileID: 8300000, guid: 76b93e75c3416154bbcf127cf057ac7d, type: 3}
-    volume: 0.6
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyAttack3
-    clip: {fileID: 8300000, guid: 217521e8ba0d7a54a8a3d626f6ce11e1, type: 3}
-    volume: 0.6
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyDie1
-    clip: {fileID: 8300000, guid: 9a35e3ca1c0bbd84fa39ec50f6eec8cf, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyDie2
-    clip: {fileID: 8300000, guid: 4220133b43c36d549ab306c63f86941d, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyDie3
-    clip: {fileID: 8300000, guid: ad575136fca1e7449a4598e295453f50, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyDie4
-    clip: {fileID: 8300000, guid: afd09267d13b3dc47b4114c01cfc0df4, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyDie5
-    clip: {fileID: 8300000, guid: 98f1ed8db8e4b2646b16890a27e30e07, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyHit1
-    clip: {fileID: 8300000, guid: db8b926f662b49a45b40961d2c099040, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyHit2
-    clip: {fileID: 8300000, guid: 0165ba365d741d04996bf72f21eb8955, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyHit3
-    clip: {fileID: 8300000, guid: e7f3e07d58fe7384eb076ef3b77e2c04, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyHit4
-    clip: {fileID: 8300000, guid: 7f976623c08fcc34cadabd399923b6ce, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: DragonFlyHit5
-    clip: {fileID: 8300000, guid: 7cd5a093513b06f4bae7525ca5296199, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeeMissile1
-    clip: {fileID: 8300000, guid: 522cb31159184fd42a544327f79f898b, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BeeMissile2
-    clip: {fileID: 8300000, guid: 8c37d589b65845641b3b8202c79227e5, type: 3}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: SpiderDie1
-    clip: {fileID: 8300000, guid: a5719990535f80545b0b3baa6059529a, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: SpiderDie2
-    clip: {fileID: 8300000, guid: bacc6f9adfedf494291ce63e39faac67, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: SpiderDie3
-    clip: {fileID: 8300000, guid: 73e64215d4e22794e99e54e39393b81f, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: SpiderDie4
-    clip: {fileID: 8300000, guid: 2edf679fb49a57147bb48553dd876547, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: SpiderHit1
-    clip: {fileID: 8300000, guid: a40624092a25d8a46976f4428ff7a69e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: SpiderHit2
-    clip: {fileID: 8300000, guid: f5c51f2e9e4712d4dab5c3b324ad2725, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: SpiderHit3
-    clip: {fileID: 8300000, guid: b2a9cde22d183fa428743a360b06fc74, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: SpiderHit4
-    clip: {fileID: 8300000, guid: a44a4589382ac1943a6fd49ac60d00cc, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: SpiderHit5
-    clip: {fileID: 8300000, guid: be16384cfea3bd542ac4ef710e31f791, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: FlyDie1
-    clip: {fileID: 8300000, guid: ed12d17c80f7c2b43bcad34cc920a05d, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: FlyDie2
-    clip: {fileID: 8300000, guid: 64cd64eb99d6f5c438777558691be323, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: FlyDie3
-    clip: {fileID: 8300000, guid: bb52c95280181dd49a99a28fa3633603, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: FlyDie4
-    clip: {fileID: 8300000, guid: 6db881b5d1ba49b41a629895baf69e2e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: FlyDie5
-    clip: {fileID: 8300000, guid: f6ba4b2273d01254d8c3d61e64a16461, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: Trumpet1
-    clip: {fileID: 8300000, guid: ba34223633fc6d347b28d40dffa94fd8, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: Trumpet2
-    clip: {fileID: 8300000, guid: 5569a105a093f704490b59d0732e96f8, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: SwarmBeeDie1
-    clip: {fileID: 8300000, guid: 6ca40ab4907a2c140b0d9fae75732de9, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: SwarmBeeDie2
-    clip: {fileID: 8300000, guid: 8eab1ec2e364a7c4286a92497afe1d56, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: SwarmBeeDie3
-    clip: {fileID: 8300000, guid: 0d50cdd5742284c4cabd8de668a117c8, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: WaspHit1
-    clip: {fileID: 8300000, guid: 53e289c31c1b8794cb9bb750a5ba2c99, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: WaspHit2
-    clip: {fileID: 8300000, guid: a4cec5bebf0775b428756ec40ea252da, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: WaspHit3
-    clip: {fileID: 8300000, guid: 4c8bbc54646fd0449b3c268f168a53f9, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: WaspHit4
-    clip: {fileID: 8300000, guid: 4d91ad44f83e76343800ca4edd9a3f19, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: WaspHit5
-    clip: {fileID: 8300000, guid: 6c211bfb155034c47b7dc4ab1695f4bf, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: WaspDie1
-    clip: {fileID: 8300000, guid: 6c83d2d4df776a24c92fc548d2be632d, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: WaspDie2
-    clip: {fileID: 8300000, guid: b67bd914186148247ba3b034f07c6cf5, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: WaspDie3
-    clip: {fileID: 8300000, guid: cc2187b3f4edd174bbbd74bbf7d8e805, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: WaspDie4
-    clip: {fileID: 8300000, guid: ba32abe143e8c0f499d62ef255bb5273, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
---- !u!4 &1843465391
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1843465389}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
-  m_LocalScale: {x: 0.228, y: 0.228, z: 1.14}
-  m_Children: []
-  m_Father: {fileID: 1445718066}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1848344760
 Prefab:
   m_ObjectHideFlags: 0
@@ -5453,3 +4971,486 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &2145064498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2145064500}
+  - component: {fileID: 2145064499}
+  m_Layer: 0
+  m_Name: _SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2145064499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2145064498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6694e97937e21a44a1b3ed78c499234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  sounds:
+  - name: BeeShoot1
+    clip: {fileID: 8300000, guid: 202bb0deafeb15b46828c4f5d9906a93, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeeShoot2
+    clip: {fileID: 8300000, guid: 52cc8046954121242ab7bb1b4423f454, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeeShoot3
+    clip: {fileID: 8300000, guid: 4ea1a879ead7c444d81f7b58ae5cae01, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Cheer1
+    clip: {fileID: 8300000, guid: ca8b9d3c088bf4543bc7423638965514, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Cheer2
+    clip: {fileID: 8300000, guid: 06419ea07bb3a004e806b381a4195cd4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Cheer3
+    clip: {fileID: 8300000, guid: 8968d3854dccc094b8660da2091e91eb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeetleDie1
+    clip: {fileID: 8300000, guid: d7d85debcb16bf340a1abaffdb28844c, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeetleDie2
+    clip: {fileID: 8300000, guid: a37f188cac337344fab16502432d5b77, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeetleDie3
+    clip: {fileID: 8300000, guid: 7613bfdcd0552264c828aca3f97e7dd3, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeetleDie4
+    clip: {fileID: 8300000, guid: ac04ee0f6cec1be4fb1deb1ce7164d12, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeetleDie5
+    clip: {fileID: 8300000, guid: 0dd8d79402e03554fafb6d04d73a66a9, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeetleHit1
+    clip: {fileID: 8300000, guid: 745706a7a29c26e4f89c1d967d5c9dfb, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeetleHit2
+    clip: {fileID: 8300000, guid: ddca2ccd15860634d9c2b1c8f28cc5f0, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeetleHit3
+    clip: {fileID: 8300000, guid: a1108c8dec81abf419e49baa78fd506c, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeetleHit4
+    clip: {fileID: 8300000, guid: 57e7b60e352f4e74b9fc1982a6514910, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeetleHit5
+    clip: {fileID: 8300000, guid: bea7ba1b215e7c44eb86e77290f46e8e, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeetleHit6
+    clip: {fileID: 8300000, guid: 07bf01ff5f4242740a32e1b5c0b8c98c, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: MainBeeDie1
+    clip: {fileID: 8300000, guid: f214f9c6c5afc2546a8aa7f768c209cc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: MainBeeDie2
+    clip: {fileID: 8300000, guid: 0094182e05225824bace39948004c486, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: MainBeeDie3
+    clip: {fileID: 8300000, guid: bed10fb6d8c011f4890b5ddc4cfa41c3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyAttack1
+    clip: {fileID: 8300000, guid: 433155558b9453242939973bace49887, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyAttack2
+    clip: {fileID: 8300000, guid: 76b93e75c3416154bbcf127cf057ac7d, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyAttack3
+    clip: {fileID: 8300000, guid: 217521e8ba0d7a54a8a3d626f6ce11e1, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyDie1
+    clip: {fileID: 8300000, guid: 9a35e3ca1c0bbd84fa39ec50f6eec8cf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyDie2
+    clip: {fileID: 8300000, guid: 4220133b43c36d549ab306c63f86941d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyDie3
+    clip: {fileID: 8300000, guid: ad575136fca1e7449a4598e295453f50, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyDie4
+    clip: {fileID: 8300000, guid: afd09267d13b3dc47b4114c01cfc0df4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyDie5
+    clip: {fileID: 8300000, guid: 98f1ed8db8e4b2646b16890a27e30e07, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyHit1
+    clip: {fileID: 8300000, guid: db8b926f662b49a45b40961d2c099040, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyHit2
+    clip: {fileID: 8300000, guid: 0165ba365d741d04996bf72f21eb8955, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyHit3
+    clip: {fileID: 8300000, guid: e7f3e07d58fe7384eb076ef3b77e2c04, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyHit4
+    clip: {fileID: 8300000, guid: 7f976623c08fcc34cadabd399923b6ce, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DragonFlyHit5
+    clip: {fileID: 8300000, guid: 7cd5a093513b06f4bae7525ca5296199, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeeMissile1
+    clip: {fileID: 8300000, guid: 93d506fb2416afe499d1566d6ad8a6e5, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BeeMissile2
+    clip: {fileID: 8300000, guid: 86a414273a701894e8947b32e114cc20, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SpiderDie1
+    clip: {fileID: 8300000, guid: a5719990535f80545b0b3baa6059529a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SpiderDie2
+    clip: {fileID: 8300000, guid: bacc6f9adfedf494291ce63e39faac67, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SpiderDie3
+    clip: {fileID: 8300000, guid: 73e64215d4e22794e99e54e39393b81f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SpiderDie4
+    clip: {fileID: 8300000, guid: 2edf679fb49a57147bb48553dd876547, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SpiderHit1
+    clip: {fileID: 8300000, guid: a40624092a25d8a46976f4428ff7a69e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SpiderHit2
+    clip: {fileID: 8300000, guid: f5c51f2e9e4712d4dab5c3b324ad2725, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SpiderHit3
+    clip: {fileID: 8300000, guid: b2a9cde22d183fa428743a360b06fc74, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SpiderHit4
+    clip: {fileID: 8300000, guid: a44a4589382ac1943a6fd49ac60d00cc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SpiderHit5
+    clip: {fileID: 8300000, guid: be16384cfea3bd542ac4ef710e31f791, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: FlyDie1
+    clip: {fileID: 8300000, guid: 7e70bbe10385b97448c91a83f16e2cb6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: FlyDie2
+    clip: {fileID: 8300000, guid: b5eb113e544a6d346ad4586fca48ca3e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: FlyDie3
+    clip: {fileID: 8300000, guid: bca452cee7bd3ea479282c9c1e11cbf2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: FlyDie4
+    clip: {fileID: 8300000, guid: 47ca7789bf7f70846af489301c242202, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: FlyDie5
+    clip: {fileID: 8300000, guid: b9c45286800250f45b9929eaa44df477, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Trumpet1
+    clip: {fileID: 8300000, guid: 8d9c091f05b7b004593de33dbe7a1aac, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Trumpet2
+    clip: {fileID: 8300000, guid: 47412c4c2cedbe64e847648c3fa5d76f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SwarmBeeDie1
+    clip: {fileID: 8300000, guid: 6ca40ab4907a2c140b0d9fae75732de9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SwarmBeeDie2
+    clip: {fileID: 8300000, guid: 8eab1ec2e364a7c4286a92497afe1d56, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SwarmBeeDie3
+    clip: {fileID: 8300000, guid: 0d50cdd5742284c4cabd8de668a117c8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WaspHit1
+    clip: {fileID: 8300000, guid: 53e289c31c1b8794cb9bb750a5ba2c99, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WaspHit2
+    clip: {fileID: 8300000, guid: a4cec5bebf0775b428756ec40ea252da, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WaspHit3
+    clip: {fileID: 8300000, guid: 4c8bbc54646fd0449b3c268f168a53f9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WaspHit4
+    clip: {fileID: 8300000, guid: 4d91ad44f83e76343800ca4edd9a3f19, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WaspHit5
+    clip: {fileID: 8300000, guid: 6c211bfb155034c47b7dc4ab1695f4bf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WaspDie1
+    clip: {fileID: 8300000, guid: 6c83d2d4df776a24c92fc548d2be632d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WaspDie2
+    clip: {fileID: 8300000, guid: b67bd914186148247ba3b034f07c6cf5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WaspDie3
+    clip: {fileID: 8300000, guid: cc2187b3f4edd174bbbd74bbf7d8e805, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WaspDie4
+    clip: {fileID: 8300000, guid: ba32abe143e8c0f499d62ef255bb5273, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+--- !u!4 &2145064500
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2145064498}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalScale: {x: 0.228, y: 0.228, z: 1.14}
+  m_Children: []
+  m_Father: {fileID: 1445718066}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

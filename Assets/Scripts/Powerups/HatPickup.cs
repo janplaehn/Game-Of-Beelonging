@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HatPickup : MonoBehaviour {
 
+    public GameObject unlockCanvas;
+
     public GameManager.Costumes hatType;
 
 	void Start () {
@@ -46,6 +48,8 @@ public class HatPickup : MonoBehaviour {
                     break;
             }
             GameObject.Find("_SoundManager").GetComponent<SoundManager>().Play("Trumpet1");
+            unlockCanvas.SetActive(true);
+            unlockCanvas.GetComponent<HatUnlockUI>().DisableAfterSecond();
             Destroy(gameObject);
         }
     }

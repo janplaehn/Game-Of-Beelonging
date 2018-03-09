@@ -3958,14 +3958,14 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: BeeMissile1
-    clip: {fileID: 8300000, guid: 522cb31159184fd42a544327f79f898b, type: 3}
+    clip: {fileID: 8300000, guid: 93d506fb2416afe499d1566d6ad8a6e5, type: 3}
     volume: 0.7
     pitch: 1
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: BeeMissile2
-    clip: {fileID: 8300000, guid: 8c37d589b65845641b3b8202c79227e5, type: 3}
+    clip: {fileID: 8300000, guid: 86a414273a701894e8947b32e114cc20, type: 3}
     volume: 0.7
     pitch: 1
     loop: 0
@@ -4070,14 +4070,14 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Trumpet1
-    clip: {fileID: 8300000, guid: ba34223633fc6d347b28d40dffa94fd8, type: 3}
+    clip: {fileID: 8300000, guid: 8d9c091f05b7b004593de33dbe7a1aac, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Trumpet2
-    clip: {fileID: 8300000, guid: 5569a105a093f704490b59d0732e96f8, type: 3}
+    clip: {fileID: 8300000, guid: 47412c4c2cedbe64e847648c3fa5d76f, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -7223,6 +7223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff4832e812f1a141ad1a464f8097e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameCursorVisible: 0
 --- !u!4 &1165246955
 Transform:
   m_ObjectHideFlags: 0

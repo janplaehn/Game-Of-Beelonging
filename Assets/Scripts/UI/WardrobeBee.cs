@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WardrobeBee : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -21,7 +22,7 @@ public class WardrobeBee : MonoBehaviour {
                     GetComponent<Renderer>().material.color = Color.white;
                 }
                 else {
-                    GetComponent<Renderer>().material.color = Color.black;
+                    GetComponent<Renderer>().material.color = new Color(0.02f, 0.02f, 0.02f, 1);
                 }
                 break;
             case GameManager.Costumes.Party:
@@ -30,7 +31,7 @@ public class WardrobeBee : MonoBehaviour {
                     GetComponent<Renderer>().material.color = Color.white;
                 }
                 else {
-                    GetComponent<Renderer>().material.color = Color.black;
+                    GetComponent<Renderer>().material.color = new Color(0.02f, 0.02f, 0.02f, 1);
                 }
                 break;
             default:

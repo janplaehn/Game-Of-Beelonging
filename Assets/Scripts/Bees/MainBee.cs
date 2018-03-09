@@ -22,6 +22,9 @@ public class MainBee : MonoBehaviour {
     private Vector2 newPosition;
     private GameObject cursor;
     
+    void Awake() {
+        GameManager.beeCount = 9;
+    }
 
     void Start () {
         MainCamera = GameObject.Find("Main Camera");
@@ -29,6 +32,8 @@ public class MainBee : MonoBehaviour {
         isAlive = true;
         isInEndSequence = false;
         cursor = GameObject.Find("Cursor");
+        GameManager.beeCount = 9;
+        GameManager.ToggleCursorVisibility(false);
     }
 	
 	void Update () {
