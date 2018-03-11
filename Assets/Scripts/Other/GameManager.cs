@@ -17,10 +17,13 @@ public class GameManager : MonoBehaviour {
     [ShowOnly] public static int beeCount = 10;
     [ShowOnly] public static bool isInLevel;
 
-    [HideInInspector] public enum Costumes {Default, Sombrero, Party}
+    [HideInInspector] public enum Costumes {Default, Gangster, Sombrero, Party, Roman, King}
     [HideInInspector] public static Costumes costume = Costumes.Default;
     public static float isSombreroUnlocked;
     public static float isPartyhatUnlocked;
+    public static float isRomanhatUnlocked;
+    public static float isKinghatUnlocked;
+    public static float isGangsterhatUnlocked;
 
     void Awake () {
         if (instance == null) instance = this;
@@ -30,6 +33,9 @@ public class GameManager : MonoBehaviour {
         unlockedLevelNumber = PlayerPrefs.GetInt("unlockedLevelNumber", 0);
         isSombreroUnlocked = PlayerPrefs.GetInt("isSombreroUnlocked", 0);
         isPartyhatUnlocked = PlayerPrefs.GetInt("isPartyhatUnlocked", 0);
+        isRomanhatUnlocked = PlayerPrefs.GetInt("isRomanhatUnlocked", 0);
+        isKinghatUnlocked = PlayerPrefs.GetInt("isKinghatUnlocked", 0);
+        isGangsterhatUnlocked = PlayerPrefs.GetInt("isGangsterhatUnlocked", 0);
 
         switch (costume) {
             case Costumes.Default:
@@ -40,6 +46,21 @@ public class GameManager : MonoBehaviour {
                 }
                 break;
             case Costumes.Party:
+                if (isPartyhatUnlocked == 0) {
+                    costume = Costumes.Default;
+                }
+                break;
+            case Costumes.Roman:
+                if (isPartyhatUnlocked == 0) {
+                    costume = Costumes.Default;
+                }
+                break;
+            case Costumes.King:
+                if (isPartyhatUnlocked == 0) {
+                    costume = Costumes.Default;
+                }
+                break;
+            case Costumes.Gangster:
                 if (isPartyhatUnlocked == 0) {
                     costume = Costumes.Default;
                 }

@@ -9,7 +9,7 @@ public class HatUnlockUI : MonoBehaviour {
     }
 
     public IEnumerator Disable() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         gameObject.SetActive(false);
     }
 }

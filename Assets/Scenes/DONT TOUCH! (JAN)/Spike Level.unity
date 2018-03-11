@@ -9201,28 +9201,34 @@ Prefab:
     - target: {fileID: 61418076215597834, guid: 481277b528cceb244bbd84c9f9c29fb0,
         type: 2}
       propertyPath: m_Size.x
-      value: 1.51
+      value: 3.18
       objectReference: {fileID: 0}
     - target: {fileID: 61418076215597834, guid: 481277b528cceb244bbd84c9f9c29fb0,
         type: 2}
       propertyPath: m_Offset.x
-      value: 0.81
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 61418076215597834, guid: 481277b528cceb244bbd84c9f9c29fb0,
         type: 2}
       propertyPath: m_Size.y
-      value: 2.1
+      value: 2.81
       objectReference: {fileID: 0}
     - target: {fileID: 61418076215597834, guid: 481277b528cceb244bbd84c9f9c29fb0,
         type: 2}
       propertyPath: m_Offset.y
-      value: 1.17
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 114582360550325682, guid: 481277b528cceb244bbd84c9f9c29fb0,
         type: 2}
       propertyPath: unlockCanvas
       value: 
       objectReference: {fileID: 1281396602}
+    - target: {fileID: 212268971674700936, guid: 481277b528cceb244bbd84c9f9c29fb0,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c8540ee6e3cdd7489c08207b6ba10df,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 481277b528cceb244bbd84c9f9c29fb0, type: 2}
   m_IsPrefabParent: 0

@@ -179,6 +179,15 @@ public class MainBee : MonoBehaviour {
                 case GameManager.Costumes.Party:
                     GetComponent<Animator>().Play("partyBee_death");
                     break;
+                case GameManager.Costumes.Roman:
+                    GetComponent<Animator>().Play("romanBee_death");
+                    break;
+                case GameManager.Costumes.King:
+                    GetComponent<Animator>().Play("kingBee_death");
+                    break;
+                case GameManager.Costumes.Gangster:
+                    GetComponent<Animator>().Play("gangsterBee_death");
+                    break;
                 default:
                     GetComponent<Animator>().Play("mainBee_death");
                     break;
@@ -195,6 +204,15 @@ public class MainBee : MonoBehaviour {
                     break;
                 case GameManager.Costumes.Party:
                     GetComponent<Animator>().Play("partyBee_bodybuilder");
+                    break;
+                case GameManager.Costumes.Roman:
+                    GetComponent<Animator>().Play("romanBee_bodybuilder");
+                    break;
+                case GameManager.Costumes.King:
+                    GetComponent<Animator>().Play("kingBee_bodybuilder");
+                    break;
+                case GameManager.Costumes.Gangster:
+                    GetComponent<Animator>().Play("gangsterBee_bodybuilder");
                     break;
                 default:
                     GetComponent<Animator>().Play("mainBee_bodybuilder");
@@ -217,6 +235,15 @@ public class MainBee : MonoBehaviour {
                         break;
                     case GameManager.Costumes.Party:
                         GetComponent<Animator>().Play("partyBee_flying");
+                        break;
+                    case GameManager.Costumes.Roman:
+                        GetComponent<Animator>().Play("romanBee_flying");
+                        break;
+                    case GameManager.Costumes.King:
+                        GetComponent<Animator>().Play("kingBee_flying");
+                        break;
+                    case GameManager.Costumes.Gangster:
+                        GetComponent<Animator>().Play("gangsterBee_flying");
                         break;
                     default:
                         GetComponent<Animator>().Play("mainBee_flying");
