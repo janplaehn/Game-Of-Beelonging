@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour {
 
+    public GameObject levelCompleteCanvas;
     public string nextSceneName;
     public bool restoreBees;
     public int levelNumber;
@@ -23,6 +24,7 @@ public class FinishLine : MonoBehaviour {
             MainBee.GetComponent<MainBee>().isInEndSequence = true;
             foreach (GameObject go in GameObject.FindGameObjectsWithTag("AIBee")) {
                 go.GetComponent<AIBee>().isInBossFight = true;
+                levelCompleteCanvas.SetActive(true);
             }
             MainCamera.GetComponent<MainCamera>().speed = 0;
             foreach (GameObject bg in GameObject.FindGameObjectsWithTag("Background")) {

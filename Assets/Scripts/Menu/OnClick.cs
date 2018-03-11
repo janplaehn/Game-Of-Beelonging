@@ -36,7 +36,28 @@ public class OnClick : MonoBehaviour
 
     public void MainLevel() {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Main Level", LoadSceneMode.Single);
+        SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
+    }
+
+    public void LevelTwo() {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Level 2", LoadSceneMode.Single);
+    }
+
+    public void LevelThree() {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Level 3", LoadSceneMode.Single);
+    }
+
+    public void LevelFour() {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Level 4", LoadSceneMode.Single);
+    }
+
+
+    public void LevelFive() {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Level 5", LoadSceneMode.Single);
     }
 
     public void Credits() {
@@ -66,7 +87,31 @@ public class OnClick : MonoBehaviour
         GameObject.Find("_PauseController").GetComponent<PauseScreen>().Resume();
     }
 
+    public void UnlockEverything() {
+        GameManager.beeCount = 10;
+        GameManager.costume = GameManager.Costumes.King;
+        GameManager.isGangsterhatUnlocked = 1;
+        PlayerPrefs.SetInt("isGangsterhatUnlocked", 1);
+        GameManager.isSombreroUnlocked = 1;
+        PlayerPrefs.SetInt("isSombreroUnlocked", 1);
+        GameManager.isPartyhatUnlocked = 1;
+        PlayerPrefs.SetInt("isPartyhatUnlocked", 1);
+        GameManager.isRomanhatUnlocked = 1;
+        PlayerPrefs.SetInt("isRomanhatUnlocked", 1);
+        GameManager.isKinghatUnlocked = 1;
+        PlayerPrefs.SetInt("isKinghatUnlocked", 1);
+        GameManager.unlockedLevelNumber = 100;
+    }
+
     public void ResetData() {
         PlayerPrefs.DeleteAll();
+        GameManager.beeCount = 10;
+        GameManager.costume = GameManager.Costumes.Default;
+        GameManager.isGangsterhatUnlocked = 0;
+        GameManager.isSombreroUnlocked = 0;
+        GameManager.isPartyhatUnlocked = 0;
+        GameManager.isRomanhatUnlocked = 0;
+        GameManager.isKinghatUnlocked = 0;
+        GameManager.unlockedLevelNumber = 0;
     }
 }

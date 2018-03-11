@@ -5,11 +5,10 @@ using UnityEngine;
 public class WardrobeBee : MonoBehaviour {
 
 
-	// Use this for initialization
+
 	void Start () {
 	}
 	
-	// Update is called once per frame
 	void Update () {
         switch (GameManager.costume) {
             case GameManager.Costumes.Default:
@@ -22,7 +21,7 @@ public class WardrobeBee : MonoBehaviour {
                     GetComponent<Renderer>().material.color = Color.white;
                 }
                 else {
-                    GetComponent<Renderer>().material.color = new Color(0.02f, 0.02f, 0.02f, 1);
+                   GetComponent<Renderer>().material.color = new Color(0.02f, 0.02f, 0.02f, 1);
                 }
                 break;
             case GameManager.Costumes.Party:

@@ -12,6 +12,8 @@ public class BearHead : MonoBehaviour {
     public float attackFrequency;
     public GameObject gameManager;
     public GameObject waspSpawnpont;
+    public GameObject FinishLine;
+    public GameObject Crown;
     public bool mouthOpen;
     public bool isHit;
     public bool isEating;
@@ -27,7 +29,6 @@ public class BearHead : MonoBehaviour {
 
     void Update() {
         if (healthPoints <= 0) {
-            StartCoroutine(LoadWinScreen());
             this.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
             leftPaw.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
             rightPaw.GetComponent<Rigidbody2D>().gravityScale = 2.0f;
@@ -36,9 +37,10 @@ public class BearHead : MonoBehaviour {
             }
         }
         if (transform.position.y <= -8) {
-            GameManager.ToggleCursorVisibility(true);
-            GameManager.isInLevel = false;
-            SceneManager.LoadScene("Win Screen", LoadSceneMode.Single);
+            FinishLine.SetActive(true);
+            Crown.SetActive(true);
+            Destroy(gameObject);
+
         }
         if (transform.position.x > 5) {
             transform.position += Vector3.left * speed * Time.deltaTime;
@@ -154,13 +156,6 @@ public class BearHead : MonoBehaviour {
         isHit = false;
         isEating = false;
         isOpeningMouth = false;
-    }
-
-    IEnumerator LoadWinScreen() {
-        yield return new WaitForSeconds(1f);
-        GameManager.ToggleCursorVisibility(true);
-        GameManager.isInLevel = false;
-        SceneManager.LoadScene("Win Screen", LoadSceneMode.Single);
     }
 
     public void StartAttackInSeconds(float time) {

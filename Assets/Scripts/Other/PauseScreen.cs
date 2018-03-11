@@ -9,12 +9,10 @@ public class PauseScreen : MonoBehaviour {
     public GameObject cursorObject;
 
 
-	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) {
             if (isPaused) {
@@ -32,6 +30,37 @@ public class PauseScreen : MonoBehaviour {
         Time.timeScale = 1f;
         isPaused = false;
         Cursor.visible = false;
+        switch (GameManager.costume) {
+            case GameManager.Costumes.Default:
+                break;
+            case GameManager.Costumes.Sombrero:
+                if (GameManager.isSombreroUnlocked == 0) {
+                    GameManager.costume = GameManager.Costumes.Default;
+                }
+                break;
+            case GameManager.Costumes.Party:
+                if (GameManager.isPartyhatUnlocked == 0) {
+                    GameManager.costume = GameManager.Costumes.Default;
+                }
+                break;
+            case GameManager.Costumes.Roman:
+                if (GameManager.isPartyhatUnlocked == 0) {
+                    GameManager.costume = GameManager.Costumes.Default;
+                }
+                break;
+            case GameManager.Costumes.King:
+                if (GameManager.isPartyhatUnlocked == 0) {
+                    GameManager.costume = GameManager.Costumes.Default;
+                }
+                break;
+            case GameManager.Costumes.Gangster:
+                if (GameManager.isPartyhatUnlocked == 0) {
+                    GameManager.costume = GameManager.Costumes.Default;
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     void Pause() {

@@ -46,7 +46,7 @@ public class MainBee : MonoBehaviour {
         else {
             if (isAlive) {
                 Move();
-                if (Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1)) {
+                if (Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1) && Time.timeScale > 0) {
                     Shoot();
                 }
             }
@@ -54,7 +54,9 @@ public class MainBee : MonoBehaviour {
                 NewMainBee();
             }
         }
-        SetAnimation();
+        if (Time.timeScale > 0) {
+            SetAnimation();
+        }
     }
 
     void Move() {

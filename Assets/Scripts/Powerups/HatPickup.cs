@@ -22,6 +22,21 @@ public class HatPickup : MonoBehaviour {
                     Destroy(gameObject);
                 }
                 break;
+            case GameManager.Costumes.Gangster:
+                if (GameManager.isGangsterhatUnlocked != 0) {
+                    Destroy(gameObject);
+                }
+                break;
+            case GameManager.Costumes.Roman:
+                if (GameManager.isRomanhatUnlocked != 0) {
+                    Destroy(gameObject);
+                }
+                break;
+            case GameManager.Costumes.King:
+                if (GameManager.isKinghatUnlocked != 0) {
+                    Destroy(gameObject);
+                }
+                break;
             default:
                 break;
         }
@@ -41,8 +56,20 @@ public class HatPickup : MonoBehaviour {
                     PlayerPrefs.SetInt("isSombreroUnlocked", 1);
                     break;
                 case GameManager.Costumes.Party:
-                    GameManager.isSombreroUnlocked = 1;
+                    GameManager.isPartyhatUnlocked = 1;
                     PlayerPrefs.SetInt("isPartyhatUnlocked", 1);
+                    break;
+                case GameManager.Costumes.Gangster:
+                    GameManager.isGangsterhatUnlocked = 1;
+                    PlayerPrefs.SetInt("isGangsterhatUnlocked", 1);
+                    break;
+                case GameManager.Costumes.Roman:
+                    GameManager.isRomanhatUnlocked = 1;
+                    PlayerPrefs.SetInt("isRomanhatUnlocked", 1);
+                    break;
+                case GameManager.Costumes.King:
+                    GameManager.isKinghatUnlocked = 1;
+                    PlayerPrefs.SetInt("isKinghatUnlocked", 1);
                     break;
                 default:
                     break;
