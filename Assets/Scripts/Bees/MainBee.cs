@@ -181,6 +181,12 @@ public class MainBee : MonoBehaviour {
                 case GameManager.Costumes.Party:
                     GetComponent<Animator>().Play("partyBee_death");
                     break;
+                case GameManager.Costumes.Pirate:
+                    GetComponent<Animator>().Play("pirateBee_death");
+                    break;
+                case GameManager.Costumes.Viking:
+                    GetComponent<Animator>().Play("vikingBee_death");
+                    break;
                 case GameManager.Costumes.Roman:
                     GetComponent<Animator>().Play("romanBee_death");
                     break;
@@ -203,6 +209,12 @@ public class MainBee : MonoBehaviour {
                     break;
                 case GameManager.Costumes.Sombrero:
                     GetComponent<Animator>().Play("sombreroBee_bodybuilder");
+                    break;
+                case GameManager.Costumes.Pirate:
+                    GetComponent<Animator>().Play("pirateBee_bodybuilder");
+                    break;
+                case GameManager.Costumes.Viking:
+                    GetComponent<Animator>().Play("vikingBee_bodybuilder");
                     break;
                 case GameManager.Costumes.Party:
                     GetComponent<Animator>().Play("partyBee_bodybuilder");
@@ -237,6 +249,12 @@ public class MainBee : MonoBehaviour {
                         break;
                     case GameManager.Costumes.Party:
                         GetComponent<Animator>().Play("partyBee_flying");
+                        break;
+                    case GameManager.Costumes.Pirate:
+                        GetComponent<Animator>().Play("pirateBee_flying");
+                        break;
+                    case GameManager.Costumes.Viking:
+                        GetComponent<Animator>().Play("vikingBee_flying");
                         break;
                     case GameManager.Costumes.Roman:
                         GetComponent<Animator>().Play("romanBee_flying");

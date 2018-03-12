@@ -105,6 +105,10 @@ public class OnClick : MonoBehaviour
         PlayerPrefs.SetInt("isRomanhatUnlocked", 1);
         GameManager.isKinghatUnlocked = 1;
         PlayerPrefs.SetInt("isKinghatUnlocked", 1);
+        GameManager.isPiratehatUnlocked = 1;
+        PlayerPrefs.SetInt("isPiratehatUnlocked", 1);
+        GameManager.isVikinghatUnlocked = 1;
+        PlayerPrefs.SetInt("isVikinghatUnlocked", 1);
         GameManager.unlockedLevelNumber = 100;
     }
 
@@ -117,6 +121,8 @@ public class OnClick : MonoBehaviour
         GameManager.isPartyhatUnlocked = 0;
         GameManager.isRomanhatUnlocked = 0;
         GameManager.isKinghatUnlocked = 0;
+        GameManager.isVikinghatUnlocked = 0;
+        GameManager.isPiratehatUnlocked = 0;
         GameManager.unlockedLevelNumber = 0;
     }
 }

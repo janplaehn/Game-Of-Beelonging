@@ -17,10 +17,12 @@ public class GameManager : MonoBehaviour {
     [ShowOnly] public static int beeCount = 10;
     [ShowOnly] public static bool isInLevel;
 
-    [HideInInspector] public enum Costumes {Default, Gangster, Sombrero, Party, Roman, King}
+    [HideInInspector] public enum Costumes {Default, Gangster, Viking, Sombrero, Party, Pirate, Roman, King}
     [HideInInspector] public static Costumes costume = Costumes.Default;
     public static float isSombreroUnlocked;
+    public static float isVikinghatUnlocked;
     public static float isPartyhatUnlocked;
+    public static float isPiratehatUnlocked;
     public static float isRomanhatUnlocked;
     public static float isKinghatUnlocked;
     public static float isGangsterhatUnlocked;
@@ -32,7 +34,9 @@ public class GameManager : MonoBehaviour {
 
         unlockedLevelNumber = PlayerPrefs.GetInt("unlockedLevelNumber", 0);
         isSombreroUnlocked = PlayerPrefs.GetInt("isSombreroUnlocked", 0);
+        isSombreroUnlocked = PlayerPrefs.GetInt("isVikinghatUnlocked", 0);
         isPartyhatUnlocked = PlayerPrefs.GetInt("isPartyhatUnlocked", 0);
+        isSombreroUnlocked = PlayerPrefs.GetInt("isPiratehatUnlocked", 0);
         isRomanhatUnlocked = PlayerPrefs.GetInt("isRomanhatUnlocked", 0);
         isKinghatUnlocked = PlayerPrefs.GetInt("isKinghatUnlocked", 0);
         isGangsterhatUnlocked = PlayerPrefs.GetInt("isGangsterhatUnlocked", 0);
@@ -47,6 +51,16 @@ public class GameManager : MonoBehaviour {
                 break;
             case Costumes.Party:
                 if (isPartyhatUnlocked == 0) {
+                    costume = Costumes.Default;
+                }
+                break;
+            case Costumes.Viking:
+                if (isVikinghatUnlocked == 0) {
+                    costume = Costumes.Default;
+                }
+                break;
+            case Costumes.Pirate:
+                if (isPiratehatUnlocked == 0) {
                     costume = Costumes.Default;
                 }
                 break;

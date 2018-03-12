@@ -11,6 +11,9 @@ public class PauseMenuWardrobeBee : MonoBehaviour {
     public Sprite romanSprite;
     public Sprite gangsterSprite;
     public Sprite kingSprite;
+    public Sprite vikingSprite;
+    public Sprite pirateSprite;
+
 
     void Start() {
 
@@ -27,6 +30,24 @@ public class PauseMenuWardrobeBee : MonoBehaviour {
             case GameManager.Costumes.Sombrero:
                 GetComponent<Image>().overrideSprite = sombreroSprite;
                 if (GameManager.isSombreroUnlocked != 0) {
+                    GetComponent<Image>().color = Color.white;
+                }
+                else {
+                    GetComponent<Image>().color = new Color(0.02f, 0.02f, 0.02f, 1);
+                }
+                break;
+            case GameManager.Costumes.Pirate:
+                GetComponent<Image>().overrideSprite = pirateSprite;
+                if (GameManager.isPiratehatUnlocked != 0) {
+                    GetComponent<Image>().color = Color.white;
+                }
+                else {
+                    GetComponent<Image>().color = new Color(0.02f, 0.02f, 0.02f, 1);
+                }
+                break;
+            case GameManager.Costumes.Viking:
+                GetComponent<Image>().overrideSprite = vikingSprite;
+                if (GameManager.isVikinghatUnlocked != 0) {
                     GetComponent<Image>().color = Color.white;
                 }
                 else {
