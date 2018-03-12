@@ -167,6 +167,7 @@ public class MainBee : MonoBehaviour {
 
     void MoveOutOfScreen() {
         transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, 0, transform.position.z), speed * Time.deltaTime);
     }
 
     void SetAnimation() {

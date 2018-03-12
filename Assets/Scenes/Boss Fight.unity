@@ -1225,6 +1225,146 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: BearHit1
+    clip: {fileID: 8300000, guid: a4852c33e9840f549bec977cd2a68dcc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearHit2
+    clip: {fileID: 8300000, guid: e0cfdb02d5cc6104497862c0a4822cdc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearHit3
+    clip: {fileID: 8300000, guid: 7832d49e752b96b4ea96fcaed9accb92, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearHit4
+    clip: {fileID: 8300000, guid: 2d944a74763bf7c43a7c99718a1b0491, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearHit5
+    clip: {fileID: 8300000, guid: 6758f459413cee04db64ddc3a07e4b09, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearEat1
+    clip: {fileID: 8300000, guid: 3aa997626452bb444af3142ad7e5f29a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearEat2
+    clip: {fileID: 8300000, guid: 7c9c168239355c44e86022f6d397ac34, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearEat3
+    clip: {fileID: 8300000, guid: ae8fe347686095e4dbb23bac84c05222, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearEat4
+    clip: {fileID: 8300000, guid: d71401032f08f5443a55768fe80fad05, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearEat5
+    clip: {fileID: 8300000, guid: ae8fdd524d9c27a44ac9198bb85cf80d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearCough1
+    clip: {fileID: 8300000, guid: 11a9812cb98d1774aaee61606f2aeec1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearCough2
+    clip: {fileID: 8300000, guid: 8c964c665bef455489ebd17838d92e05, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearCough3
+    clip: {fileID: 8300000, guid: 94b1bcd5693559c46b58ce19a106fecb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearCough4
+    clip: {fileID: 8300000, guid: 810f258b29b980a45acc7364d3ea58b4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearCough5
+    clip: {fileID: 8300000, guid: 7edbc79c9c750ba48a91fd319b0884cb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearAttack1
+    clip: {fileID: 8300000, guid: 96d247cb4e0739c43abca37bf3feaee2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearAttack2
+    clip: {fileID: 8300000, guid: cf47db4f970f6dd4c8095f4485c7e0c1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearAttack3
+    clip: {fileID: 8300000, guid: 0d272b8b8aa813e40bfdfaf40f566f3c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearAttack4
+    clip: {fileID: 8300000, guid: ccb4d6c9c6d7b794c823820e6847d55c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BearAttack5
+    clip: {fileID: 8300000, guid: 2a0d4bcb3b2662443b5a8b68b235dd5f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
 --- !u!4 &214397147
 Transform:
   m_ObjectHideFlags: 0
@@ -3999,7 +4139,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4861176912985004, guid: 481277b528cceb244bbd84c9f9c29fb0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.22
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 4861176912985004, guid: 481277b528cceb244bbd84c9f9c29fb0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4074,7 +4214,7 @@ Prefab:
     - target: {fileID: 114582360550325682, guid: 481277b528cceb244bbd84c9f9c29fb0,
         type: 2}
       propertyPath: hatType
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 481277b528cceb244bbd84c9f9c29fb0, type: 2}
@@ -5807,7 +5947,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 09fcab88b09c261409eb2cc761a544f2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d2f90fd31ccb08f41907ed8559ebf7aa, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -65,17 +65,17 @@ public class GameManager : MonoBehaviour {
                 }
                 break;
             case Costumes.Roman:
-                if (isPartyhatUnlocked == 0) {
+                if (isRomanhatUnlocked == 0) {
                     costume = Costumes.Default;
                 }
                 break;
             case Costumes.King:
-                if (isPartyhatUnlocked == 0) {
+                if (isKinghatUnlocked == 0) {
                     costume = Costumes.Default;
                 }
                 break;
             case Costumes.Gangster:
-                if (isPartyhatUnlocked == 0) {
+                if (isGangsterhatUnlocked == 0) {
                     costume = Costumes.Default;
                 }
                 break;
