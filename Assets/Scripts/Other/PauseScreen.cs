@@ -44,17 +44,27 @@ public class PauseScreen : MonoBehaviour {
                 }
                 break;
             case GameManager.Costumes.Roman:
-                if (GameManager.isPartyhatUnlocked == 0) {
+                if (GameManager.isRomanhatUnlocked == 0) {
                     GameManager.costume = GameManager.Costumes.Default;
                 }
                 break;
             case GameManager.Costumes.King:
-                if (GameManager.isPartyhatUnlocked == 0) {
+                if (GameManager.isKinghatUnlocked == 0) {
                     GameManager.costume = GameManager.Costumes.Default;
                 }
                 break;
             case GameManager.Costumes.Gangster:
-                if (GameManager.isPartyhatUnlocked == 0) {
+                if (GameManager.isGangsterhatUnlocked == 0) {
+                    GameManager.costume = GameManager.Costumes.Default;
+                }
+                break;
+            case GameManager.Costumes.Pirate:
+                if (GameManager.isPiratehatUnlocked == 0) {
+                    GameManager.costume = GameManager.Costumes.Default;
+                }
+                break;
+            case GameManager.Costumes.Viking:
+                if (GameManager.isVikinghatUnlocked == 0) {
                     GameManager.costume = GameManager.Costumes.Default;
                 }
                 break;

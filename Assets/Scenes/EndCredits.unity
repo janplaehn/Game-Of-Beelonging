@@ -755,7 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 35
-  nextScene: Main Menu
+  nextScene: Win Screen
 --- !u!114 &1006752457
 MonoBehaviour:
   m_ObjectHideFlags: 0
