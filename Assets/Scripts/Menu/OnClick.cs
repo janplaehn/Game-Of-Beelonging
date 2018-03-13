@@ -77,7 +77,7 @@ public class OnClick : MonoBehaviour
 
     public void BossFight() {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Boss Fight", LoadSceneMode.Single);
+        SceneManager.LoadScene("End Cutscene", LoadSceneMode.Single);
     }
 
     public void NextCostume() {
