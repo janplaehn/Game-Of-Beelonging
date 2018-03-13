@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 181289815}
   - component: {fileID: 181289814}
   - component: {fileID: 181289816}
+  - component: {fileID: 181289817}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -137,7 +138,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 181289813}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 87ffcba03e0bf78498ce7693c512a6b4, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: e4a7cf828deef3c468f8caccf2f8bcad, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 281346799}
@@ -261,6 +262,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &181289817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 181289813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd04dc4747bf16540bd0e04940eb9b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoDuration: 6
+  nextSceneName: Boss Fight
 --- !u!1 &281346796
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +317,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
