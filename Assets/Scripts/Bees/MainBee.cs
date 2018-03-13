@@ -167,6 +167,7 @@ public class MainBee : MonoBehaviour {
 
     void MoveOutOfScreen() {
         transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, 0, transform.position.z), speed * Time.deltaTime);
     }
 
     void SetAnimation() {
@@ -180,6 +181,12 @@ public class MainBee : MonoBehaviour {
                     break;
                 case GameManager.Costumes.Party:
                     GetComponent<Animator>().Play("partyBee_death");
+                    break;
+                case GameManager.Costumes.Pirate:
+                    GetComponent<Animator>().Play("pirateBee_death");
+                    break;
+                case GameManager.Costumes.Viking:
+                    GetComponent<Animator>().Play("vikingBee_death");
                     break;
                 case GameManager.Costumes.Roman:
                     GetComponent<Animator>().Play("romanBee_death");
@@ -203,6 +210,12 @@ public class MainBee : MonoBehaviour {
                     break;
                 case GameManager.Costumes.Sombrero:
                     GetComponent<Animator>().Play("sombreroBee_bodybuilder");
+                    break;
+                case GameManager.Costumes.Pirate:
+                    GetComponent<Animator>().Play("pirateBee_bodybuilder");
+                    break;
+                case GameManager.Costumes.Viking:
+                    GetComponent<Animator>().Play("vikingBee_bodybuilder");
                     break;
                 case GameManager.Costumes.Party:
                     GetComponent<Animator>().Play("partyBee_bodybuilder");
@@ -237,6 +250,12 @@ public class MainBee : MonoBehaviour {
                         break;
                     case GameManager.Costumes.Party:
                         GetComponent<Animator>().Play("partyBee_flying");
+                        break;
+                    case GameManager.Costumes.Pirate:
+                        GetComponent<Animator>().Play("pirateBee_flying");
+                        break;
+                    case GameManager.Costumes.Viking:
+                        GetComponent<Animator>().Play("vikingBee_flying");
                         break;
                     case GameManager.Costumes.Roman:
                         GetComponent<Animator>().Play("romanBee_flying");

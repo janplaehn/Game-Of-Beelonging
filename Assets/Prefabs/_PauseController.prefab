@@ -713,6 +713,8 @@ MonoBehaviour:
   romanSprite: {fileID: 21300000, guid: 217381a2ec62d264fa0d9687d895a4d2, type: 3}
   gangsterSprite: {fileID: 21300000, guid: 72e2641249b4e7c4f9e40646eb4d54e8, type: 3}
   kingSprite: {fileID: 21300000, guid: f3a2705574c755046a1376267a02985f, type: 3}
+  vikingSprite: {fileID: 21300000, guid: c3f7a576d39aa934a9331779c4759ae8, type: 3}
+  pirateSprite: {fileID: 21300000, guid: be0ab1c32eae69349a2d49fe2d7652d3, type: 3}
 --- !u!114 &114727406443591482
 MonoBehaviour:
   m_ObjectHideFlags: 1

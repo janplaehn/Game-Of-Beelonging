@@ -24,6 +24,24 @@ public class WardrobeBee : MonoBehaviour {
                    GetComponent<Renderer>().material.color = new Color(0.02f, 0.02f, 0.02f, 1);
                 }
                 break;
+            case GameManager.Costumes.Pirate:
+                GetComponent<Animator>().Play("wardrobe_pirate");
+                if (GameManager.isPiratehatUnlocked != 0) {
+                    GetComponent<Renderer>().material.color = Color.white;
+                }
+                else {
+                    GetComponent<Renderer>().material.color = new Color(0.02f, 0.02f, 0.02f, 1);
+                }
+                break;
+            case GameManager.Costumes.Viking:
+                GetComponent<Animator>().Play("wardrobe_viking");
+                if (GameManager.isVikinghatUnlocked != 0) {
+                    GetComponent<Renderer>().material.color = Color.white;
+                }
+                else {
+                    GetComponent<Renderer>().material.color = new Color(0.02f, 0.02f, 0.02f, 1);
+                }
+                break;
             case GameManager.Costumes.Party:
                 GetComponent<Animator>().Play("wardrobe_party");
                 if (GameManager.isPartyhatUnlocked != 0) {

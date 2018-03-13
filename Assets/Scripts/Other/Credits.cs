@@ -15,7 +15,7 @@ public class Credits : MonoBehaviour {
 	
 	void Update () {
         transform.position += Vector3.up * scrollSpeed * Time.deltaTime;
-        if (transform.position.y > 880) {
+        if (transform.position.y > 1500) {
             Time.timeScale = 1f;
             GameManager.isInLevel = false;
             SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
