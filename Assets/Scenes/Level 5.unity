@@ -344,7 +344,7 @@ Prefab:
     - target: {fileID: 114582360550325682, guid: 481277b528cceb244bbd84c9f9c29fb0,
         type: 2}
       propertyPath: hatType
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114582360550325682, guid: 481277b528cceb244bbd84c9f9c29fb0,
         type: 2}
