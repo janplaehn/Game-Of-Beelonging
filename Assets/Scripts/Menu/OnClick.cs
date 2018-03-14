@@ -20,7 +20,7 @@ public class OnClick : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
+        SceneManager.LoadScene("Start Cutscene", LoadSceneMode.Single);
     }
 
     public void Quit()
