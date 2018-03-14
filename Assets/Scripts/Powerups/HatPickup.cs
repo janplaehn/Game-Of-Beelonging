@@ -32,6 +32,16 @@ public class HatPickup : MonoBehaviour {
                     Destroy(gameObject);
                 }
                 break;
+            case GameManager.Costumes.Pirate:
+                if (GameManager.isPiratehatUnlocked != 0) {
+                    Destroy(gameObject);
+                }
+                break;
+            case GameManager.Costumes.Viking:
+                if (GameManager.isVikinghatUnlocked != 0) {
+                    Destroy(gameObject);
+                }
+                break;
             case GameManager.Costumes.King:
                 if (GameManager.isKinghatUnlocked != 0) {
                     Destroy(gameObject);
@@ -66,6 +76,14 @@ public class HatPickup : MonoBehaviour {
                 case GameManager.Costumes.Roman:
                     GameManager.isRomanhatUnlocked = 1;
                     PlayerPrefs.SetInt("isRomanhatUnlocked", 1);
+                    break;
+                case GameManager.Costumes.Pirate:
+                    GameManager.isPiratehatUnlocked = 1;
+                    PlayerPrefs.SetInt("isPiratehatUnlocked", 1);
+                    break;
+                case GameManager.Costumes.Viking:
+                    GameManager.isVikinghatUnlocked = 1;
+                    PlayerPrefs.SetInt("isVikinghatUnlocked", 1);
                     break;
                 case GameManager.Costumes.King:
                     GameManager.isKinghatUnlocked = 1;

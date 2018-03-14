@@ -30,6 +30,9 @@ public class Beetle : MonoBehaviour {
         if (transform.position.y <= -6) {
             Destroy(this.gameObject);
         }
+        if (transform.position.x <= MainCamera.GetComponent<MainCamera>().offset - 11f) {
+            Destroy(gameObject);
+        }
         if (isAlive) {
             Move();
             if (healthPoints <= 0 || transform.position.x <= MainCamera.GetComponent<MainCamera>().offset - 10f) {
