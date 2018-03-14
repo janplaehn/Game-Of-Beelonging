@@ -34,6 +34,9 @@ public class Wasp : MonoBehaviour
         if (transform.position.y <= -6) {
             Destroy(this.gameObject);
         }
+        else if (transform.position.x <= MainCamera.GetComponent<MainCamera>().offset - 11f) {
+            Destroy(gameObject);
+        }
         if (isAlive) {
             if (transform.position.x > player.transform.position.x) {
                 if (transform.position.x - player.transform.position.x < detectionRange) {

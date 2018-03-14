@@ -660,7 +660,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 2.9}
+    oldSize: {x: 3.2, y: 2.8999999}
     newSize: {x: 3.2, y: 2.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5312,7 +5312,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 2.9}
+    oldSize: {x: 3.2, y: 2.8999999}
     newSize: {x: 3.2, y: 2.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6226,11 +6226,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4619747365868298, guid: b2ec3ff32b8b92a438ab76a79afcc8ec, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -21.934483
       objectReference: {fileID: 0}
     - target: {fileID: 4619747365868298, guid: b2ec3ff32b8b92a438ab76a79afcc8ec, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15.38
+      value: 22.800001
       objectReference: {fileID: 0}
     - target: {fileID: 4619747365868298, guid: b2ec3ff32b8b92a438ab76a79afcc8ec, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7790,7 +7790,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 2.9}
+    oldSize: {x: 3.2, y: 2.8999999}
     newSize: {x: 3.2, y: 2.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -9000,7 +9000,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 2.9}
+    oldSize: {x: 3.2, y: 2.8999999}
     newSize: {x: 3.2, y: 2.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -9751,11 +9751,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4107596687017900, guid: b5c9cda22d4c14147805c8a837a1350b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -60.460526
+      value: -106
       objectReference: {fileID: 0}
     - target: {fileID: 4107596687017900, guid: b5c9cda22d4c14147805c8a837a1350b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 58.686844
+      value: 87
       objectReference: {fileID: 0}
     - target: {fileID: 4107596687017900, guid: b5c9cda22d4c14147805c8a837a1350b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11395,11 +11395,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4148471782436038, guid: 8b0c9b8cb9ffc4f41a6ecdcff489cc4b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -21.934483
       objectReference: {fileID: 0}
     - target: {fileID: 4148471782436038, guid: 8b0c9b8cb9ffc4f41a6ecdcff489cc4b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15.38
+      value: 22.800001
       objectReference: {fileID: 0}
     - target: {fileID: 4148471782436038, guid: 8b0c9b8cb9ffc4f41a6ecdcff489cc4b, type: 2}
       propertyPath: m_LocalPosition.z

@@ -34,9 +34,9 @@ public class GameManager : MonoBehaviour {
 
         unlockedLevelNumber = PlayerPrefs.GetInt("unlockedLevelNumber", 0);
         isSombreroUnlocked = PlayerPrefs.GetInt("isSombreroUnlocked", 0);
-        isSombreroUnlocked = PlayerPrefs.GetInt("isVikinghatUnlocked", 0);
+        isVikinghatUnlocked = PlayerPrefs.GetInt("isVikinghatUnlocked", 0);
         isPartyhatUnlocked = PlayerPrefs.GetInt("isPartyhatUnlocked", 0);
-        isSombreroUnlocked = PlayerPrefs.GetInt("isPiratehatUnlocked", 0);
+        isPiratehatUnlocked = PlayerPrefs.GetInt("isPiratehatUnlocked", 0);
         isRomanhatUnlocked = PlayerPrefs.GetInt("isRomanhatUnlocked", 0);
         isKinghatUnlocked = PlayerPrefs.GetInt("isKinghatUnlocked", 0);
         isGangsterhatUnlocked = PlayerPrefs.GetInt("isGangsterhatUnlocked", 0);
