@@ -806,6 +806,16 @@ Prefab:
       propertyPath: hatType
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 212268971674700936, guid: 481277b528cceb244bbd84c9f9c29fb0,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: -525770065
+      objectReference: {fileID: 0}
+    - target: {fileID: 212268971674700936, guid: 481277b528cceb244bbd84c9f9c29fb0,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 481277b528cceb244bbd84c9f9c29fb0, type: 2}
   m_IsPrefabParent: 0
